@@ -1,0 +1,59 @@
+@import '../../../assets/scss/colors';
+@import '../../../assets/scss/flexbox';
+@import '../../../assets/scss/divider';
+
+
+.pricing_s
+{
+    overflow-x: hidden;
+    
+    
+}
+
+.pricing_slide
+{
+    padding: 6px;
+    @include flexi(column, center, space-evenly);
+  
+    .desc
+    {
+        margin: 20px auto;
+    }
+}
+.slick-slide {
+    &:focus, a {
+      outline: none;
+    }
+  }
+
+
+.divider
+{
+
+    @include divider(10px);
+}
+
+@media only screen and (min-width: 767px) and (max-width: 944px)
+{
+        .pricing_slide
+    {
+        
+        .desc:first-of-type
+        {
+            min-height: 63px;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 944px)
+{
+        .pricing_slide
+    {
+        
+        .desc:first-of-type
+        {
+            min-height: 43px;
+        }
+    }
+}

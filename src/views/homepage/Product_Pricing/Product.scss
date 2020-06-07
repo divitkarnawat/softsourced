@@ -1,0 +1,41 @@
+.prod_s
+{
+    .title{
+    text-transform: none;
+}
+.part
+    {
+        margin: 30px;
+        &-specific{
+            line-height: 2;
+        }
+    }
+}
+ol
+{
+    margin-top: 35px;
+}
+
+.prod_item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+
+   h3
+   {
+       color: #37ae86;
+   }
+
+    p
+    {
+        margin: 0;
+    }
+}
+.prodSym
+{
+    width: 35px;
+    height: 33.7px;
+    margin-bottom: 20px;
+}

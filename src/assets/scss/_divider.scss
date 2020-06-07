@@ -1,0 +1,8 @@
+@import './colors';
+@mixin divider($size : 2px, $color: $primary_color, $width: 85%)
+{
+    border-bottom: $size solid $color;
+    margin: auto;
+    width: $width;
+
+}

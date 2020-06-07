@@ -1,0 +1,224 @@
+.header-wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 30px;
+    background: white;
+    display: flex;
+    transition: .2s;
+    z-index: 15;
+    align-items: center;
+    justify-content: space-evenly;
+    a{
+      position: relative;
+      display: inline-block;
+      color: black;
+      padding: 0px 20px;
+      letter-spacing: 1.5px;
+      font-size: 1em;
+
+      &:hover{
+        transition: .4s;
+        color: #37ae86;
+    }
+  }
+  
+ 
+}
+
+
+
+
+.brandLogo
+{
+    padding: 0px 10px;
+    a
+    {
+      padding: 0;
+      display: block;
+      letter-spacing: 0;
+      width: 100px;
+      height: 93.33px;
+    }
+}
+img{
+  height: 100%;
+  width: 100%;
+}
+
+.navLinks
+{
+    padding: 0px 10px;
+    line-height: 5;
+    align-items: center;
+ 
+  
+
+}
+.desktopView
+{
+    align-items: center;
+    display: flex;
+  
+}
+
+
+
+
+
+.menuWrapper
+{
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #17f9f2;
+    background-image: linear-gradient(45deg, #17f9f2 0%, white 70%);;
+  /*  background: #4776E6;  
+background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  
+background: linear-gradient(to right, #8E54E9, #4776E6);  */
+
+    z-index: 40;
+    transition: 1s;
+    opacity: 0;
+    display: none;
+}
+.menuWrapper_fadein
+{
+    opacity: 1;
+    transition: 1s;
+}
+.menuWrapper_display
+{
+    display: block;
+}
+
+
+.linksWrapper
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+}
+
+
+.menuWrapper_fadein .navLink
+{
+    opacity: 1;
+    transform: translateY(0);
+    transition: 2s;
+}
+
+
+
+#hamburger{
+    display: none;
+    width: 34px;
+    height: 20px;
+    position: fixed;
+    top: 14px;
+    right: 10px;
+    z-index: 50;
+    background: transparent;
+    outline: none;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  #hamburger span {
+    
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: #37ae86;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  
+  #hamburger span:nth-child(1) {
+    top: 0px;
+  }
+  
+  #hamburger span:nth-child(2) {
+    top: 10px;
+  }
+  
+  #hamburger span:nth-child(3) {
+    top: 20px;
+  }
+  
+  #hamburger.open span:nth-child(1) {
+    top: 10px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  
+  #hamburger.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+  
+  #hamburger.open span:nth-child(3) {
+    top: 10px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+
+
+  @media only screen and (min-width: 760px) and (max-width: 800px)
+  {
+    .brandLogo
+    {
+      width: 30%;
+    }
+  }
+  @media only screen and (max-width: 1306px)
+  {
+      .brandLogo
+      {
+          padding: 6px;
+          width: 70%;
+      }
+      .desktopView  
+      {
+          display: none;
+      }
+      #hamburger
+      {
+          display: block;
+      }
+      .navLink
+{
+    opacity: 0;
+    transition: 1s;
+    transform: translateY(-15px);
+}
+  }

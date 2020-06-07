@@ -1,0 +1,40 @@
+@import '../../../assets/scss/colors';
+@import '../../../assets/scss/flexbox';
+
+.contact_wrapper
+{
+    @include flexi(row, center, space-evenly);
+    flex-wrap: wrap;
+}
+.form_wrapper
+{
+    max-width: 440px;
+}
+.contact_s
+{
+    .main_form
+    {
+        
+        form
+        {
+            @include flexi(column);
+        }
+    }
+    input
+    {
+        outline: none !important;
+        margin-top: 1.2rem;
+        width: 100%;
+        padding: 12px; /* Some padding */ 
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 10px;
+        box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.10);
+    }
+}
+
+.display_box
+{
+    border: 2px solid $primary_color;
+    padding: 30px 20px;
+    border-radius: 10px;
+}

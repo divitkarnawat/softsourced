@@ -1,0 +1,44 @@
+@import '../../../assets/scss/flexbox' ;
+@import '../../../assets/scss/colors';
+.blog_articles
+{
+    @include flexi(row);
+    flex-wrap: wrap;
+}
+
+.blog_article
+{
+    padding: 20px;
+    @include flexi(column);
+
+    .title
+    {
+        text-align: left;
+    }
+    img
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .img_wrapper
+    {
+        width: 320px;
+        height: 207.56px;
+       
+    }
+    .content_wrapper
+    {
+        width: 320px;
+       
+    }
+    .links
+    {
+        display: block;
+        text-align: right;
+        margin: 5px 5px 0 0;
+        color: $primary_color;
+    }
+
+}
+
+
