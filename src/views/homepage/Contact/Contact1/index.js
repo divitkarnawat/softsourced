@@ -15,9 +15,13 @@ class Contact1 extends Component{
     {
         return(
             <div className = "contact_proj_req">
+          
+                  <div className = "part">
+                    You are looking for support for your project?
+                </div>
                 <div className = "part">
                 <div>
-                    You are looking for support for your project?
+                When do you want to kick off the project with us?
                 </div>
                 <div className = "grp_btn_time">
                 {
@@ -40,7 +44,7 @@ class Contact1 extends Component{
                 </div>
                 <div className = "grp_btn_time">
                 {
-                    ["E-COMMERCE","MOBILE APPLOCATION","API DEVELOPMENT"].map((item,idx)=>
+                    ["E-COMMERCE","MOBILE APPLICATION","API DEVELOPMENT"].map((item,idx)=>
                     {
                               
                         return(
@@ -57,7 +61,7 @@ class Contact1 extends Component{
                 <div>
                     What is your budget?
                 </div>
-                <div className = "grp_btn_time">
+                <div className = "grp_btn_price">
                 {
                     ["2000 - 3000","3001 - 10 000","10 001 - 50 000","> 50 000"].map((item,idx)=>
                     {

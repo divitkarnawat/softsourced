@@ -1,0 +1,75 @@
+@import '../../assets/scss/colors';
+
+
+.footer_section
+{
+    bottom: 0;
+    background-color: white;
+    color: black;
+    background-attachment: fixed;
+    padding: 50px;
+    border-top: 15px solid $primary_color;
+  
+
+    a
+    {
+        letter-spacing: 0;
+        padding: 0;
+        text-shadow: none;
+        font-weight: normal;
+    }
+    
+}
+.fas
+{
+    margin-right: 5px;
+}
+.contact_details
+{
+    margin-top: 0;
+    padding: 0;
+    color: black;
+}
+.cb
+{
+    margin-bottom: 25px;
+}
+.cd
+{
+    margin-bottom: 10px;
+}
+.cd,.cf
+{
+    display: flex;
+    justify-content: center;
+
+}
+
+.fdivider
+{
+    border-top: 1px solid gray;
+    margin: 10px auto;
+}
+.ext_footer
+{
+    div
+    {
+        text-align: center;
+        color: gray;
+    }
+}
+@media only screen and (max-width: 1000px)
+{
+   .cd, .cf{
+       justify-content: left;
+   }
+   .ext_footer
+{
+    div
+    {
+        text-align: left;
+    }
+}
+
+}
+

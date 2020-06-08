@@ -1,5 +1,12 @@
 @import '../../../assets/scss/flexbox' ;
 @import '../../../assets/scss/colors';
+
+.blog_s
+{
+    padding: 40px 0px;
+    background-color: rgba(55, 174, 134, 0.14);
+    border-bottom: 15px solid $primary_color;
+}
 .blog_articles
 {
     @include flexi(row);

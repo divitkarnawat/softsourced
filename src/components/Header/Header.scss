@@ -10,6 +10,12 @@
     z-index: 15;
     align-items: center;
     justify-content: space-evenly;
+
+    .custom_btn
+    {
+      padding: 10px;
+      height: 22px;
+    }
     a{
       position: relative;
       display: inline-block;
@@ -124,8 +130,8 @@ background: linear-gradient(to right, #8E54E9, #4776E6);  */
     width: 34px;
     height: 20px;
     position: fixed;
-    top: 14px;
-    right: 10px;
+    top: 33px;
+    right: 20px;
     z-index: 50;
     background: transparent;
     outline: none;
@@ -193,19 +199,17 @@ background: linear-gradient(to right, #8E54E9, #4776E6);  */
   }
 
 
-  @media only screen and (min-width: 760px) and (max-width: 800px)
-  {
-    .brandLogo
-    {
-      width: 30%;
-    }
-  }
+  
   @media only screen and (max-width: 1306px)
   {
+    .header-wrap
+    {
+      padding: 0;
+    }
       .brandLogo
       {
-          padding: 6px;
-          width: 70%;
+          padding: 0;
+          width: 85%;
       }
       .desktopView  
       {

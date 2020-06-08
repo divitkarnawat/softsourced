@@ -56,7 +56,7 @@ class Header extends Component{
             }
             else{
                 this.headerNavbar.current.style.top = "0px";
-                this.hamburger.current.style.top = "14px";
+                this.hamburger.current.style.top = "33px";
             }
         }
          prevScrollPos = currentScrollPos;
@@ -82,7 +82,7 @@ class Header extends Component{
               <div className="linksWrapper">
               {navlinks}
               <div className="navLink" onClick={this.handleHamburger}>
-                <a>  <CustomisedButton>KICK OFF YOUR PROJECT WITH US</CustomisedButton></a>
+                <a>  <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
             </div>
               </div>
               
@@ -99,7 +99,7 @@ class Header extends Component{
                <div className="desktopView">
                {navlinks}
                <div className="navLink" onClick={this.handleHamburger}>
-                <a>  <CustomisedButton>KICK OFF YOUR PROJECT WITH US</CustomisedButton></a>
+                <a>  <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
             </div>
                </div>
                </div>

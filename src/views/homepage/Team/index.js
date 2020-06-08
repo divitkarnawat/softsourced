@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
 import './Team.scss';
+import profile_pic from '../../../assets/img/sample_profile.jpg';
 class Team extends Component
 {
 
@@ -32,7 +33,7 @@ class Team extends Component
         return(
             <div class="profile-card js-profile-card">
     <div class="profile-card__img">
-      <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg" alt="profile card" />
+      <img src={profile_pic} alt="profile card" />
     </div>
 
     <div class="profile-card__cnt js-profile-cnt">

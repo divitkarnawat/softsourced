@@ -22,7 +22,7 @@ html{
 
 .section
 {
-  min-height: 100vh;
+ 
   margin: 50px auto;
 }
 
@@ -64,7 +64,7 @@ a
 
     .custom_btn
     {
-        display: inline-block;
+        display: inline-flex;
         padding: 10px 20px;
         border-radius: 20px;
         border: 2px solid $primary_color;
@@ -73,6 +73,10 @@ a
         text-decoration: none;
         background-color: white;
         transition: .3s;
+        margin: 0 3px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
         
         &:hover
         {
@@ -80,12 +84,34 @@ a
             background-color: $primary_color;
             transition: .6s;
         }
-    
+      
     }
     
     
     .checked
     {
-        color: white;
-        background-color: $primary_color;
+        color: white !important;
+        background-color: $primary_color !important
     }
+
+    input[type="text"]
+    {
+        outline: none !important;
+        margin-top: 1.2rem;
+        width: 95%;
+        padding: 12px 0 12px 14px; /* Some padding */ 
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 10px;
+        box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.10);
+    }
+    input[type="submit"]
+    {
+        padding: 10px 40px;
+        background-color: $primary_color;
+        color: white;
+        font-size: 1.2em;
+        box-shadow: 2px 3px 8px black;
+        &:hover{
+            box-shadow: 1px 1px 2px black;
+        }
+      }

@@ -40,21 +40,21 @@ class About extends Component
                         </p>
                     </div>
                     
-                    <div className = "main_slider">
-                    <Slider {...settings_main}>
+                    <div className = "partners_logo">
+                 
                 {
                     [partner1,partner2,partner3,partner4,partner5].map((imgURL,idx)=>
                     {
                               
                         return(
-                            <div className = "slide_wrapper" key={idx}>
+                            <div className = "logo" key={idx}>
                                 <img src = {imgURL} />   
                             </div>
                         );
                     })
                 }
 
-                </Slider>
+             
                     </div>
                 </Container>
             </div>

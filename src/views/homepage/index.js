@@ -8,19 +8,20 @@ import WhyUs from './WhyUs';
 import Pricing from './Pricing';
 import Team from './Team';
 import Contact from './Contact';
+
 export default function HomePage()
 {
     return(
         <>
-        <Parallax/>
-        <About/>
+        <Parallax />
+        <div id = "ABOUT"><About/></div>
         <Product/>
-        <Projects />
+        <div id = "PROJECTS"><Projects /></div>
         <WhyUs/>
         <Team />
-        <Pricing />
-        <Blog/>
-        <Contact />
+        <div id = "PRODUCT & PRICING"><Pricing /></div>
+        <div id = "BLOG"><Blog/></div>
+        <div id = "CONTACT"><Contact /></div>
         </>
     )
 }

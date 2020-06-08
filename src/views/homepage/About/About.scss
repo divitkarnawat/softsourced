@@ -2,6 +2,7 @@
 
 .about_s
 {
+    min-height: 0;
     .m_content
     {
         @include flexi(column);
@@ -9,8 +10,21 @@
     .desc
     {
         text-align: center;
+        line-height: 2;
+    }
+    .partners_logo
+    {
+        @include flexi(row, center, space-evenly);
+        flex-wrap: wrap;
+        margin: 40px auto;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid gray;
+
     }
     
     
+       
+    
 }
+
 

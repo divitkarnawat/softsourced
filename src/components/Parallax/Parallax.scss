@@ -26,48 +26,66 @@
 -moz-background-size: cover;
   }
   
-  .title_div
-  {
-    color: white;
-  }
+ 
 
   
-  .title1
+  .parallax .title
   {
     font-weight: 500;
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 2px 1px 20px black;
-  }
-  .title2
-  {
-    font-weight: 500;
-    font-size: 4rem;
-    text-shadow: 2px 1px 20px black;
-    margin-bottom: 3rem;
-  }
-  .title_btn
-  {
-    background: white;
-    color: #204379;
-    border: 1.5px solid #204379;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius:3px;
-    box-shadow: 1px 1px 10px gray;
-    transition: 1s;
-  
-  }
-  .title_btn:hover{
-    background-color: #204379;
     color: white;
-    transition: 1s;
+  }
+ 
+  .home_btm_l
+  {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+
+    div:first-child{
+    display: inline-block;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    font-size: 1.3rem;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
   }
 
+
+
+}
+.home_btm_r
+{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  right: 10px;
+
+  form
+  {
+    display: inline-flex;
+    input[type="text"]
+    {
+      margin: 0px 4px;
+      background-color: #e2e0e0;
+      text-align: center;
+      border-radius: 40px;
+    }
+  }
+
+}
+ 
 
 @media only screen and (max-width: 500px)
 {
   .parallax
   {
     background-attachment: scroll;
+  }
+  .home_btm_l, .home_btm_r
+  {
+    display: none;
   }
 }

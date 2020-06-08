@@ -10,15 +10,45 @@ class Contact extends Component
     {
         super(props);
         this.state = {
-            cur_contact: 1,
+            cur_contact: 0,
             fname: '',
             lname: '',
             email: '',
             pnumber: '',
-            llink: ''
+            llink: '',
+            
         }
 
     }
+    handleInvalid = (e)=>{
+    
+        // if(document.documentElement.clientWidth > 500)
+        // e.target.setCustomValidity('Bitte füllen Sie dieses Feld aus');
+        // else{
+        //   e.target.setCustomValidity(' ');
+          
+        // }
+        
+      }
+      handleChange = (e)=>{
+     
+    //   if(e.target.name == 'email')
+    //   {
+    //     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value))
+    //     {
+    
+    //       this.setState({status: ''});
+    //     }
+    //     else{
+          
+    //       this.send_status.current.style.color = "red";
+    //       this.setState({status: 'Ungültig E-mail'});
+    //     }
+    //   }
+        this.setState({[e.target.name]: [e.target.value]});
+        
+      }
+      
 
     render()
     {
@@ -70,7 +100,7 @@ class Contact extends Component
 
                 </Slider>
                 </div>
-
+                <form>
                 <div className = "contact_wrapper">
                     {this.state.cur_contact == 0 ? <Contact1 /> : ''}
                     
@@ -90,19 +120,20 @@ class Contact extends Component
                         </div>
 
                         <div className = "main_form">
-                            <form>
+                           
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = "First Name" />
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = "Last Name"/>
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = "E-Mail"/>
                                 <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = "Phone Number"/>
                                 <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = "LinkedIn"/>
-                            </form>
+                                <input type="checkbox" required value = "tnc" name = "tnc" />
                         </div>
                     </div>
                 </div>
 
-
-
+                            <input type="submit" value = "SUBMIT" className = "custom_btn" />
+                            <p className="desc">This support request is of course non-binding. No costs or fees are incurred.</p>
+                        </form>
                 </Container>
             </div>
         );
