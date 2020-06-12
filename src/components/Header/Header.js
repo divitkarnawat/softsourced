@@ -13,14 +13,14 @@ class Header extends Component{
         this.menuWrapper = React.createRef();
         this.hamburger = React.createRef();
         this.state = {
-            navLinks: ["HOME","ABOUT","PRODUCT & PRICING","PROJECTS","BLOG","CONTACT"],
+            navLinks: ["ABOUT","PRODUCT & PRICING","PROJECTS","BLOG","CONTACT"],
             scrollCheck: false
         }
     }
 
     handleHamburger = () =>
     {   
-        if(window.innerWidth < 1000)
+        if(window.innerWidth < 1354)
         {
   
         this.hamburger.current.classList.toggle('open');
@@ -82,14 +82,15 @@ class Header extends Component{
               <div className="linksWrapper">
               {navlinks}
               <div className="navLink" onClick={this.handleHamburger}>
-                <a>  <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
+                <a href = "#CONTACT">  <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
             </div>
+           
               </div>
               
           </div>
         <div className="header-wrap" ref={this.headerNavbar}>
            <div className="brandLogo">
-           <Link smooth to="/">
+           <Link smooth to="#root">
           
             <img src={logo} alt="softsourced"/>
   </Link>
@@ -99,11 +100,26 @@ class Header extends Component{
                <div className="desktopView">
                {navlinks}
                <div className="navLink" onClick={this.handleHamburger}>
-                <a>  <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
+                <a href = "#CONTACT">   <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
             </div>
+          
                </div>
+              
                </div>
+               <div >
+                <a style={{height: `33px`}}> 
+                                    <label class="button">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </label>
+                </a>
+                </div>
+               
         </div>
+      
+
         <div ref={this.hamburger} id="hamburger" onClick={this.handleHamburger}> 
                 <span></span>
                 <span></span>

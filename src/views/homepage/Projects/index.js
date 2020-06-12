@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Container} from '@material-ui/core';
 import Slider from "react-slick";
+import Fade from 'react-reveal/Fade';
 
 import './Projects.scss';
 import proj1s from '../../../assets/img/projects/prod1s.png';
@@ -26,7 +27,7 @@ class Projects extends Component{
     render()
     {
 
-        const projects_cat = [[0,1,2,3,4,5,6,7,8],[3,6,7,8],[1,2,4,8]];
+        const projects_cat = [[0,1,2,3,4,5,6,7,8],[3,6,7,8,1],[1,2,4,8]];
         const projects = {
             titles:["BELLA & BONA","COVID AB TESTING","FRESH & JUICY","TRAX HAUT CUISINE","TRACK RECORDX","BLUE OCEAN SOLUTIONS","HOP IN THE SHOW CAFE","NOTE YOUR DAYS Co KG","COMMERZFLANK"],
             desc: [
@@ -51,6 +52,7 @@ class Projects extends Component{
                 breakpoint: 767,
                 settings: {
                   slidesToShow: 1,
+                  dots: true,
                   slidesToScroll: 1,
                   infinite: true,
                   beforeChange: (current, next) => {
@@ -82,10 +84,14 @@ class Projects extends Component{
 
                 </Slider>
                 </div>
+               
                 <div className = "projects">
+                    
+                        
                     {
                         projects_cat[this.state.id].map((project_id, idx)=>{
                             return(
+                                <Fade bottom  spy = {this.state.id} onReveal = {(e) => console.log(e)}>
                                 <div className="project">
                                 <div className = "img_wrapper">
                                     <img src={projects.imgURLs[project_id]} />
@@ -102,10 +108,13 @@ class Projects extends Component{
                                     
                                 </div>
                             </div>
+                            </Fade>
                             );
                         })
                     }
+                  
                 </div>
+          
                 <div>
                     <a href = "/" > See all projects >> </a>
                 </div>

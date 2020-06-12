@@ -44,13 +44,13 @@ class Pricing extends Component{
                     ],
             price: [
                         [
-                            "2750 to 5500", "3500 to 8000", "10k to 55k"
+                            "2.75 to 5.5k", "3.5 to 8k", "10 to 55k"
                         ],
                         [
-                            "27k to 55k", "27k to 60k", "35k to 70k"
+                            "27 to 55k", "27 to 60k", "35 to 70k"
                         ],
                         [
-                            "5k to 15k", "8k to 27k", "from 15k"
+                            "5 to 15k", "8 to 27k", "from 15k"
                         ]
                     ]
 
@@ -69,6 +69,7 @@ class Pricing extends Component{
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
+            dots: true,
             infinite: true,
             beforeChange: (current, next) => {
                 this.setState({ id: next });  
@@ -86,6 +87,7 @@ class Pricing extends Component{
                 breakpoint: 767,
                 settings: {
                   slidesToShow: 1,
+             
                   slidesToScroll: 1,
                   infinite: true,
                 }
@@ -137,7 +139,7 @@ class Pricing extends Component{
                                                 {this.state.time_hr[this.state.id][idx]} hours 
                                             </div>
                                             <div className = "desc">
-                                                {this.state.price[this.state.id][idx]} e 
+                                                {this.state.price[this.state.id][idx]} €
                                             </div>
                                         </div>
                                     </div>

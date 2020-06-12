@@ -1,5 +1,6 @@
 .prod_s
 {
+
     .title{
     text-transform: none;
 }
@@ -23,6 +24,11 @@ ol
     align-items: center;
     margin: 30px;
 
+    .desc
+    {
+        text-align: center;
+    }
+
    h3
    {
        color: #37ae86;
@@ -38,4 +44,19 @@ ol
     width: 35px;
     height: 33.7px;
     margin-bottom: 20px;
+}
+
+.MuiGrid-direction-xs-row-reverse + div
+{
+    margin: 20px 30px;
+}
+
+@media screen and (max-width: 960px)
+{
+    
+.MuiGrid-direction-xs-row-reverse + div
+{
+    margin: 20px 0px;
+}
+
 }

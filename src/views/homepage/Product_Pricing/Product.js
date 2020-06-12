@@ -14,7 +14,7 @@ export default function Product()
         <div className="section prod_s">
             
             <h2 className="title">
-                The products we offer - these three are our thing:
+            These are our products:
             </h2>
 
             <div>
@@ -38,7 +38,7 @@ export default function Product()
                         </Grid>
                     
                 </Grid>
-                    <Grid container>
+                    <Grid container >
                         <Grid item md={6}>
                             <div className="part part-specific">
                             <h3 className=""> Softsourced has it. </h3>

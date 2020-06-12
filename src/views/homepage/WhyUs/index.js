@@ -13,7 +13,7 @@ class WhyUs extends Component{
     {
         const content_l = {
             titles : ["Commitment to deliver quality","Immediate scalability & synergy"],
-            desc : ["We put on our a-game from project initiation toconclusion, softsourced commits to deliver an optimal product. No code refactoring needed whatsoever",
+            desc : ["We put on our a-game from project initiation to conclusion, softsourced commits to deliver an optimal product. No code refactoring needed whatsoever",
                     "Due to our team and network of hand-picked designers and developers, we are able to put together a highly skilled workforce in no time - no matter the scale of the project."
                     ],
             syms : [sym1, sym2]
@@ -21,7 +21,7 @@ class WhyUs extends Component{
         const content_r = {
             titles : ["Track & make requests along the way","Sustainable development"],
             desc : ["Track progress on project milestones and receive status updates via a unique link online. Make requests along the project lifecycle.",
-                    "We are committed to deliver durable products. We offer post-delivery maintenance services. Also, we are proud member of GreenGeeks."
+                    "We are committed to deliver durable products. We offer post-delivery maintenance services. Also, we are a proud member of GreenGeeks."
                     ],
             syms : [sym3, sym4]
         }

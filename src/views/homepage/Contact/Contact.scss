@@ -3,12 +3,13 @@
 
 .contact_wrapper
 {
-    @include flexi(row, center, space-evenly);
+    @include flexi(row, flex-start, space-evenly);
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
 .form_wrapper
 {
+    margin-top: 30px;
     max-width: 440px;
 }
 .contact_s
@@ -52,11 +53,15 @@
 }
 }
 
-.display_box
+textarea
 {
     border: 2px solid $primary_color;
     padding: 30px 20px;
     border-radius: 10px;
+    outline: none;
+    width: 85%;
+
+  
 }
 
 .contact_proj_req

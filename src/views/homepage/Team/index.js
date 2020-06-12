@@ -54,12 +54,12 @@ class Team extends Component
       
 
 
-     
+{/*      
         <a href={tcontent.slinks[idx][1]} class="profile-card-social__item github" target="_blank">
           <span class="icon-font">
               <svg class="icon" dangerouslySetInnerHTML={{__html: useTagG }}/>
           </span>
-        </a>
+        </a> */}
 
       
 

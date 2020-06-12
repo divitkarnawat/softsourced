@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -77,7 +78,7 @@ a
         text-align: center;
         justify-content: center;
         align-items: center;
-        
+        cursor: pointer;
         &:hover
         {
             color: white;
@@ -94,6 +95,8 @@ a
         background-color: $primary_color !important
     }
 
+   
+
     input[type="text"]
     {
         outline: none !important;
@@ -104,7 +107,7 @@ a
         border-radius: 10px;
         box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.10);
     }
-    input[type="submit"]
+    .submit
     {
         padding: 10px 40px;
         background-color: $primary_color;

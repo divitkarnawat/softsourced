@@ -13,10 +13,11 @@ class Contact1 extends Component{
     }
     render()
     {
+        console.log(this.props.proj_details)
         return(
             <div className = "contact_proj_req">
           
-                  <div className = "part">
+                  <div className = "part" style={{contentEditable: true}}>
                     You are looking for support for your project?
                 </div>
                 <div className = "part">
@@ -30,7 +31,7 @@ class Contact1 extends Component{
                               
                         return(
                            
-                                <div onClick={this.handleClassChange} className = {`custom_btn`}>{item}</div>
+                                <div onClick={()=>this.props.changeProjDetails('time',idx)} className = {`custom_btn ${this.props.proj_details.time == idx ? 'checked' : '' }`}>{item}</div>
     
                         );
                     })
@@ -49,7 +50,7 @@ class Contact1 extends Component{
                               
                         return(
                            
-                                <div onClick={this.handleClassChange} className = {`custom_btn`}>{item}</div>
+                                <div onClick={()=>this.props.changeProjDetails('support',idx)} className = {`custom_btn ${this.props.proj_details.support.has(idx) ? 'checked': ''}`}>{item}</div>
     
                         );
                     })
@@ -63,12 +64,12 @@ class Contact1 extends Component{
                 </div>
                 <div className = "grp_btn_price">
                 {
-                    ["2000 - 3000","3001 - 10 000","10 001 - 50 000","> 50 000"].map((item,idx)=>
+                    ["2 - 3k","3 - 10k","10 - 50k","> 50k"].map((item,idx)=>
                     {
                               
                         return(
                            
-                                <div onClick={this.handleClassChange} className = {`custom_btn`}>{`${item} €`}</div>
+                                <div onClick={()=>this.props.changeProjDetails('budget',idx)} className = {`custom_btn ${this.props.proj_details.budget == idx ? 'checked' : '' }`}>{`${item} €`}</div>
     
                         );
                     })

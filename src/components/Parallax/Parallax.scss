@@ -1,4 +1,5 @@
-
+@import '../../assets/scss/colors';
+@import '../../assets/scss/flexbox';
 
 .parallax {
     /* The image used */
@@ -13,7 +14,7 @@
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: center;
+    background-position: 22%;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -24,6 +25,7 @@
 -moz-background-position: center;
 -moz-background-repeat: no-repeat;
 -moz-background-size: cover;
+
   }
   
  
@@ -37,33 +39,47 @@
     color: white;
   }
  
-  .home_btm_l
+  .home_btm
   {
     position: absolute;
     bottom: 0;
-    margin-bottom: 20px;
-
-    div:first-child{
-    display: inline-block;
-    background-color: rgba(0,0,0,.5);
-    color: white;
-    font-size: 1.3rem;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    left: 0;
+    right: 0;
+    margin-bottom: 30px;
+    @include flexi(row, flex-end, space-around);
+    flex-wrap: wrap;
   }
+
+  .home_btm_l
+  {
+  
+    
+    
+    text-align: center;
+      div:first-child{
+      display: inline-block;
+      background-color: rgba(0,0,0,.5);
+      color: white;
+      font-size: 1.3rem;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    
+    }
+      
+    .custom_btn:hover{
+      background-color: white ;
+      color: $primary_color ;
+
+    }
 
 
 
 }
 .home_btm_r
 {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 20px;
-  right: 10px;
-
-  form
+margin-top: 20px;
+  div
   {
     display: inline-flex;
     input[type="text"]
@@ -72,6 +88,7 @@
       background-color: #e2e0e0;
       text-align: center;
       border-radius: 40px;
+      padding: 12px;
     }
   }
 
