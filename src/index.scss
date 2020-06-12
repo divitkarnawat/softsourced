@@ -97,7 +97,7 @@ a
 
    
 
-    input[type="text"]
+    input[type="text"], input[type="tel"]
     {
         outline: none !important;
         margin-top: 1.2rem;
@@ -106,6 +106,19 @@ a
         border: 1px solid #ccc; /* Gray border */
         border-radius: 10px;
         box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.10);
+
+        &:focus
+        {
+         box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.10),0 0 0 0.14rem lighten($primary_color, 30%);
+          border-color: $primary_color;
+        }
+     
+    }
+
+    .invalid
+    {
+      box-shadow: 0 0 0 0.1rem lighten(red, 20%) !important;
+      border-color: #ccc !important;
     }
     .submit
     {
@@ -114,7 +127,7 @@ a
         color: white;
         font-size: 1.2em;
         box-shadow: 2px 3px 8px black;
-        &:hover{
-            box-shadow: 1px 1px 2px black;
+        &:active{
+            box-shadow: -1px -4px 2px black;
         }
       }

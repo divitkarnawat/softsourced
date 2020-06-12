@@ -14,6 +14,8 @@ padding-bottom: 70px;
     @include flexi(row);
     flex-wrap: wrap;
     margin-bottom: 40px;
+    overflow: hidden;
+      
 }
 .projects + div{
     text-align: center;

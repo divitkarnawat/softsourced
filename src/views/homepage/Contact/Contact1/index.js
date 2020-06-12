@@ -7,13 +7,9 @@ class Contact1 extends Component{
 
     }
 
-    handleClassChange = (e) =>
-    {
-        e.target.classList.toggle("checked");
-    }
     render()
     {
-        console.log(this.props.proj_details)
+      
         return(
             <div className = "contact_proj_req">
           

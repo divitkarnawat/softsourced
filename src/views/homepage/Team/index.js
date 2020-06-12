@@ -86,7 +86,7 @@ class Team extends Component
   </div>
   
 
-<svg hidden="hidden">
+<svg hidden="hidden" display="none">
   <defs>
     
 

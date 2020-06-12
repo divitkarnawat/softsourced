@@ -9,6 +9,8 @@ class Contact extends Component
     constructor(props)
     {
         super(props);
+        this.errors = new Set();
+        this.submitbtn = React.createRef();
         this.state = {
             cur_contact: 0,
             fname: '',
@@ -16,7 +18,7 @@ class Contact extends Component
             lname: '',
             email: '',
             prevemail: '',
-            prevsupport: '',
+            prevsupport: this.props.support,
             pnumber: '',
             message: '',
             llink: '',
@@ -24,7 +26,8 @@ class Contact extends Component
                 time: 0,
                 support: this.props.support,
                 budget: 3
-            }
+            },
+           
         }
  
 
@@ -41,14 +44,15 @@ class Contact extends Component
     {
         
         let updateState = {}
-        if(props.email !== state.email)
+        if(props.email !== state.prevemail)
         {
-            console.log('in email')
+
            updateState.email = props.email
+           updateState.prevemail = props.email
         }
-        if(!Contact.eqSet(props.support, state.proj_details.support))
+        if(!Contact.eqSet(props.support, state.prevsupport))
         {
-            console.log('in support')
+            updateState.prevsupport = props.support
             updateState.proj_details = {
                 ...state.proj_details,
                 'support': props.support
@@ -76,24 +80,49 @@ class Contact extends Component
         
       }
       handleChange = (e)=>{
-     
-    //   if(e.target.name == 'email')
-    //   {
-    //     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value))
-    //     {
-    
-    //       this.setState({status: ''});
-    //     }
-    //     else{
-          
-    //       this.send_status.current.style.color = "red";
-    //       this.setState({status: 'Ungültig E-mail'});
-    //     }
-    //   }
-   // console.log(e.target.name + ' '+ e.target.value);
-        this.setState({[e.target.name]: [e.target.value]});
+        
+
+      if(e.target.name == 'email' && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)))
+      {
+        
+        
+         
+            this.errors.add(e.target.name);
+        
+      
+      }
+     else if(e.target.name == 'pnumber' && !(/^([0-9]|\+)[0-9]*$/.test(e.target.value)))
+      {
+        this.errors.add(e.target.name);
+      }
+      else
+      { 
+          this.errors.delete(e.target.name);
+
+      }
+      
+
+      this.submitbtn.current.disabled = this.errors.size ? true : false
+        this.setState({
+            [e.target.name]: [e.target.value],
+           
+        });
+
         
       }
+
+    //   resetform = () =>
+    //   {
+    //       this.setState({
+            
+    //       })
+    //   }
+    handleSubmit = (e) =>
+    {
+        e.preventDefault();
+
+    }
+    
 
     changeProjDetails = (property, value) =>
     {
@@ -118,11 +147,14 @@ class Contact extends Component
         })
     }
        
+   
     render()
     {
 
-      //  console.log(this.state.email);
+
     
+
+       
         const display_box_content = [
                                         "Type in a brief description of your project here.",
                                         "Introduce yourself in a few words here. We are excited to hear more about you.",
@@ -176,7 +208,7 @@ class Contact extends Component
 
                 </Slider>
                 </div>
-                <form>
+                <form onSubmit = {this.handleSubmit}>
                 <div className = "contact_wrapper">
                     {this.state.cur_contact == 0 ? <Contact1 proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
                     
@@ -188,8 +220,8 @@ class Contact extends Component
                            
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = "First Name" />
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = "Last Name"/>
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = "E-Mail"/>
-                                <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = "Phone Number"/>
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = "E-Mail" className = {this.errors.has("email") ? 'invalid': ''} />
+                                <input type="tel"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = "Phone Number" minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
                                 {
                                     this.state.cur_contact == 1 ? <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = "LinkedIn"/> : ''
                                 }   
@@ -198,7 +230,7 @@ class Contact extends Component
                     </div>
                 </div>
 
-                            <input type="submit" value = "SUBMIT" className = "custom_btn submit" />
+                            <input type="submit" value = "SUBMIT" className = "custom_btn submit" ref={this.submitbtn} />
                             <p className="desc">This support request is of course non-binding. No costs or fees are incurred.</p>
                         </form>
                 </Container>
