@@ -231,7 +231,7 @@ class Contact extends Component
                 </div>
 
                             <input type="submit" value = "SUBMIT" className = "custom_btn submit" ref={this.submitbtn} />
-                            <p className="desc">This support request is of course non-binding. No costs or fees are incurred.</p>
+                            {this.state.cur_contact == 0 ? <p className="desc">This support request is of course non-binding. No costs or fees are incurred.</p> : ''}
                         </form>
                 </Container>
             </div>
