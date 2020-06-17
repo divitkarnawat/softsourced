@@ -6,19 +6,76 @@
 .pricing_s
 {
     overflow-x: hidden;
-    
+    .sync_slider
+    {
+        .slide_wrapper
+{
+    margin: 30px 0;
+}
+    }
     
 }
 
+
 .pricing_slide
 {
-    padding: 6px;
-    @include flexi(column, center, space-evenly);
-  
+    position: relative;
+    padding: 30px 18px 10px;
+    display: flex;
+    padding-top: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 345px;
+    max-width: 230px;
+    overflow: hidden;
+    color: white;
+    background: #37AE86;
+    mix-blend-mode: darken;
+    transition: all .3s ease-in-out;
+    //box-shadow: 0px 4px 80px rgba(55, 174, 134, 0.5);
+    .desc:last-of-type
+        {
+            font-size: 18px;
+        }
     .desc
     {
-        margin: 20px auto;
+        margin: 25px auto;
+        color: white;
+        font-weight: 600;
     }
+    .title
+    {
+        margin-top: -23px;
+    z-index: 100;
+    color: black;
+    }
+    &:hover
+    {
+        box-shadow: 1px 3px 20px rgba(0,0,0,.6);
+        transition: all .3s ease-in-out;
+        transform: scale(1.05);
+    }
+    &::before
+    {
+        content: attr(data-title);
+    height: 36px;
+    color: black;
+
+    font-size: 17px;
+    padding-top: 10px;
+    position: absolute;
+    background: #B8FFE7;
+    top: 0;
+    width: 100%;
+    font-weight: 500;
+    -webkit-clip-path: polygon(0 0, 100% 0, 84% 90%, 16% 90%);
+    clip-path: polygon(0 0, 100% 0, 84% 90%, 16% 90%);
+}
+       
+    
+
 }
 .slick-slide {
     &:focus, a {
@@ -26,34 +83,30 @@
     }
   }
 
+  .ellipse2
+  {
+    
+    position: absolute;
+    right: -20px;
+    bottom: -45px;
+    width: 310px;
+    height: 310px;
+    transform: rotate(1.37deg);
+    mix-blend-mode: screen;
+  }
+  .ellipse3
+  {
+    position: absolute;
+    left: -1px;
 
-.divider
-{
-
-    @include divider(10px);
-}
-
-@media only screen and (min-width: 767px) and (max-width: 944px)
-{
-        .pricing_slide
-    {
-        
-        .desc:first-of-type
-        {
-            min-height: 63px;
-        }
-    }
-}
+    bottom: -44px;
+    width: 282px;
+    mix-blend-mode: screen;
+    height: 280px;
+    transform: rotate(0.52deg);
+  }
 
 
-@media only screen and (min-width: 944px)
-{
-        .pricing_slide
-    {
-        
-        .desc:first-of-type
-        {
-            min-height: 43px;
-        }
-    }
-}
+
+
+

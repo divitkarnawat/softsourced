@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Container} from '@material-ui/core';
 import './Pricing.scss';
-
+import ellipse2 from '../../../assets/img/pricing/ellipse2.svg';
+import ellipse3 from '../../../assets/img/pricing/ellipse3.svg';
 import Slider from "react-slick";
 
 
@@ -44,13 +45,13 @@ class Pricing extends Component{
                     ],
             price: [
                         [
-                            "2.75 to 5.5k", "3.5 to 8k", "10 to 55k"
+                            "from 2.75k", "from 3.5k", "from 10k"
                         ],
                         [
-                            "27 to 55k", "27 to 60k", "35 to 70k"
+                            "from 27k", "from 27k", "from 35k"
                         ],
                         [
-                            "5 to 15k", "8 to 27k", "from 15k"
+                            "from 5k", "from 8k", "from 15k"
                         ]
                     ]
 
@@ -119,7 +120,7 @@ class Pricing extends Component{
 
                 </Slider>
                 </div>
-                <div className="divider"/>
+                {/* <div className="divider"/> */}
 
                 <div className = "sync_slider">
                     <Slider {...settings_list}>
@@ -128,10 +129,8 @@ class Pricing extends Component{
                             {
                                 return(
                                     <div className = "slide_wrapper" key={idx}>
-                                        <div className = "pricing_slide">
-                                            <h4 className="title">
-                                                {title}
-                                            </h4>
+                                        <div className = "pricing_slide" data-title = {title} >
+                                            
                                             <div className = "desc">
                                                 {this.state.desc[this.state.id][idx]}
                                             </div>
@@ -141,12 +140,17 @@ class Pricing extends Component{
                                             <div className = "desc">
                                                 {this.state.price[this.state.id][idx]} €
                                             </div>
+                                            <img src = {ellipse2} className = "ellipse2" />
+                <img src = {ellipse3} className = "ellipse3" />
                                         </div>
                                     </div>
                                 );
                             })
                         }
                     </Slider>
+                </div>
+                <div style={{position: `relative`}} >
+                
                 </div>
                 </Container>
             </div>

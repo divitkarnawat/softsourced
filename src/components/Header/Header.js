@@ -13,7 +13,7 @@ class Header extends Component{
         this.menuWrapper = React.createRef();
         this.hamburger = React.createRef();
         this.state = {
-            navLinks: ["ABOUT","PRODUCT & PRICING","PROJECTS","BLOG","CONTACT"],
+            navLinks: ["ABOUT","PRODUCT & PRICING","PROJECTS","TEAM","BLOG","CONTACT"],
             scrollCheck: false
         }
     }
@@ -81,9 +81,9 @@ class Header extends Component{
           <div className="menuWrapper" ref={this.menuWrapper}>
               <div className="linksWrapper">
               {navlinks}
-              <div className="navLink" onClick={this.handleHamburger}>
+              {/* <div className="navLink" onClick={this.handleHamburger}>
                 <a href = "#CONTACT">  <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
-            </div>
+            </div> */}
            
               </div>
               
@@ -99,9 +99,9 @@ class Header extends Component{
            <div className="navLinks">
                <div className="desktopView">
                {navlinks}
-               <div className="navLink" onClick={this.handleHamburger}>
+               {/* <div className="navLink" onClick={this.handleHamburger}>
                 <a href = "#CONTACT">   <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
-            </div>
+            </div> */}
           
                </div>
               

@@ -6,13 +6,13 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 5px 30px;
+    padding: 0;
     background: white;
     display: flex;
     transition: .2s;
     z-index: 15;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
     .custom_btn
     {
@@ -23,7 +23,7 @@
       position: relative;
       display: inline-block;
       color: black;
-      padding: 0px 20px;
+      padding: 0px 30px;
       letter-spacing: 1.5px;
       font-size: .94em;
 
@@ -41,7 +41,7 @@
 
 .brandLogo
 {
-    padding: 0px 10px;
+    padding: 0;
     a
     {
       padding: 0;
@@ -202,7 +202,7 @@ background: linear-gradient(to right, #8E54E9, #4776E6);  */
 
 
   
-  @media only screen and (max-width: 1354px)
+  @media only screen and (max-width: 1147px)
   {
   
     .navLinks + div

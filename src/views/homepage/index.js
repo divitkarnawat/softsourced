@@ -36,7 +36,7 @@ class HomePage extends Component  {
             <Product/>
             <div id = "PROJECTS"><Projects /></div> 
             <WhyUs/>
-            <Team />
+            <div id = "TEAM"><Team /></div>
             <div id = "PRODUCT & PRICING"><Pricing /></div>
             <div id = "BLOG"><Blog/></div>
             <div id = "CONTACT"><Contact email={this.state.email} support={this.state.support}  /></div>
