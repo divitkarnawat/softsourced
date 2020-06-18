@@ -51,12 +51,7 @@
     z-index: 100;
     color: black;
     }
-    &:hover
-    {
-        box-shadow: 1px 3px 20px rgba(0,0,0,.6);
-        transition: all .3s ease-in-out;
-        transform: scale(1.05);
-    }
+    
     &::before
     {
         content: attr(data-title);
@@ -106,7 +101,38 @@
     transform: rotate(0.52deg);
   }
 
+  @media screen and (min-width: 1024px)
+  {
+      .pricing_slide
+      {
 
+      
+    &:hover
+    {
+        box-shadow: 1px 3px 20px rgba(0,0,0,.6);
+        transition: all .3s ease-in-out;
+        transform: scale(1.05);
+    }
+}
+  }
 
+  @media screen and (min-width: 768px) and (max-width: 900px)
+  {
+      .pricing_slide
+      {
+          padding: 30px 5px 10px;
+          max-width: 221px;
+      }
+  }
+@media screen and (max-width: 768px)
+{
+    .sync_slider .slick-active .pricing_slide
+    {
+        box-shadow: 1px 3px 20px rgba(0,0,0,.6);
+        transition: all .3s ease-in-out;
+        transform: scale(1.05);
+    }
+}
+  
 
 

@@ -17,7 +17,7 @@ class Pricing extends Component{
             titles: ['Shopify','WooCommerce','Headless'],
             desc: [
                 [
-                 "Easy to setup, quick to market, mostly front-end and design work along wit PP",
+                 "Easy to setup, quick to market, mostly front-end and design work along with PP",
                  "Open Source, more flexibility with plugins",
                  "Unlimited flexibility, grow with your business with specific use cases"
                 ],
@@ -88,7 +88,6 @@ class Pricing extends Component{
                 breakpoint: 767,
                 settings: {
                   slidesToShow: 1,
-             
                   slidesToScroll: 1,
                   infinite: true,
                 }
