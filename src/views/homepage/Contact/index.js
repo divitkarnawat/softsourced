@@ -13,6 +13,7 @@ class Contact extends Component
         this.submitbtn = React.createRef();
         this.state = {
             cur_contact: 0,
+            resume: 'Resume...',
             prevpropid: 0,
             fname: '',
             message: '',
@@ -115,31 +116,32 @@ class Contact extends Component
       }
       handleChange = (e)=>{
         
-
-      if(e.target.name == 'email' && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)))
+        let name = e.target.name;
+        let value = e.target.value;
+      if(name == 'email' && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)))
       {
         
         
          
-            this.errors.add(e.target.name);
+            this.errors.add(name);
         
       
       }
-     else if(e.target.name == 'pnumber' && !(/^([0-9]|\+)[0-9]*$/.test(e.target.value)))
+     else if(name == 'pnumber' && !(/^([0-9]|\+)[0-9]*$/.test(value)))
       {
-        this.errors.add(e.target.name);
+        this.errors.add(name);
       }
       else
       { 
-          this.errors.delete(e.target.name);
-
+          this.errors.delete(name);
       }
-      
-
+      if(name == 'resume') 
+      {
+        value = value.replace("C:\\fakepath\\", "");
+      }
       this.submitbtn.current.disabled = this.errors.size ? true : false
         this.setState({
-            [e.target.name]: [e.target.value],
-           
+            [name]: [value],
         });
 
         
@@ -184,7 +186,7 @@ class Contact extends Component
    
     render()
     {
-
+        console.log('resume is' + this.state.resume);
 
    
     
@@ -253,14 +255,26 @@ class Contact extends Component
 
                         <div className = "main_form">
                            
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = "First Name" />
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = "Last Name"/>
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = "E-Mail" className = {this.errors.has("email") ? 'invalid': ''} />
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = "First Name*" />
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = "Last Name*"/>
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = "E-Mail*" className = {this.errors.has("email") ? 'invalid': ''} />
                                 <input type="tel"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = "Phone Number" minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
                                 {
                                     this.state.cur_contact == 1 ? <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = "LinkedIn"/> : ''
                                 }   
-                                <input type="checkbox" required value = "tnc" name = "tnc" style={{marginTop: `30px`}} /><label for="tnc">I agree with Terms & Conditions</label>
+                                {
+                                    this.state.cur_contact == 1 ? <>
+                                        <div className={`file-upload ${this.state.resume != "Resume..." ? 'active' : ''}`}>
+                                            <div className="file-select"> 
+                                                <div className="file-select-name" id="noFile">{this.state.resume}</div> 
+                                                <div className="file-select-button" id="fileName">Upload</div>
+                                                <input type="file" name="resume" id="chooseFile" onChange={this.handleChange} />
+                                            </div>
+                                        </div>
+                                    </>
+                                     : ''
+                                }  
+                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc">You comply with our Terms & Conditions and our GDPR compliant data policy.*</label>
                         </div>
                     </div>
                 </div>
