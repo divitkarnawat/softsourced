@@ -13,22 +13,28 @@ class Contact extends Component
         this.submitbtn = React.createRef();
         this.state = {
             cur_contact: 0,
+            prevpropid: 0,
             fname: '',
             message: '',
             lname: '',
             email: '',
             prevemail: '',
             prevsupport: this.props.support,
+            prevsupport_id: this.props.support_id,
+            prevsupport_cat: this.props.support_cat,
             pnumber: '',
             message: '',
             llink: '',
             proj_details: {
                 time: 0,
                 support: this.props.support,
+                support_id: this.props.support_id,
+                support_cat: this.props.support_cat,
                 budget: 3
             },
            
-        }
+        };
+        
  
 
     }
@@ -42,31 +48,59 @@ class Contact extends Component
 
     static getDerivedStateFromProps = (props,state) =>
     {
-        
         let updateState = {}
-        if(props.email !== state.prevemail)
-        {
 
+        if(props.propid != state.prevpropid) 
+        {
+            updateState.prevpropid = props.propid;
+        
+                if(props.email != state.prevemail)
+        {
+            console.log('in email')
            updateState.email = props.email
            updateState.prevemail = props.email
         }
-        if(!Contact.eqSet(props.support, state.prevsupport))
-        {
-            updateState.prevsupport = props.support
+    
+        // if(!Contact.eqSet(props.support, state.prevsupport))
+        // {
+        //     updateState.prevsupport = props.support
+        //     updateState.proj_details = {
+        //         ...state.proj_details,
+        //         'support': props.support
+        //     }
+        // }
+        // if(!Contact.eqSet(props.support_cat,state.prevsupport_cat))
+        // {
+       
+            updateState.prevsupport_cat = props.support_cat;
+            let temp_cat = state.proj_details.support_cat;
+            for( let value of props.support_cat)
+            {
+                temp_cat.add(value);
+            }
             updateState.proj_details = {
                 ...state.proj_details,
-                'support': props.support
+                support_cat: temp_cat
             }
-        }
-        if(Object.entries(updateState).length > 0)
+        
+    
+       // console.log('props' + props.support_id + 'prevsupport' + state.prevsupport_id);
+        
+        if(props.support_id != state.prevsupport_id)
         {
-      
-            return updateState;
+         
+            updateState.proj_details = {
+                ...state.proj_details,
+                support_id : props.support_id,
+                
+            }  
+            updateState.prevsupport_id = props.support_id;
         }
-        else
-        {
-            return null;
-        }
+ 
+    }
+    
+        
+       return updateState;
     }
 
     handleInvalid = (e)=>{
@@ -128,9 +162,9 @@ class Contact extends Component
     {
         
         this.setState(prevState=>{
-            if(property === 'support')
+            if(property === 'support_cat')
         {
-            let tempSet = prevState.proj_details.support;
+            let tempSet = prevState.proj_details.support_cat;
             if(!tempSet.delete(value))
             {
                 tempSet.add(value);
@@ -152,8 +186,9 @@ class Contact extends Component
     {
 
 
+   
     
-
+        
        
         const display_box_content = [
                                         "Type in a brief description of your project here.",

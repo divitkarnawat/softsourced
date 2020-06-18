@@ -4,6 +4,23 @@ class Contact1 extends Component{
     constructor(props)
     {
         super(props);
+        this.support_desc = [
+            [
+             "Easy to setup, quick to market, mostly front-end and design work along with PP",
+             "Open Source, more flexibility with plugins",
+             "Unlimited flexibility, grow with your business with specific use cases"
+            ],
+            [
+                "Food Delivery",
+                "Social networking platform",
+                "Messaging with secure file storage"
+            ],
+            [
+                "Connecting bank account to accounting, reporting and invoice generation",
+                "ERP to the rest of the organisation",
+                "API based microservices on a case by case basis"
+            ]
+        ]
 
     }
 
@@ -39,14 +56,30 @@ class Contact1 extends Component{
                 <div>
                     What type of support do you need?
                 </div>
-                <div className = "grp_btn_time">
+                <div className = "grp_btn_support">
                 {
                     ["E-COMMERCE","MOBILE APPLICATION","API DEVELOPMENT"].map((item,idx)=>
                     {
                               
                         return(
                            
-                                <div onClick={()=>this.props.changeProjDetails('support',idx)} className = {`custom_btn ${this.props.proj_details.support.has(idx) ? 'checked': ''}`}>{item}</div>
+                                <div onClick={()=>this.props.changeProjDetails('support_id',idx)} className = {`custom_btn ${this.props.proj_details.support_id == (idx) ? 'checked': ''}`}>{item}</div>
+    
+                        );
+                    })
+                }
+                </div>
+                <div>
+                    Category: 
+                </div>
+                <div className = "grp_btn_support_cat">
+                {
+                    this.support_desc[this.props.proj_details.support_id].map((desc,idx)=>
+                    {
+                              
+                        return(
+                           
+                                <div onClick={()=>this.props.changeProjDetails('support_cat',('' + this.props.proj_details.support_id + idx))} className = {`custom_btn ${this.props.proj_details.support_cat.has(('' + this.props.proj_details.support_id + idx)) ? 'checked': ''}`}>{desc}</div>
     
                         );
                     })

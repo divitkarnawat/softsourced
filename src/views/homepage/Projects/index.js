@@ -27,7 +27,7 @@ class Projects extends Component{
     render()
     {
         const ran = Math.random();
-        console.log(ran)
+     
         const projects_cat = [[0,1,2,3,4,5,6,7,8],[3,6,7,8,1],[1,2,4,8]];
         const projects = {
             titles:["BELLA & BONA","COVID AB TESTING","FRESH & JUICY","TRAX HAUT CUISINE","TRACK RECORDX","BLUE OCEAN SOLUTIONS","HOP IN THE SHOW CAFE","NOTE YOUR DAYS Co KG","COMMERZFLANK"],

@@ -129,7 +129,7 @@ class Pricing extends Component{
                             {
                                 return(
                                     <div className = "slide_wrapper" key={idx}>
-                                        <div className = "pricing_slide" data-title = {title} >
+                                        <a href="#CONTACT"><div onClick = {()=>{this.props.support_catUpdate(this.state.id,new Set([(''+this.state.id+idx)]))}} className = "pricing_slide" data-title = {title} >
                                             
                                             <div className = "desc">
                                                 {this.state.desc[this.state.id][idx]}
@@ -143,6 +143,7 @@ class Pricing extends Component{
                                             <img src = {ellipse2} className = "ellipse2" />
                 <img src = {ellipse3} className = "ellipse3" />
                                         </div>
+                                        </a>
                                     </div>
                                 );
                             })

@@ -15,10 +15,13 @@ class HomePage extends Component  {
     {
         super(props);
         this.checked_btns = new Set();
+        this.support_cat = new Set();
         this.checked_btns.add(0);
         this.state = {
             email: '',
-            support: this.checked_btns
+            support: this.checked_btns,
+            support_cat: this.support_cat,
+            support_id: 0
         }
     }
 
@@ -26,9 +29,14 @@ class HomePage extends Component  {
     {
         this.setState({email, support});
     }
+    support_catUpdate = (support_id, support_cat) =>
+    {
+        this.setState({support_id, support_cat});
+    }
     render()
     {
-        console.log('in index file' + this.state.email);
+       
+        const contact_ran = Math.random();
         return(
             <>
             <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
@@ -37,9 +45,9 @@ class HomePage extends Component  {
             <div id = "PROJECTS"><Projects /></div> 
             <WhyUs/>
             <div id = "TEAM"><Team /></div>
-            <div id = "PRODUCT & PRICING"><Pricing /></div>
+            <div id = "PRODUCT & PRICING"><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} /></div>
             <div id = "BLOG"><Blog/></div>
-            <div id = "CONTACT"><Contact email={this.state.email} support={this.state.support}  /></div>
+            <div id = "CONTACT"><Contact propid = {contact_ran} email={this.state.email} support={this.state.support} support_cat = {this.state.support_cat} support_id = {this.state.support_id} /></div>
             </>
         )
     }
