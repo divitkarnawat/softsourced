@@ -60,10 +60,11 @@ class Contact1 extends Component{
                 {
                     ["E-COMMERCE","MOBILE APPLICATION","API DEVELOPMENT"].map((item,idx)=>
                     {
+                             let sup_cat = this.props.proj_details.support_cat;
                               
                         return(
                            
-                                <div onClick={()=>this.props.changeProjDetails('support_id',idx)} className = {`custom_btn ${this.props.proj_details.support_id == (idx) ? 'checked': ''}`}>{item}</div>
+                                <div title="Double Click to Deselect" onClick={()=>this.props.changeProjDetails('support_id',idx)} className = {`custom_btn ${this.props.proj_details.support_id == (idx) ? 'selected': ''}  ${(sup_cat.has((idx+'0')) || sup_cat.has((idx+'1')) || sup_cat.has((idx+'2')) ) ? 'checked': ''}`}>{item}</div>
     
                         );
                     })

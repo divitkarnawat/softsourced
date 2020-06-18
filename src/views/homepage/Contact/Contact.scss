@@ -76,6 +76,12 @@ textarea
       width: 183px !important;
   }  
 }
+.grp_btn_support
+{
+    .checked:focus{
+        background-color: red !important;
+    }
+}
 
 .file-upload
 {

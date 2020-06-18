@@ -162,7 +162,17 @@ class Contact extends Component
 
     changeProjDetails = (property, value) =>
     {
-        
+       
+        if(property == 'support_id' && value == this.state.proj_details.support_id)
+        {
+            property = 'support_cat';
+            let temp_cat = this.state.proj_details.support_cat;
+            for (let i=0;i<3;i++)
+            {
+                temp_cat.delete(''+value+i);
+            }
+            value = temp_cat;
+        }
         this.setState(prevState=>{
             if(property === 'support_cat')
         {
