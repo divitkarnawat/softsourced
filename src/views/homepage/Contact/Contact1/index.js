@@ -64,7 +64,7 @@ class Contact1 extends Component{
                               
                         return(
                            
-                                <div title="Double Click to Deselect" onClick={()=>this.props.changeProjDetails('support_id',idx)} className = {`custom_btn ${this.props.proj_details.support_id == (idx) ? 'selected': ''}  ${(sup_cat.has((idx+'0')) || sup_cat.has((idx+'1')) || sup_cat.has((idx+'2')) ) ? 'checked': ''}`}>{item}</div>
+                                <div title="Double Click to Deselect" onClick={()=>this.props.changeProjDetails('support_id',idx)} className = {`custom_btn ${this.props.proj_details.support_id == (idx) ? 'selected': ''}  ${(sup_cat.has((idx+'0')) || sup_cat.has((idx+'1')) || sup_cat.has((idx+'2')) ) ? `${`checked_`+idx}`: ''}`}>{item}</div>
     
                         );
                     })
@@ -80,7 +80,7 @@ class Contact1 extends Component{
                               
                         return(
                            
-                                <div onClick={()=>this.props.changeProjDetails('support_cat',('' + this.props.proj_details.support_id + idx))} className = {`custom_btn ${this.props.proj_details.support_cat.has(('' + this.props.proj_details.support_id + idx)) ? 'checked': ''}`}>{desc}</div>
+                                <div onClick={()=>this.props.changeProjDetails('support_cat',('' + this.props.proj_details.support_id + idx))} className = {`custom_btn ${this.props.proj_details.support_cat.has(('' + this.props.proj_details.support_id + idx)) ? `${`checked_`+this.props.proj_details.support_id}`: ''}`}>{desc}</div>
     
                         );
                     })

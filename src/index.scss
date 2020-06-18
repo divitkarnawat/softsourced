@@ -1,5 +1,8 @@
 @import './assets/scss/colors';
 @import './assets/scss/flexbox';
+$primary_color_0 : #50c878;
+$primary_color_1 : #2e8b57;
+$primary_color_2 : #01796F;
 
 body {
   margin: 0;
@@ -98,6 +101,21 @@ a
     {
         color: white !important;
         background-color: $primary_color !important
+    }
+    .checked_0
+    {
+      color: white !important;
+      background-color: $primary_color_0 !important;
+    }
+    .checked_1
+    {
+      color: white !important;
+      background-color: $primary_color_1 !important;
+    }
+    .checked_2
+    {
+      color: white !important;
+      background-color: $primary_color_2 !important;
     }
     .selected
     {
