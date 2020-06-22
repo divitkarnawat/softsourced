@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
+import {HashLink as Link} from 'react-router-hash-link';
 
 import './Blog.scss';
 import blog3s from '../../../assets/img/blog1s.jpg';
@@ -12,6 +13,7 @@ class Blog extends Component{
     render()
     {
         const content = {
+            bid: ['nm_2432020',"adube_2232020","lmatsakis_1032020"],
             author: [["NATASHA","MASCARENHAS"],["AAKARSH","DUBE"],["LOUISE","MATSAKIS"]],
             pdate: ["24th March 2020","22nd March 2020", "10th March 2020"],
         titles: ["TECHCRUNCH","MASHABLE","WIRED"],
@@ -25,9 +27,10 @@ class Blog extends Component{
 
         const blog_articles = content.titles.map((title, idx)=>
         {
+            let name = content.author[idx][0] + '-' + content.author[idx][1]; 
             return(
                 <>
-
+                <Link to={{pathname:`/blog/${name}/${content.bid[idx]}/`}}>
                 <div className="blog_article">
                     <div className = "img_wrapper">
                         <img src={content.imgURL_art[idx][0]} />
@@ -56,6 +59,7 @@ class Blog extends Component{
                         
                     </div>
                 </div>
+                </Link>
                 </>
             )
         })

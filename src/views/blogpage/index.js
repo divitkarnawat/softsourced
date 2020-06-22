@@ -47,13 +47,16 @@ class BlogPage extends Component
             }
         }
     }
-
+    componentDidMount()
+    {
+        window.scrollTo(0,0);
+    }   
 
     render()
     {
-        let id = this.state.id;
+        let id = this.props.match.params.blogid;
         return(
-            <div className = "section blogpage_s">
+            <div className = "section blogpage_s" id="blogpage">
             <Container>
 
             <h2 className = "title">
@@ -62,7 +65,7 @@ class BlogPage extends Component
             <div className = "author">
                 <div className = "details">
                     <div className = "img_wrapper">
-                                    <img src = {this.blog_content[id].imgURL_aut} alt={this.blog_content[id].name}/>
+                                    <img src = {`http://ec2-35-158-221-15.eu-central-1.compute.amazonaws.com/${this.blog_content[id].imgURL_aut}`} alt={this.blog_content[id].name}/>
                                 </div>
                                 <div className = "nd">
                                     <div className = "name desc">
@@ -76,7 +79,7 @@ class BlogPage extends Component
                 <div className = "author_social_links">
                     {this.blog_content[id].social_links.map((item,idx)=>{
                         return(
-                            <a href = {item[1]}> <img src = {item[0]} /></a>
+                            <a href = {item[1]}> <img src = {`http://ec2-35-158-221-15.eu-central-1.compute.amazonaws.com/${item[0]}  `} /></a>
                         );
                     })}
                 </div>
