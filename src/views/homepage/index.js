@@ -9,6 +9,7 @@ import Pricing from './Pricing';
 import Team from './Team';
 import Contact from './Contact';
 
+
 class HomePage extends Component  {
 
     constructor(props)
@@ -19,8 +20,8 @@ class HomePage extends Component  {
         this.checked_btns.add(0);
         this.state = {
             email: '',
-            support: this.checked_btns,
-            support_cat: this.support_cat,
+            support : this.checked_btns,
+            support_cat_id: '',
             support_id: 0
         }
     }
@@ -29,9 +30,9 @@ class HomePage extends Component  {
     {
         this.setState({email, support});
     }
-    support_catUpdate = (support_id, support_cat) =>
+    support_catUpdate = (support_id, support_cat_id) =>
     {
-        this.setState({support_id, support_cat});
+        this.setState({support_id, support_cat_id});
     }
     render()
     {
@@ -47,7 +48,7 @@ class HomePage extends Component  {
             <div id = "TEAM"><Team /></div>
             <div id = "PRODUCT & PRICING"><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} /></div>
             <div id = "BLOG"><Blog/></div>
-            <div id = "CONTACT"><Contact propid = {contact_ran} email={this.state.email} support={this.state.support} support_cat = {this.state.support_cat} support_id = {this.state.support_id} /></div>
+            <div id = "CONTACT"><Contact propid = {contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
             </>
         )
     }

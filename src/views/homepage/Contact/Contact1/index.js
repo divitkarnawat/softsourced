@@ -4,24 +4,7 @@ class Contact1 extends Component{
     constructor(props)
     {
         super(props);
-        this.support_desc = [
-            [
-             "Easy to setup, quick to market, mostly front-end and design work along with PP",
-             "Open Source, more flexibility with plugins",
-             "Unlimited flexibility, grow with your business with specific use cases"
-            ],
-            [
-                "Food Delivery",
-                "Social networking platform",
-                "Messaging with secure file storage"
-            ],
-            [
-                "Connecting bank account to accounting, reporting and invoice generation",
-                "ERP to the rest of the organisation",
-                "API based microservices on a case by case basis"
-            ]
-        ]
-
+    
     }
 
     render()
@@ -39,7 +22,7 @@ class Contact1 extends Component{
                 </div>
                 <div className = "grp_btn_time">
                 {
-                    ["now","within the next 7 days","within the next 14 days","within the next few months"].map((item,idx)=>
+                    this.props.feedback.time.map((item,idx)=>
                     {
                               
                         return(
@@ -58,13 +41,13 @@ class Contact1 extends Component{
                 </div>
                 <div className = "grp_btn_support">
                 {
-                    ["E-COMMERCE","MOBILE APPLICATION","API DEVELOPMENT"].map((item,idx)=>
+                    this.props.feedback.support_titles.map((item,idx)=>
                     {
-                             let sup_cat = this.props.proj_details.support_cat;
+                             let support = this.props.proj_details.support;
                               
                         return(
                            
-                                <div title="Double Click to Deselect" onClick={()=>this.props.changeProjDetails('support_id',idx)} className = {`custom_btn ${this.props.proj_details.support_id == (idx) ? 'selected': ''}  ${(sup_cat.has((idx+'0')) || sup_cat.has((idx+'1')) || sup_cat.has((idx+'2')) ) ? `${`checked_`+idx}`: ''}`}>{item}</div>
+                                <div title="Double Click to Deselect" onClick={()=>this.props.changeProjDetails('support_id',idx)} className = {`custom_btn ${this.props.proj_details.support_id == (idx) ? 'selected': ''}  ${ support.has(idx) ? `${`checked_`+idx}`: ''}`}>{item}</div>
     
                         );
                     })
@@ -75,12 +58,12 @@ class Contact1 extends Component{
                 </div>
                 <div className = "grp_btn_support_cat">
                 {
-                    this.support_desc[this.props.proj_details.support_id].map((desc,idx)=>
+                    this.props.feedback.support_desc[this.props.proj_details.support_id].map((desc,idx)=>
                     {
                               
                         return(
                            
-                                <div onClick={()=>this.props.changeProjDetails('support_cat',('' + this.props.proj_details.support_id + idx))} className = {`custom_btn ${this.props.proj_details.support_cat.has(('' + this.props.proj_details.support_id + idx)) ? `${`checked_`+this.props.proj_details.support_id}`: ''}`}>{desc}</div>
+                                <div onClick={()=>this.props.changeProjDetails('support',(idx))} className = {`custom_btn ${(this.props.proj_details.support.has(this.props.proj_details.support_id)) ? (this.props.proj_details.support.get(this.props.proj_details.support_id).has(idx) ? `${`checked_`+this.props.proj_details.support_id}` : '') : ''}`}>{desc}</div>
     
                         );
                     })
@@ -94,7 +77,7 @@ class Contact1 extends Component{
                 </div>
                 <div className = "grp_btn_price">
                 {
-                    ["2 - 3k","3 - 10k","10 - 50k","> 50k"].map((item,idx)=>
+                    this.props.feedback.budget.map((item,idx)=>
                     {
                               
                         return(

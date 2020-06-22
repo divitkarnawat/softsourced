@@ -4,7 +4,7 @@
 .blog_s
 {
     padding: 40px 0px;
-    background-color: rgba(55, 174, 134, 0.14);
+  
     border-bottom: 15px solid $primary_color;
 }
 .blog_articles
@@ -38,6 +38,10 @@
         width: 320px;
        
     }
+    .desc
+    {
+        font-size: 12px;
+    }
     .links
     {
         display: block;
@@ -47,5 +51,32 @@
     }
 
 }
+
+.author
+{
+    margin-top: 10px;
+    @include flexi(row,center,left);
+    &_img_wrapper
+    {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        img
+        {
+            border-radius: 50%;
+        }
+        margin-right: 6px;
+    }
+    &_nd
+    {
+        @include flexi(column,left,center);
+    }
+    &_name
+    {
+        color: black;
+    }
+
+}
+
 
 

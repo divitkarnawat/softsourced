@@ -16,19 +16,20 @@ class Contact extends Component
             resume: 'Resume...',
             prevpropid: 0,
             fname: '',
-            message: '',
             lname: '',
             email: '',
-            prevemail: '',
-            prevsupport: this.props.support,
+            prevemail: 'email',
+            prevsupport:'',
             prevsupport_id: this.props.support_id,
             prevsupport_cat: this.props.support_cat,
             pnumber: '',
-            message: '',
+            message : '',
+            support_id: -1,
+            support_cat_id: -1,
             llink: '',
             proj_details: {
                 time: 0,
-                support: this.props.support,
+                support: new Map(),
                 support_id: this.props.support_id,
                 support_cat: this.props.support_cat,
                 budget: 3
@@ -36,7 +37,30 @@ class Contact extends Component
            
         };
         
- 
+        this.feedback = {
+            budget: ["2 - 3k","3 - 10k","10 - 50k","> 50k"],
+            time: ["now","within the next 7 days","within the next 14 days","within the next few months"],
+            support_titles: ["E-COMMERCE","MOBILE APPLICATION","API DEVELOPMENT"],
+            support_desc: 
+            [
+            [
+             "Easy to setup, quick to market, mostly front-end and design work along with PP",
+             "Open Source, more flexibility with plugins",
+             "Unlimited flexibility, grow with your business with specific use cases"
+            ],
+            [
+                "Food Delivery",
+                "Social networking platform",
+                "Messaging with secure file storage"
+            ],
+            [
+                "Connecting bank account to accounting, reporting and invoice generation",
+                "ERP to the rest of the organisation",
+                "API based microservices on a case by case basis"
+            ]
+        ]
+    }
+
 
     }
 
@@ -57,7 +81,7 @@ class Contact extends Component
         
                 if(props.email != state.prevemail)
         {
-            console.log('in email')
+           
            updateState.email = props.email
            updateState.prevemail = props.email
         }
@@ -73,30 +97,33 @@ class Contact extends Component
         // if(!Contact.eqSet(props.support_cat,state.prevsupport_cat))
         // {
        
-            updateState.prevsupport_cat = props.support_cat;
-            let temp_cat = state.proj_details.support_cat;
-            for( let value of props.support_cat)
+           else
+           {
+            let temp_support = state.proj_details.support;
+            if(temp_support.has(props.support_id))
             {
-                temp_cat.add(value);
+                temp_support.get(props.support_id).add(props.support_cat_id)
+            }
+            else
+            {
+                temp_support.set(props.support_id,new Set([props.support_cat_id]))
             }
             updateState.proj_details = {
                 ...state.proj_details,
-                support_cat: temp_cat
+                support: temp_support,
+                support_id : props.support_id,
             }
+            
         
+        
+         
+           
+            
+        
+           }
     
        // console.log('props' + props.support_id + 'prevsupport' + state.prevsupport_id);
         
-        if(props.support_id != state.prevsupport_id)
-        {
-         
-            updateState.proj_details = {
-                ...state.proj_details,
-                support_id : props.support_id,
-                
-            }  
-            updateState.prevsupport_id = props.support_id;
-        }
  
     }
     
@@ -118,19 +145,17 @@ class Contact extends Component
         
         let name = e.target.name;
         let value = e.target.value;
+
       if(name == 'email' && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)))
       {
-        
-        
-         
+
             this.errors.add(name);
-        
-      
       }
      else if(name == 'pnumber' && !(/^([0-9]|\+)[0-9]*$/.test(value)))
       {
         this.errors.add(name);
       }
+     
       else
       { 
           this.errors.delete(name);
@@ -165,24 +190,37 @@ class Contact extends Component
        
         if(property == 'support_id' && value == this.state.proj_details.support_id)
         {
-            property = 'support_cat';
-            let temp_cat = this.state.proj_details.support_cat;
-            for (let i=0;i<3;i++)
+            property = 'support';
+            let temp_sup = this.state.proj_details.support;
+            temp_sup.delete(value)
+            value = temp_sup;
+        }
+        else if(property === 'support')
+        {
+            let temp_sup = this.state.proj_details.support;
+            if(temp_sup.has(this.state.proj_details.support_id))
             {
-                temp_cat.delete(''+value+i);
+               if(!temp_sup.get(this.state.proj_details.support_id).delete(value))
+               {
+                    temp_sup.get(this.state.proj_details.support_id).add(value);       
+               }
+               else
+               {
+                   if(temp_sup.get(this.state.proj_details.support_id).size == 0)
+                   {
+                       temp_sup.delete(this.state.proj_details.support_id);
+                   }
+               }
             }
-            value = temp_cat;
+            else
+            {
+                temp_sup.set(this.state.proj_details.support_id, new Set([value]));
+            }
+            
+            value = temp_sup;
         }
         this.setState(prevState=>{
-            if(property === 'support_cat')
-        {
-            let tempSet = prevState.proj_details.support_cat;
-            if(!tempSet.delete(value))
-            {
-                tempSet.add(value);
-            }
-            value = tempSet;
-        }
+            
             return({
             proj_details: {
                 ...prevState.proj_details,
@@ -196,11 +234,11 @@ class Contact extends Component
    
     render()
     {
-        console.log('resume is' + this.state.resume);
-
-   
-    
         
+      
+        
+
+ 
        
         const display_box_content = [
                                         "Type in a brief description of your project here.",
@@ -257,10 +295,40 @@ class Contact extends Component
                 </div>
                 <form onSubmit = {this.handleSubmit}>
                 <div className = "contact_wrapper">
-                    {this.state.cur_contact == 0 ? <Contact1 proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
+                    {this.state.cur_contact == 0 ? <Contact1 feedback = {this.feedback} proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
                     
                     <div className = "form_wrapper">
-                        <textarea rows="4"  value= {this.state.message} name="message" onChange = {this.handleChange} onInvalid = {this.handleInvalid} placeholder={display_box_content[this.state.cur_contact]} />
+                        <div className = "display_box">
+                            <p> We would like to begin <b>{this.feedback.time[this.state.proj_details.time]}</b></p>
+                            {
+                                this.state.proj_details.support.size > 0 ? (
+                                <>
+                                
+                                <p> We wish to work on the following projects: </p>
+                            <ul>
+                            {
+                               
+                                (Array.from(this.state.proj_details.support)).map((item)=>{
+                                    
+                                    let support_cat_list = Array.from(item[1]).map(desc=>{
+                                        return(
+                                        <p >{this.feedback.support_desc[item[0]][desc]}</p>);
+                                    }) 
+                                    return(
+                                        
+                                        <li style={{marginBottom: `1em`}}>
+                                        <p><b> {this.feedback.support_titles[item[0]]}</b></p>
+                                        <p> {support_cat_list}</p>
+                                        </li>
+                                    );
+                                })
+                            }
+                            </ul>
+                            </>): ''
+    }
+                            <p> Our budget is <b>{this.feedback.budget[this.state.proj_details.budget]} EUR</b></p>
+                        </div>
+                        <textarea rows="4"  value= {this.state.message} name="message" onChange = {this.handleChange} placeholder={display_box_content[this.state.cur_contact]} />
                            
 
                         <div className = "main_form">

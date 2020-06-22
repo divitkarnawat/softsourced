@@ -128,7 +128,7 @@ class Pricing extends Component{
                             {
                                 return(
                                     <div className = "slide_wrapper" key={idx}>
-                                        <a href="#CONTACT"><div onClick = {()=>{this.props.support_catUpdate(this.state.id,new Set([(''+this.state.id+idx)]))}} className = "pricing_slide" data-title = {title} >
+                                        <a href="#CONTACT"><div onClick = {()=>{this.props.support_catUpdate(this.state.id,idx)}} className = "pricing_slide" data-title = {title} >
                                             
                                             <div className = "desc">
                                                 {this.state.desc[this.state.id][idx]}

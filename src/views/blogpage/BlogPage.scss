@@ -1,0 +1,96 @@
+@import '../../assets/scss/flexbox' ;
+@import '../../assets/scss/colors';
+@import '../../assets/scss/divider';
+
+.blogpage_s
+{
+
+    .title
+    {
+        text-align: left;
+    }
+    .author
+    {
+    font-size: 14px !important;
+    margin-top: 10px;
+    @include flexi(row,center,space-between);
+    .details
+    {
+        @include flexi(row,center,left);
+    }
+    &_social_links
+    {
+        @include flexi(row, center, space-between)  ;
+        img
+        {
+        height: 25px;
+        width: 25px;
+        margin-left: 20px;
+        }
+    }
+    .img_wrapper
+    {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        img
+        {
+            border-radius: 50%;
+        }
+        margin-right: 6px;
+    }
+    .nd
+    {
+        @include flexi(column,left,center);
+    }
+    .name
+    {
+        color: black;
+    }
+}
+
+.divider
+{
+    @include divider(2px , $primary_color, 60%);
+    margin: 10px 37px;
+}
+.blog_desc
+{
+    margin-top: 30px;
+}
+
+
+
+.video {
+    // the good stuff:
+    height: 0;
+    padding-bottom: 42.6%; // ratio of the video 16/9 would be 56.25% (42.6 % of he width of the parent element)
+    position: relative;
+  
+    &__frame { // .video__frame
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+    }
+    
+    iframe {
+      width: 100%;
+      height: 100%;
+      
+      box-shadow: 0 0 40px #000;
+    }
+  }
+  
+  .container_video {
+    position: relative; // this must be relative or absolute.. or fixed
+    width: 90%;
+    margin: 10vh auto;
+  }
+
+
+
+}
