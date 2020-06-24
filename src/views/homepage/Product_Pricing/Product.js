@@ -54,7 +54,7 @@ We are a trusted partner with years of experience in the development of Mobile A
                                 <p className="desc">We build the product you are asking for. From A - Z. </p>
 
                             <li><h4>PROJECT SURROGATE</h4></li>
-                                <p className="desc">You take the lead. We support you in realizing your goals</p>
+                                <p className="desc">You take the lead. We support you in realizing your goals.</p>
                             </ol>
                             </div>
                         </Grid>

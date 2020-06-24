@@ -21,23 +21,28 @@ class HomePage extends Component  {
         this.state = {
             email: '',
             support : this.checked_btns,
-            support_cat_id: '',
-            support_id: 0
+            support_cat_id: 'hello',
+            support_id: 0,
+            contact_ran : {
+                email: 0,
+                support: 0
+            }
         }
     }
 
-    contactUpdate = (email, support)=>
+    contactUpdate = (email, support, ran)=>
     {
-        this.setState({email, support});
+        let contact_ran = {...this.state.contact_ran, email: ran};
+        this.setState({email, support, contact_ran});
     }
-    support_catUpdate = (support_id, support_cat_id) =>
+    support_catUpdate = (support_id, support_cat_id, ran) =>
     {
-        this.setState({support_id, support_cat_id});
+        let contact_ran = {...this.state.contact_ran, support: ran};
+        this.setState({support_id, support_cat_id, contact_ran});
     }
     render()
     {
        
-        const contact_ran = Math.random();
         return(
             <>
             <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
@@ -48,7 +53,7 @@ class HomePage extends Component  {
             <div id = "TEAM"><Team /></div>
             <div id = "PRODUCT & PRICING"><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} /></div>
             <div id = "BLOG"><Blog/></div>
-            <div id = "CONTACT"><Contact propid = {contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
+            <div id = "CONTACT"><Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
             </>
         )
     }

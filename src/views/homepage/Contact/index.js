@@ -14,7 +14,10 @@ class Contact extends Component
         this.state = {
             cur_contact: 0,
             resume: 'Resume...',
-            prevpropid: 0,
+            prevpropid: {
+                email: 0,
+                support: 0
+            },
             fname: '',
             lname: '',
             email: '',
@@ -36,6 +39,7 @@ class Contact extends Component
             },
            
         };
+
         
         this.feedback = {
             budget: ["2 - 3k","3 - 10k","10 - 50k","> 50k"],
@@ -44,25 +48,27 @@ class Contact extends Component
             support_desc: 
             [
             [
-             "Easy to setup, quick to market, mostly front-end and design work along with PP",
-             "Open Source, more flexibility with plugins",
-             "Unlimited flexibility, grow with your business with specific use cases"
+             "Shopify",
+             "WooCommerce",
+             "Headless"
             ],
             [
                 "Food Delivery",
-                "Social networking platform",
-                "Messaging with secure file storage"
+                "Social Networking Platform",
+                "Messaging with Secure File Storage"
             ],
             [
-                "Connecting bank account to accounting, reporting and invoice generation",
-                "ERP to the rest of the organisation",
-                "API based microservices on a case by case basis"
+                "Connecting Bank Account to Accounting, Reporting and Invoice Generator",
+                "ERP to the Rest of the Organisation",
+                "API Based Microservices on a Case by Case Basis"
             ]
         ]
     }
 
 
     }
+
+
 
     static eqSet(fs, ss)
     {
@@ -74,14 +80,18 @@ class Contact extends Component
     static getDerivedStateFromProps = (props,state) =>
     {
         let updateState = {}
-
-        if(props.propid != state.prevpropid) 
+        console.log(props.propid);
+        if(props.propid.email != state.prevpropid.email) 
         {
-            updateState.prevpropid = props.propid;
-        
+    
+            updateState.cur_contact = 0;
+            updateState.prevpropid = {
+                ...state.prevpropid,
+                email: props.propid.email
+            }
                 if(props.email != state.prevemail)
         {
-           
+       
            updateState.email = props.email
            updateState.prevemail = props.email
         }
@@ -96,9 +106,13 @@ class Contact extends Component
         // }
         // if(!Contact.eqSet(props.support_cat,state.prevsupport_cat))
         // {
-       
-           else
+    }
+           else if(props.propid.support != state.prevpropid.support)
            {
+            updateState.prevpropid = {
+                ...state.prevpropid,
+                support: props.propid.support
+            }
             let temp_support = state.proj_details.support;
             if(temp_support.has(props.support_id))
             {
@@ -115,17 +129,21 @@ class Contact extends Component
             }
             
         
-        
+            updateState.cur_contact = 0;
          
            
             
         
            }
+           else
+           {
+
+           }
     
        // console.log('props' + props.support_id + 'prevsupport' + state.prevsupport_id);
         
- 
-    }
+           
+    
     
         
        return updateState;
@@ -298,7 +316,9 @@ class Contact extends Component
                     {this.state.cur_contact == 0 ? <Contact1 feedback = {this.feedback} proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
                     
                     <div className = "form_wrapper">
-                        <div className = "display_box">
+                        {
+                            this.state.cur_contact == 0 ? 
+                        (<div className = "display_box">
                             <p> We would like to begin <b>{this.feedback.time[this.state.proj_details.time]}</b></p>
                             {
                                 this.state.proj_details.support.size > 0 ? (
@@ -327,7 +347,8 @@ class Contact extends Component
                             </>): ''
     }
                             <p> Our budget is <b>{this.feedback.budget[this.state.proj_details.budget]} EUR</b></p>
-                        </div>
+                        </div>) : ''
+    }
                         <textarea rows="4"  value= {this.state.message} name="message" onChange = {this.handleChange} placeholder={display_box_content[this.state.cur_contact]} />
                            
 
@@ -352,7 +373,7 @@ class Contact extends Component
                                     </>
                                      : ''
                                 }  
-                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc">You comply with our Terms & Conditions and our GDPR compliant data policy.*</label>
+                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc">I agree with <a href="https://softsourced.com/termsandconditions/">Terms & Conditions</a> and <a href="https://softsourced.com/privacypolicy/" target="_blank">GDPR compliant data policy.*</a></label>
                         </div>
                     </div>
                 </div>

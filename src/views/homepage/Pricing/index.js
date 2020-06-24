@@ -14,12 +14,13 @@ class Pricing extends Component{
 
         this.state = {
             id: 0,
-            titles: ['Shopify','WooCommerce','Headless'],
-            desc: [
+            titles: ['E-Commerce','Mobile Applications','API Development'],
+            
+            subtitles: [
                 [
-                 "Easy to setup, quick to market, mostly front-end and design work along with PP",
-                 "Open Source, more flexibility with plugins",
-                 "Unlimited flexibility, grow with your business with specific use cases"
+                 "Shopify",
+                 "WooCommerce",
+                 "Headless"
                 ],
                 [
                     "Food Delivery",
@@ -31,6 +32,13 @@ class Pricing extends Component{
                     "ERP to the rest of the organisation",
                     "API based microservices on a case by case basis"
                 ]
+            ],
+            desc: [
+                [
+                    "Easy to setup, quick to market, mostly front-end and design work along with PP",
+                    "Open Source, more flexibility with plugins",
+                    "Unlimited flexibility, grow with your business with specific use cases"  
+                ],['','',''],['','','']
             ],
             time_hr: [
                         [
@@ -105,7 +113,7 @@ class Pricing extends Component{
                 <div className="main_slider">
                 <Slider {...settings_main}>
                 {
-                    ["E-Commerce","Mobile Applications","API Development"].map((item,idx)=>
+                    this.state.titles.map((item,idx)=>
                     {
                         const test = 'checked';
                         
@@ -128,9 +136,11 @@ class Pricing extends Component{
                             {
                                 return(
                                     <div className = "slide_wrapper" key={idx}>
-                                        <a href="#CONTACT"><div onClick = {()=>{this.props.support_catUpdate(this.state.id,idx)}} className = "pricing_slide" data-title = {title} >
-                                            
-                                            <div className = "desc">
+                                        <div  className = "pricing_slide" data-title = {this.state.titles[this.state.id]}  >
+                                        <div className = "desc">
+                                                {this.state.subtitles[this.state.id][idx]}
+                                            </div>
+                                            <div className = "desc" className = {this.state.desc[this.state.id][idx] == '' ? 'dnone':''}>
                                                 {this.state.desc[this.state.id][idx]}
                                             </div>
                                             <div className = "desc">
@@ -139,10 +149,15 @@ class Pricing extends Component{
                                             <div className = "desc">
                                                 {this.state.price[this.state.id][idx]} €
                                             </div>
+                                            <a href="#CONTACT"><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
+                                            CHOOSE PLAN
+                                        </div>  </a>
                                             <img src = {ellipse2} className = "ellipse2" />
                 <img src = {ellipse3} className = "ellipse3" />
                                         </div>
-                                        </a>
+                                        
+
+                                      
                                     </div>
                                 );
                             })

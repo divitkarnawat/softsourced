@@ -3,7 +3,7 @@ import {Container} from '@material-ui/core';
 import Slider from 'react-slick';
 
 
-import partner1 from '../../../assets/img/about/partner1.jpg';
+import partner1 from '../../../assets/img/about/partner1.svg';
 import partner2 from '../../../assets/img/about/partner2.jpg';
 import partner3 from '../../../assets/img/about/partner3.jpg';
 import partner4 from '../../../assets/img/about/partner4.jpg';

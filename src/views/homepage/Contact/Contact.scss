@@ -24,18 +24,18 @@
     
     .part
     {
-        margin: 30px 0;
-    &:first-child
-    {
-        background-color: rgba(65, 63, 71, 0.84);
-        color: white;
-        display: inline-block;
-        padding: 20px;
-        font-weight: bold;
-    }
+        margin: 38px 0;
+    // &:first-child
+    // {
+    //     background-color: rgba(65, 63, 71, 0.84);
+    //     color: white;
+    //     display: inline-block;
+    //     padding: 20px;
+    //     font-weight: bold;
+    // }
     & > div
     {
-        margin: 10px 0;
+        margin: 15px 0;
         @include flexi(row, normal, center);
         flex-wrap: wrap;
     }
@@ -194,3 +194,15 @@ textarea, .display_box
 .file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
 .file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
 .file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+
+
+@media screen and (min-width: 1024px)
+{
+    .contact_proj_req
+    {
+        .custom_btn:hover
+        {
+            box-shadow: 0px 2px 8px rgba(0,0,0,.4);
+        }
+    }
+}

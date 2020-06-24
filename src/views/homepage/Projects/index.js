@@ -20,7 +20,7 @@ class Projects extends Component{
     {
         super(props);
         this.state = {
-            id: 0
+            id: 1
         }
     }
 
@@ -28,9 +28,9 @@ class Projects extends Component{
     {
         const ran = Math.random();
      
-        const projects_cat = [[0,1,2,3,4,5,6,7,8],[3,6,7,8,1],[1,2,4,8]];
+        const projects_cat = [[0,2],[3,4,5],[0,1,3,6]];
         const projects = {
-            titles:["BELLA & BONA","COVID AB TESTING","FRESH & JUICY","TRAX HAUT CUISINE","TRACK RECORDX","BLUE OCEAN SOLUTIONS","HOP IN THE SHOW CAFE","NOTE YOUR DAYS Co KG","COMMERZFLANK"],
+            titles:["BELLA & BONA","Permatech","Sansiel","Betra","Ondoor","Wildride","Moreclix"],
             desc: [
                     "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
                     "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",

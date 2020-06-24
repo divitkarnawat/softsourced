@@ -42,7 +42,7 @@ class Parallax extends Component{
     handleSubmit = () =>
     {
         
-        this.props.contactUpdate(this.state.email, this.state.support);
+        this.props.contactUpdate(this.state.email, this.state.support,Math.random());
         
     }
    
@@ -81,8 +81,8 @@ class Parallax extends Component{
                 </div> */}
                 <div className = "home_btm_r">
                     <div >
-                        <input type="text" required placeholder="Your email address......." value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
-                        <a href="#CONTACT" ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = "PROCEED" className = "custom_btn submit" /></a>
+                        <input required type="text" required placeholder="Type in your email address here ..." value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
+                        <a href="#CONTACT" ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = "CONTINUE" className = "custom_btn submit" /></a>
                     </div>
                 </div>
                 </div>

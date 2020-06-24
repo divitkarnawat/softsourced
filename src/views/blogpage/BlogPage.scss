@@ -4,7 +4,7 @@
 
 .blogpage_s
 {
-    margin-top: 100px;
+    margin: 100px 15%;
 
     .title
     {
@@ -52,12 +52,13 @@
 
 .divider
 {
-    @include divider(2px , $primary_color, 60%);
+    @include divider(2px , $primary_color, 28%);
     margin: 10px 37px;
 }
 .blog_desc
 {
     margin-top: 30px;
+    text-align: justify;
 }
 
 
@@ -93,5 +94,18 @@
   }
 
 
+
+}
+
+@media screen and (max-width: 500px)
+{
+    .blogpage_s
+    {
+        margin: 100px 1%;
+    }
+    .divider
+    {
+        width: 48% !important;
+    }
 
 }

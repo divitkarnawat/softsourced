@@ -13,12 +13,12 @@ class Contact1 extends Component{
         return(
             <div className = "contact_proj_req">
           
-                  <div className = "part" style={{contentEditable: true}}>
+                  {/* <div className = "part" style={{contentEditable: true}}>
                     You are looking for support for your project?
-                </div>
+                </div> */}
                 <div className = "part">
                 <div>
-                When do you want to kick off the project with us?
+                When do you want to kick off your project with us?
                 </div>
                 <div className = "grp_btn_time">
                 {
@@ -37,7 +37,7 @@ class Contact1 extends Component{
 
                 <div className = "part">
                 <div>
-                    What type of support do you need?
+                    Which categories apply to your project?
                 </div>
                 <div className = "grp_btn_support">
                 {
@@ -53,8 +53,10 @@ class Contact1 extends Component{
                     })
                 }
                 </div>
+                </div>
+                <div className = "part">
                 <div>
-                    Category: 
+                    Which type(s) of product support do you need?
                 </div>
                 <div className = "grp_btn_support_cat">
                 {

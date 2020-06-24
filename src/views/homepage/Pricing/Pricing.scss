@@ -22,9 +22,9 @@
     position: relative;
     padding: 30px 18px 10px;
     display: flex;
-    padding-top: 30px;
+    padding-top: 45px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: auto;
     height: 345px;
@@ -39,9 +39,13 @@
         {
             font-size: 18px;
         }
+    .desc:first-of-type
+    {
+        font-size: 17px;
+    }
     .desc
     {
-        margin: 25px auto;
+        margin: 12px auto;
         color: white;
         font-weight: 600;
     }
@@ -88,12 +92,13 @@
     height: 310px;
     transform: rotate(1.37deg);
     mix-blend-mode: screen;
+    pointer-events: none;
   }
   .ellipse3
   {
     position: absolute;
     left: -1px;
-
+    pointer-events: none;
     bottom: -44px;
     width: 282px;
     mix-blend-mode: screen;
