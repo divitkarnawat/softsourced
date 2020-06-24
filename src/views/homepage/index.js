@@ -47,6 +47,7 @@ class HomePage extends Component  {
             <>
             <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
             <div id = "ABOUT"><About/></div>
+        
             <Product/>
             <div id = "PROJECTS"><Projects /></div> 
             <WhyUs/>

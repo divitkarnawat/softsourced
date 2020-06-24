@@ -22,6 +22,12 @@ class Projects extends Component{
         this.state = {
             id: 1
         }
+        this.mainSlider = React.createRef();
+    }
+
+    componentDidMount()
+    {
+        this.slider.slickGoTo(1,false);   
     }
 
     render()
@@ -70,7 +76,7 @@ class Projects extends Component{
                         PAST PROJECTS
                     </h2>
                     <div className="main_slider">
-                <Slider {...settings_main}>
+                <Slider ref={slider => (this.slider = slider)} {...settings_main}>
                 {
                     ["E-Commerce","Mobile Applications","API Development"].map((item,idx)=>
                     {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Slider from 'react-slick';
+import {HashLink as Link} from 'react-router-hash-link';
 import {Container} from '@material-ui/core';
 import Contact1 from './Contact1';
 
@@ -371,7 +372,7 @@ class Contact extends Component
                                     </>
                                      : ''
                                 }  
-                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc">I agree with <a href="https://softsourced.com/termsandconditions/">Terms & Conditions</a> and <a href="https://softsourced.com/privacypolicy/" target="_blank">GDPR compliant data policy.*</a></label>
+                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc">I agree with <a href="/terms-and-conditions/" target='_blank'>Terms & Conditions</a> and <a target='_blank' href="/privacy-policy/"> GDPR compliant data policy.*</a></label>
                         </div>
                     </div>
                 </div>
