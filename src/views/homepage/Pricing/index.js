@@ -77,7 +77,7 @@ class Pricing extends Component{
           breakpoint: 767,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1,
+            slidesToScroll: 1, 
             dots: true,
             infinite: true,
             beforeChange: (current, next) => {
@@ -91,6 +91,9 @@ class Pricing extends Component{
             speed: 500,
             slidesToShow: 3,
             slidesToScroll: 1,
+            arrows: true,
+            nextArrow: <div style={{background: `red`}}>aljfbejsk</div>,
+            prevArrow: <div></div>,
             responsive: [
               {
                 breakpoint: 767,
@@ -98,6 +101,7 @@ class Pricing extends Component{
                   slidesToShow: 1,
                   slidesToScroll: 1,
                   infinite: true,
+                 
                 }
               }
           ]

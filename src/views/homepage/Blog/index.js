@@ -67,7 +67,7 @@ class Blog extends Component{
             <div className="section blog_s">
                 <Container>
                     <div>
-                        <h2 className="title"> BLOGPOSTS</h2>
+                        <h2 className="title"> BLOG POSTS</h2>
                         <p className="desc c_desc">
                         In our blog, we publish articles that are of technical nature or about our company to keep you up to speed with latest developments.
                         </p>

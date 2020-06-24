@@ -87,12 +87,7 @@ a
         align-items: center;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
-        &:hover
-        {
-            color: white;
-            background-color: $primary_color;
-            transition: .6s;
-        }
+        
         &::selection
         {
           background-color: transparent;
@@ -166,4 +161,18 @@ a
 .dnone
 {
   display: none;
+}
+
+
+@media screen and (min-width: 1024px)
+{
+  .custom_btn
+  {
+    &:hover
+        {
+            color: white;
+            background-color: $primary_color;
+            transition: .6s;
+        }
+  }
 }

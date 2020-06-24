@@ -276,8 +276,6 @@ class Contact extends Component
                 settings: {
                   slidesToShow: 1,
                   dots: true,
-                  centerMode: true,
-                  centerPadding: "60px",
                   slidesToScroll: 1,
                   infinite: true,
                   beforeChange: (current, next) => {
