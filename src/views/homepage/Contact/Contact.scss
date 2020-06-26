@@ -36,7 +36,7 @@
     & > div
     {
         margin: 15px 0;
-        @include flexi(row, normal, center);
+        @include flexi(row, normal, space-evenly);
         flex-wrap: wrap;
     }
     .custom_btn
@@ -115,6 +115,7 @@ textarea, .display_box
 .contact_proj_req
 {
     max-width: 100vw;
+    width: 650px;
 }
 .grp_btn_support_cat, .grp_btn_support
 {

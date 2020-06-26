@@ -50,32 +50,9 @@
     flex-wrap: wrap;
   }
 
-  .home_btm_l
-  {
-  
-    
-    
-    text-align: center;
-      div:first-child{
-      display: inline-block;
-      background-color: rgba(0,0,0,.5);
-      color: white;
-      font-size: 1.3rem;
-      padding: 20px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    
-    }
-      
-    .custom_btn:hover{
-      background-color: white ;
-      color: $primary_color ;
-
-    }
 
 
 
-}
 .home_btm_r
 {
   width: 90%;
@@ -110,7 +87,7 @@
   {
     background-attachment: scroll;
   }
-  .home_btm_l, .home_btm_r
+  .home_btm_r
   {
     display: none;
   }
