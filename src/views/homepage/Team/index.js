@@ -11,10 +11,10 @@ class Team extends Component
             const useTagF = '<use xlink:href="#icon-facebook" />';
             const useTagG = '<use xlink:href="#icon-github" />';
             const tcontent = {
-                name: ["John Doe","John Doe","John Doe","John Doe"],
-                desig: ["CEO","COO","CTO","CFO"],
-                loc: ["Germany","Germany","Germany","Germany"],
-                slinks: [["#","#"],["#","#"],["#","#"],["#","#"]]
+                name: ["John Doe","John Doe","John Doe"],
+                desig: ["CEO","COO","CTO"],
+                loc: ["Germany","Germany","Germany"],
+                slinks: [["#","#"],["#","#"],["#","#"]]
 
             }
         

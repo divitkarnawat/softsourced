@@ -6,12 +6,30 @@
 .pricing_s
 {
     overflow-x: hidden;
+    .main_slider
+    {
+        @include flexi(column, center, space-evenly);
+        flex-wrap: wrap;
+        .custom_btn
+        {
+            width: 170px;
+        }
+    }
     .sync_slider
     {
-        .slide_wrapper
-{
-    margin: 30px 0;
-}
+        @include flexi(column, center, space-evenly);
+        .slide_wrapper:last-child{
+            .pricing_slide
+            {
+                border-bottom-width: 6px;
+            }
+        }
+        
+    }
+    .desc
+    {
+        color: black;
+        font-size: 14px;
     }
     
 }
@@ -19,23 +37,107 @@
 
 .pricing_slide
 {
+    border: 6px solid $primary_color;
+    
+    border-bottom-width: 0px;
     position: relative;
-    padding: 30px 18px 10px;
-    display: flex;
-    padding-top: 45px;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    
+    @include flexi(column, center, space-evenly);
+    padding: 8px;
+    padding-bottom: 2px;
+    // font-size: 14px !important;
+    height: 120px;    
+
     margin: auto;
-    height: 345px;
-    max-width: 230px;
+  
+    width: 230px;
     overflow: hidden;
-    color: white;
-    background: #37AE86;
+    
+   
     mix-blend-mode: darken;
     transition: all .3s ease-in-out;
     //box-shadow: 0px 4px 80px rgba(55, 174, 134, 0.5);
-    .desc:last-of-type
+
+  
+ 
+ 
+       
+    
+
+}
+
+
+  .ellipse2
+  {
+    display: none;
+    position: absolute;
+    right: -20px;
+    bottom: -45px;
+    width: 310px;
+    height: 310px;
+    transform: rotate(1.37deg);
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+  .ellipse3
+  {
+      display: none;
+    position: absolute;
+    left: -1px;
+    pointer-events: none;
+    bottom: -44px;
+    width: 282px;
+    mix-blend-mode: screen;
+    height: 280px;
+    transform: rotate(0.52deg);
+  }
+
+  @media screen and (min-width: 1024px)
+  {
+      .pricing_slide
+      {
+
+      
+    &:hover
+    {
+        box-shadow: 1px 3px 20px rgba(0,0,0,.6);
+        transition: all .3s ease-in-out;
+        transform: scale(1.05);
+    }
+}
+  }
+
+  @media screen and (min-width: 768px)
+  {
+      
+      .main_slider
+      {
+          flex-direction: row !important;
+         
+      }
+      .sync_slider
+      {
+        .slide_wrapper
+        {
+            margin: 30px auto;
+        }
+        flex-direction: row !important;
+        flex-wrap: wrap;
+      }
+      .pricing_slide
+      {
+          border: none;
+        height: 345px;
+        padding: 30px 18px 10px;
+        padding-top: 45px;
+        justify-content: space-evenly;
+        color: white;
+        background: #37AE86;
+        .custom_btn
+        {
+            display: block;
+        }
+        .desc:last-of-type
         {
             font-size: 18px;
         }
@@ -43,7 +145,8 @@
     {
         font-size: 17px;
     }
-    .desc
+    
+        .desc
     {
         margin: 12px auto;
         color: white;
@@ -72,53 +175,10 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 84% 90%, 16% 90%);
     clip-path: polygon(0 0, 100% 0, 84% 90%, 16% 90%);
 }
-       
-    
-
-}
-.slick-slide {
-    &:focus, a {
-      outline: none;
-    }
-  }
-
-  .ellipse2
-  {
-    
-    position: absolute;
-    right: -20px;
-    bottom: -45px;
-    width: 310px;
-    height: 310px;
-    transform: rotate(1.37deg);
-    mix-blend-mode: screen;
-    pointer-events: none;
-  }
-  .ellipse3
-  {
-    position: absolute;
-    left: -1px;
-    pointer-events: none;
-    bottom: -44px;
-    width: 282px;
-    mix-blend-mode: screen;
-    height: 280px;
-    transform: rotate(0.52deg);
-  }
-
-  @media screen and (min-width: 1024px)
-  {
-      .pricing_slide
-      {
-
-      
-    &:hover
-    {
-        box-shadow: 1px 3px 20px rgba(0,0,0,.6);
-        transition: all .3s ease-in-out;
-        transform: scale(1.05);
-    }
-}
+      }
+      .ellipse2, .ellipse3{
+          display: block;
+      }
   }
 
   @media screen and (min-width: 768px) and (max-width: 900px)
@@ -129,15 +189,60 @@
           max-width: 221px;
       }
   }
-// @media screen and (max-width: 768px)
+
+@media screen and (max-width: 768px)
+{
+    .a-custom_btn
+    {
+        position: absolute;
+        opacity: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        .custom_btn
+        {
+            position: absolute;
+            opacity: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        }
+    }
+
+}
+ 
+
+
+// .testing
 // {
-//     .sync_slider .slick-active .pricing_slide
-//     {
-//         box-shadow: 1px 3px 20px rgba(0,0,0,.6);
-//         transition: all .3s ease-in-out;
-//         transform: scale(1.05);
+//     background-color: red;
+//     animation: lolip-r 1s forwards;
+//     overflow: hidden !important;
+// }
+// .in_t
+// {
+//    animation: lolip 1s linear forwards;
+// }
+
+
+// @keyframes lolip-r
+// {
+//     from{
+//         height: 500px;
+//     }
+//     to{
+//         height: 0px;
 //     }
 // }
-  
 
-
+// @keyframes lolip
+// {
+//     from{
+//         height: 0px;
+//     }
+//     to{
+//         height: 500px;
+//     }
+// }

@@ -1,0 +1,77 @@
+@import '../../assets/scss/flexbox';
+
+.projectpage-s
+{
+    margin-top: 100px;
+}
+.proj_side
+{
+    padding: 0 0 0 4%;
+    font-size: 14px;
+    img
+    {
+        height: 35px;
+        width: 35px;
+        margin-right: 10px;
+    }
+    &>div
+    {
+        margin-bottom: 30px;
+        h4
+        {
+          margin-bottom: 10px;
+       
+        }
+      
+    }
+}
+
+.proj_main
+{
+    padding: 0px 4%;
+    line-height: 40px;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.platform, .capabilities
+{
+    div
+    {
+        @include flexi(row, center, flex-start)
+    }
+    
+}
+.stats
+{
+    
+    div
+    {
+        @include flexi(column, flex-start, flex-start);
+        div
+        {
+            @include flexi(row);
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px)
+{
+    .proj_side{
+        text-align: center;
+        padding: 0;
+        img:first-of-type{
+            margin-left: 10px;
+        }
+    }
+    .stats, .platform , .capabilities
+    {
+        div
+        {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
+}

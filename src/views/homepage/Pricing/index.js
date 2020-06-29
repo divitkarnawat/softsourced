@@ -3,7 +3,6 @@ import {Container} from '@material-ui/core';
 import './Pricing.scss';
 import ellipse2 from '../../../assets/img/pricing/ellipse2.svg';
 import ellipse3 from '../../../assets/img/pricing/ellipse3.svg';
-import Slider from "react-slick";
 
 
 class Pricing extends Component{
@@ -68,45 +67,43 @@ class Pricing extends Component{
   
     render()
     {
-        const settings_main = {
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1, 
-            dots: true,
-            infinite: true,
-            beforeChange: (current, next) => {
-                this.setState({ id: next });  
-            }
-          }
-        }
-    ]
-        };
-        const settings_list = {
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-          
-            arrows: true,
-         
-            responsive: [
-              {
-                breakpoint: 767,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  infinite: true,
-                 
-                }
-              }
-          ]
-              };
+      const sync_slider = 
       
+      <div className = "sync_slider">
+                 
+      {
+          this.state.titles.map((title,idx)=>
+          {
+              return(
+                  <div className = "slide_wrapper" key={idx}>
+                      <div  className = "pricing_slide" data-title = {this.state.titles[this.state.id]}  >
+                      <div className = "desc">
+                              {this.state.subtitles[this.state.id][idx]}
+                          </div>
+                          <div className = "desc" className = {this.state.desc[this.state.id][idx] == '' ? 'dnone':''}>
+                              {this.state.desc[this.state.id][idx]}
+                          </div>
+                          <div className = "desc">
+                              {this.state.time_hr[this.state.id][idx]} hours 
+                          </div>
+                          <div className = "desc">
+                              {this.state.price[this.state.id][idx]} €
+                          </div>
+                          <a href="#CONTACT"><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
+                          CHOOSE PLAN
+                      </div>  </a>
+                          <img src = {ellipse2} className = "ellipse2" />
+<img src = {ellipse3} className = "ellipse3" />
+                      </div>
+                      
+
+                    
+                  </div>
+              );
+          })
+      }
+
+</div>
         return(
             
             <div className = "section pricing_s">
@@ -115,26 +112,28 @@ class Pricing extends Component{
                     Pricing List
                     </h2>
                 <div className="main_slider">
-                <Slider {...settings_main}>
+                
                 {
                     this.state.titles.map((item,idx)=>
                     {
-                        const test = 'checked';
+                   
                         
                         return(
-                            <div className = "slide_wrapper" key={idx}>
-                                <label for={item} onClick={()=>{this.setState({id: idx})}} className = {`custom_btn ${this.state.id == idx ? 'checked' : ''}`}>{item}</label>
+                            <div className = "slide_wrapper" key={idx} style={{marginBottom: `2px`}}>
+                                <label for={item} onClick={()=>{   this.setState({id: idx})}} className = {`custom_btn ${this.state.id == idx ? 'checked' : ''}`}>{item}</label>
+                                
                             </div>
                         );
                     })
                 }
 
-                </Slider>
+          
                 </div>
-                {/* <div className="divider"/> */}
+                
+                <div className="divider"/> 
 
-                <div className = "sync_slider">
-                    <Slider {...settings_list}>
+                 <div className = "sync_slider">
+                 
                         {
                             this.state.titles.map((title,idx)=>
                             {
@@ -144,7 +143,7 @@ class Pricing extends Component{
                                         <div className = "desc">
                                                 {this.state.subtitles[this.state.id][idx]}
                                             </div>
-                                            <div className = "desc" className = {this.state.desc[this.state.id][idx] == '' ? 'dnone':''}>
+                                            <div  className = {`desc ${this.state.desc[this.state.id][idx] == '' ? 'dnone':''}`}>
                                                 {this.state.desc[this.state.id][idx]}
                                             </div>
                                             <div className = "desc">
@@ -153,7 +152,7 @@ class Pricing extends Component{
                                             <div className = "desc">
                                                 {this.state.price[this.state.id][idx]} €
                                             </div>
-                                            <a href="#CONTACT"><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
+                                            <a className="a-custom_btn" href="#CONTACT"><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
                                             CHOOSE PLAN
                                         </div>  </a>
                                             <img src = {ellipse2} className = "ellipse2" />
@@ -166,11 +165,9 @@ class Pricing extends Component{
                                 );
                             })
                         }
-                    </Slider>
+               
                 </div>
-                <div style={{position: `relative`}} >
-                
-                </div>
+        
                 </Container>
             </div>
         );

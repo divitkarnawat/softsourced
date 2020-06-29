@@ -27,6 +27,13 @@ code {
 
 html{
   scroll-behavior: smooth;
+  &::-moz-selection { /* Code for Firefox */
+    background: $primary_color;
+  }
+  
+  &::selection {
+      background: $primary_color;
+  }
 }
 
 .section

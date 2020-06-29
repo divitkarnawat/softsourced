@@ -27,8 +27,8 @@ class Footer extends Component
                     </Grid>
                     <Grid item className="cf" sm = {4} xs = {12}>
                         <div className="flinks">
-                        <div><Link to="/Datenschutzerklärung/#dp_s">Datenschutzerklärung</Link></div>
-                        <div><Link to="/Impressum/#i_s">Impressum</Link></div>
+                        <div><Link to="/Datenschutzerklärung/#dp_s">Data Protection</Link></div>
+                        <div><Link to="/Impressum/#i_s">Imprint</Link></div>
                        
                         
                         </div>
@@ -38,7 +38,7 @@ class Footer extends Component
                 <Grid container className="ext_footer">
                     <Grid item sm={4} xs = {12}>© COPYRIGHT SOFTSOURCED</Grid>
                     <Grid item sm={4} xs = {12}></Grid>
-                    <Grid item sm={4} xs = {12}>Entwickelt von softsourced</Grid>
+                    <Grid item sm={4} xs = {12}>Developed by SOFTSOURCED</Grid>
                 </Grid>
             </div>
 
