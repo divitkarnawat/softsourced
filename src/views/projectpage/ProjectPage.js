@@ -36,7 +36,7 @@ import Sansielmj from '../../assets/img/projectpage/mockups-images/Sansiel/mobil
 import Wildridemj from '../../assets/img/projectpage/mockups-images/Wildride/mobile/wildride.jpg'
 import Moreclixmj from '../../assets/img/projectpage/mockups-images/Moreclix/mobile/moreclix.jpg'
 
-
+ 
 import BBmw from '../../assets/img/projectpage/mockups-images/Bella&Bonna/mobile/B&B.webp'
 import Ondoormw from '../../assets/img/projectpage/mockups-images/Ondoor/mobile/ondoor.webp'
 import Permatechmw from '../../assets/img/projectpage/mockups-images/Permatech/mobile/permatech.webp'
