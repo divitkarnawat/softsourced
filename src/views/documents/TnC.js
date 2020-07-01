@@ -7,9 +7,14 @@ class TnC extends Component{
     }
     render()
     {
+        let path = this.props.match.path;
+        path = path.slice(1);
+        path = path.slice(0, path.length - 1);
+        path = path.replace('-',' ');
+        path = path.toUpperCase();
         return(
             <div className = "section tnc-s" id="tnc">
-                <h2 className = "title"> TERMS AND CONDITIONS</h2>
+                <h2 className = "title"> {path}</h2>
                 <div className = "desc">
                 <h3>INFORMATION ACCORDING TO §5 TMG</h3>
 

@@ -87,7 +87,7 @@ class Projects extends Component{
 
                 </Slider>
                 </div> */}
-               
+
                 <div className = "projects">
                     
                         
@@ -96,6 +96,7 @@ class Projects extends Component{
                         this.state.projects_id.map((project_id, idx)=>{
                             return(
                                 <Fade clear  spy = {0} appear = {true} >
+                                <a  href = {`/projects/${projects.titles[project_id].replace(/ +/g, "")}`}>
                                 <div className="project">
                                 <div className = "img_wrapper">
                                     <img src={projects.imgURLs[project_id]} />
@@ -112,6 +113,7 @@ class Projects extends Component{
                                     
                                 </div>
                             </div>
+                            </a>
                              </Fade>
                             );
                         })

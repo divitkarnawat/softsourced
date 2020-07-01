@@ -36,7 +36,12 @@ class About extends Component
                     <div className="m_content">
                         <h1 className="title"> this is softsourced.</h1>
                         <p className="desc">
-                        We are a Digital Solutions Studio based in Munich, Germany. <br/> Our designers and developers combine both, hard work and talent. <br/> For you, we design, develop and deliver on projects.
+                        We are a Digital Solutions Studio based in Munich, Germany. <br/>
+Our dynamic team of young and creative minds in the design and development team knows no borders. <br/>
+The team has been working together for the past 3 years - you can imagine how well we work together. <br/>
+What makes us unique is the nomadic approach we take to run our company. We are spread all over the world, some are on holidays in Thailand, others live in India, and some of us even life the cliche life of a digital nomad. 
+
+                    
                         </p>
                     </div>
                     

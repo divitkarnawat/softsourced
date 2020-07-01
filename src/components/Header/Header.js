@@ -90,7 +90,7 @@ class Header extends Component{
           </div>
         <div className="header-wrap" ref={this.headerNavbar}>
            <div className="brandLogo">
-           <Link smooth to="#root">
+           <Link smooth to="/#root">
           
             <img src={logo} alt="softsourced"/>
   </Link>

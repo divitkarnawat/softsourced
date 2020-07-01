@@ -21,6 +21,8 @@ function App() {
     <Route path = "/projects/:pname" component = {ProjectPage} />
     <Route path = "/privacy-policy/" component = {PrivacyPolicy} />
     <Route path = "/terms-and-conditions/" component = {TnC} />
+    <Route path = "/imprint/" component = {TnC} />
+    <Route path = "/data-protection/" component = {PrivacyPolicy} />
   </Switch>
   
   

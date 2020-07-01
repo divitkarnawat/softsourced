@@ -12,7 +12,9 @@ class Footer extends Component
                 <Grid container >
                     <Grid item className="cb" sm = {4} xs = {12}>
                     <div style={{textAlign: `center`}} >
+                    <Link smooth to="/#root">
            <img src = {logo} style = {{ width: `100px`, height: `93.33px`}} />
+           </Link>
 
            </div>
 
@@ -27,8 +29,8 @@ class Footer extends Component
                     </Grid>
                     <Grid item className="cf" sm = {4} xs = {12}>
                         <div className="flinks">
-                        <div><Link to="/Datenschutzerklärung/#dp_s">Data Protection</Link></div>
-                        <div><Link to="/Impressum/#i_s">Imprint</Link></div>
+                        <div><a href="/data-protection">Data Protection</a></div>
+                        <div><a href="/imprint">Imprint</a></div>
                        
                         
                         </div>

@@ -81,7 +81,7 @@ class Parallax extends Component{
                 </div> */}
                 <div className = "home_btm_r">
                     <div >
-                        <input required type="text" required placeholder="Type in your email address here ..." value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
+                        <input required type="text" required placeholder="Type in your email address here to get in touch to start your project now..." value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
                         <a href="#CONTACT" ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = "CONTINUE" className = "custom_btn submit" /></a>
                     </div>
                 </div>

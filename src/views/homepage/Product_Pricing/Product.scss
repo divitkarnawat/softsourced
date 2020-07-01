@@ -1,8 +1,16 @@
+@import '../../../assets/scss/flexbox';
+
+
 .prod_s
 {
 
     .title{
     text-transform: none;
+    
+}
+.part-specific
+{
+    text-align: justify;
 }
 .part
     {
@@ -17,12 +25,27 @@ ol
     margin-top: 35px;
 }
 
+.prod_items
+{
+    @include flexi(row, center, space-evenly);
+    flex-wrap: wrap;
+    a
+    {
+        font-weight: normal;
+    }
+}
 .prod_item
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px;
+    @include flexi(column, center, center);
+    margin: 20px;
+    box-shadow: 1px 1px 5px grey;
+    border-radius: 20px;
+    transition: .2s;
+    padding: 20px;
+    height: 170px;
+    width: 279px;
+    cursor: pointer;
+   
 
     .desc
     {
@@ -43,7 +66,7 @@ ol
 {
     width: 35px;
     height: 33.7px;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
 }
 
 .MuiGrid-direction-xs-row-reverse + div
@@ -59,4 +82,17 @@ ol
     margin: 20px 0px;
 }
 
+}
+
+@media screen and (min-width: 1024px)
+{
+    .prod_item:hover{
+        box-shadow: 1px 1px 12px gray;
+        transition: .3s;
+    }
+    .part-specific
+    {
+        padding-right: 6%;
+    
+    }
 }

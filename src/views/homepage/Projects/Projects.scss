@@ -15,6 +15,11 @@ padding-bottom: 70px;
     flex-wrap: wrap;
     margin-bottom: 40px;
     overflow: hidden;
+    a
+    {
+        text-align: left;
+        font-weight: normal;
+    }
       
 }
 .projects + div{
@@ -26,6 +31,7 @@ padding-bottom: 70px;
     padding: 20px;
     @include flexi(column);
 
+   
     .title
     {
         text-align: left;
@@ -43,10 +49,7 @@ padding-bottom: 70px;
         box-shadow: 1px 1px 5px grey;
     border-radius: 20px;
     transition: .2s;
-    &:hover{
-        box-shadow: 1px 1px 12px gray;
-        transition: .3s;
-    }
+   
     }
     .img_wrapper
     {
@@ -76,5 +79,16 @@ padding-bottom: 70px;
     {
         clip-path: ellipse(95% 54% at 57% 44%);
 
+    }
+}
+
+@media only screen and (min-width: 1024px)
+{
+    .project:hover{
+        img
+        {
+            box-shadow: 1px 1px 12px gray;
+            transition: .3s;
+        }
     }
 }

@@ -19,6 +19,32 @@ import Wildride1xj from '../../assets/img/projectpage/mockups-images/Wildride/1x
 import Moreclix1xj from '../../assets/img/projectpage/mockups-images/Moreclix/1x/moreclix.jpg'
 
 
+
+import BB1xw from '../../assets/img/projectpage/mockups-images/Bella&Bonna/1x/B&B.webp'
+import Ondoor1xw from '../../assets/img/projectpage/mockups-images/Ondoor/Ondoor_Web_1x/ondoor-2.webp'
+import Permatech1xw from '../../assets/img/projectpage/mockups-images/Permatech/1x/permatech.webp'
+import Sansiel1xw from '../../assets/img/projectpage/mockups-images/Sansiel/1x/sansiel.webp'
+import Wildride1xw from '../../assets/img/projectpage/mockups-images/Wildride/1x/wildride-2.webp'
+import Moreclix1xw from '../../assets/img/projectpage/mockups-images/Moreclix/1x/moreclix.webp'
+
+
+
+import BBmj from '../../assets/img/projectpage/mockups-images/Bella&Bonna/mobile/B&B.jpg'
+import Ondoormj from '../../assets/img/projectpage/mockups-images/Ondoor/mobile/ondoor.jpg'
+import Permatechmj from '../../assets/img/projectpage/mockups-images/Permatech/mobile/permatech.jpg'
+import Sansielmj from '../../assets/img/projectpage/mockups-images/Sansiel/mobile/sansiel.jpg'
+import Wildridemj from '../../assets/img/projectpage/mockups-images/Wildride/mobile/wildride.jpg'
+import Moreclixmj from '../../assets/img/projectpage/mockups-images/Moreclix/mobile/moreclix.jpg'
+
+
+import BBmw from '../../assets/img/projectpage/mockups-images/Bella&Bonna/mobile/B&B.webp'
+import Ondoormw from '../../assets/img/projectpage/mockups-images/Ondoor/mobile/ondoor.webp'
+import Permatechmw from '../../assets/img/projectpage/mockups-images/Permatech/mobile/permatech.webp'
+import Sansielmw from '../../assets/img/projectpage/mockups-images/Sansiel/mobile/sansiel.webp'
+import Wildridemw from '../../assets/img/projectpage/mockups-images/Wildride/mobile/wildride.webp'
+import Moreclixmw from '../../assets/img/projectpage/mockups-images/Moreclix/mobile/moreclix.webp'
+
+
 class ProjectPage extends Component
 {
     constructor(props)
@@ -101,16 +127,19 @@ class ProjectPage extends Component
                 "Agency",
                 ""
             ],
-            imgJ: [
-                [BB1xj],
-                [Ondoor1xj],
-                [Moreclix1xj],
-                [Sansiel1xj],
-                [Permatech1xj],
-                [Wildride1xj],
-
-            ]
-            
+            imgj: 
+                [BB1xj,Ondoor1xj,Moreclix1xj,Sansiel1xj,Permatech1xj,Wildride1xj],
+            imgw: 
+                [BB1xw,Ondoor1xw,Moreclix1xw,Sansiel1xw,Permatech1xw,Wildride1xw],
+            imgm: [
+                [BBmw,BBmj],
+                [Ondoormw,Ondoormj],
+                [Moreclixmw,Moreclixmj],
+                [Sansielmw,Sansielmj],
+                [Permatechmw,Permatechmj],
+                [Wildridemw,Wildridemj],
+                
+            ],
         }
     }
 
@@ -137,6 +166,24 @@ class ProjectPage extends Component
                 <Container>
                 <h2 className = "title">{this.content.titles[this.state.proj_id]}</h2>
                 <div className = "img_wrapper"></div>
+                <picture>
+    
+    <source
+        media="(max-width: 450px)"
+		srcset={this.content.imgm[this.state.proj_id][0]}
+		type="image/webp" />
+	<source
+        media="(max-width: 450px)"
+        srcset={this.content.imgm[this.state.proj_id][1]}
+         />
+	
+    <source
+		srcset={this.content.imgw[this.state.proj_id]}
+		type="image/webp" />
+	<img
+		src={this.content.imgj[this.state.proj_id]} alt={this.content.titles[this.state.proj_id]}
+		 />
+</picture>
                 <Grid container>
                     <Grid item md={8} xs={12} className = "proj_main">
                         <div className = "challenges">
@@ -208,7 +255,7 @@ class ProjectPage extends Component
                         </div>
                     </Grid>
                 </Grid>
-                <img src = {this.content.imgJ[this.state.proj_id][0]} />
+               
                 </Container>
             </div>
         );

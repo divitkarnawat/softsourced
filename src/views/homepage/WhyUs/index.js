@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {Grid, Container} from '@material-ui/core';
 
 import './WhyUs.scss';
-import img_wrapper from '../../../assets/img/whyus/img_wrapper.png';
+import img_wrapper from '../../../assets/img/whyus/img_wrapper.jpg';
+import img_wrapper_w from '../../../assets/img/whyus/img_wrapper.webp';
 import sym1 from '../../../assets/img/whyus/sym1.jpg';
 import sym2 from '../../../assets/img/whyus/sym2.jpg';
 import sym3 from '../../../assets/img/whyus/sym3.svg';
@@ -60,7 +61,11 @@ class WhyUs extends Component{
                     </Grid>
                     <Grid item lg={2} xs={12}>
                         <div className="img_wrapper">
-                            <img src = {img_wrapper} />
+                            <picture>
+                                <source srcset = {img_wrapper_w} type="image/webp"/>
+                                <img src = {img_wrapper} alt="img_whyus" />    
+                            </picture>
+                            
                         </div>
                     </Grid>
                     <Grid item lg={5} xs={12}>

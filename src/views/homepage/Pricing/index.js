@@ -13,6 +13,7 @@ class Pricing extends Component{
 
         this.state = {
             id: 0,
+            prevprops_id: 0,
             titles: ['E-Commerce','Mobile Applications','API Development'],
             
             subtitles: [
@@ -34,9 +35,9 @@ class Pricing extends Component{
             ],
             desc: [
                 [
-                    "Easy to setup, quick to market, mostly front-end and design work along with PP",
-                    "Open Source, more flexibility with plugins",
-                    "Unlimited flexibility, grow with your business with specific use cases"  
+                    "",
+                    "",
+                    ""  
                 ],['','',''],['','','']
             ],
             time_hr: [
@@ -67,6 +68,12 @@ class Pricing extends Component{
   
     render()
     {
+        
+    if(this.props.p_slide_id != this.state.prevprops_id)
+    {
+        this.setState({id: this.props.p_slide_id, prevprops_id: this.props.p_slide_id});
+    }
+
       const sync_slider = 
       
       <div className = "sync_slider">

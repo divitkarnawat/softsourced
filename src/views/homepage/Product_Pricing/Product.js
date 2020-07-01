@@ -3,7 +3,7 @@ import {Grid, Container, Box} from '@material-ui/core';
 
 import './Product.scss'
 import prodSym from '../../../assets/img/prod_sym.svg';
-export default function Product()
+export default function Product(props)
 {
     const products = {
         titles: ["E-COMMERCE","MOBILE APPLICATIONS","API DEVELOPMENT"],
@@ -19,22 +19,22 @@ export default function Product()
 
             <div>
                 <Container >
-                <Grid container >
+                    <div className = "prod_items">
                     {products.titles.map((title,idx)=>{
                         return(
-                            <Grid item xs={12} md={4}>
-                                <div className="prod_item"> 
+                                <a href="#PRODUCT & PRICING">
+                                <div className="prod_item" onClick={()=>props.change_p_slide_id(idx)}> 
                                 <img src={prodSym} className="prodSym"/>
                                 <h4 >{title}</h4>
                                 <p className="desc">{products.desc[idx]}</p>
                                 </div>
-                            </Grid>
+                                </a>
                         );
                     })}
-                    </Grid>
+                    </div>
                     <Grid container  direction="row-reverse">
                         <Grid item  md={4} xs={12} style={{textAlign: 'center'}}>
-                            <a href="/">See products & pricing >></a>
+                            <a href="/#PRODUCT & PRICING">See products & pricing >></a>
                         </Grid>
                     
                 </Grid>

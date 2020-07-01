@@ -8,10 +8,16 @@ class PrivacyPolicy extends Component
     }
     render()
     {
+        let path = this.props.match.path;
+        path = path.slice(1);
+        path = path.slice(0, path.length - 1);
+        path = path.replace('-',' ');
+        path = path.toUpperCase();
+       
         return(
             <div className = "section pp-s" >
                 <h2 className = "title">
-                    PRIVACY POLICY
+                    {path}
                 </h2>
                 <div className = "desc">
                     <div>

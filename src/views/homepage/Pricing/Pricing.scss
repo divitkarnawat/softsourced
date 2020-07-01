@@ -8,7 +8,7 @@
     overflow-x: hidden;
     .main_slider
     {
-        @include flexi(column, center, space-evenly);
+        @include flexi(column, center, space-around);
         flex-wrap: wrap;
         .custom_btn
         {
@@ -137,20 +137,14 @@
         {
             display: block;
         }
-        .desc:last-of-type
-        {
-            font-size: 18px;
-        }
-    .desc:first-of-type
-    {
-        font-size: 17px;
-    }
+        
     
         .desc
     {
         margin: 12px auto;
         color: white;
         font-weight: 600;
+        font-size: 18px;
     }
     .title
     {
