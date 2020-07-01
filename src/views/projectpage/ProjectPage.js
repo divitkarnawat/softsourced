@@ -11,38 +11,38 @@ import design from '../../assets/img/projectpage/symbols/design.png'
 import development from '../../assets/img/projectpage/symbols/development.png'
 
 
-import BB1xj from '../../assets/img/projectpage/mockups-images/Bella&Bonna/1x/B&B.jpg'
-import Ondoor1xj from '../../assets/img/projectpage/mockups-images/Ondoor/Ondoor_Web_1x/ondoor-2.jpg'
-import Permatech1xj from '../../assets/img/projectpage/mockups-images/Permatech/1x/permatech.jpg'
-import Sansiel1xj from '../../assets/img/projectpage/mockups-images/Sansiel/1x/sansiel.jpg'
-import Wildride1xj from '../../assets/img/projectpage/mockups-images/Wildride/1x/wildride.jpg'
-import Moreclix1xj from '../../assets/img/projectpage/mockups-images/Moreclix/1x/moreclix.jpg'
+import BB1xj from '../../assets/img/projectpage/mockups-imgs/Bella&Bonna/1x/B&B.jpg'
+import Ondoor1xj from '../../assets/img/projectpage/mockups-imgs/Ondoor/Ondoor_Web_1x/ondoor-2.jpg'
+import Permatech1xj from '../../assets/img/projectpage/mockups-imgs/Permatech/1x/permatech.jpg'
+import Sansiel1xj from '../../assets/img/projectpage/mockups-imgs/Sansiel/1x/sansiel.jpg'
+import Wildride1xj from '../../assets/img/projectpage/mockups-imgs/Wildride/1x/wildride.jpg'
+import Moreclix1xj from '../../assets/img/projectpage/mockups-imgs/Moreclix/1x/moreclix.jpg'
 
 
 
-import BB1xw from '../../assets/img/projectpage/mockups-images/Bella&Bonna/1x/B&B.webp'
-import Ondoor1xw from '../../assets/img/projectpage/mockups-images/Ondoor/Ondoor_Web_1x/ondoor-2.webp'
-import Permatech1xw from '../../assets/img/projectpage/mockups-images/Permatech/1x/permatech.webp'
-import Sansiel1xw from '../../assets/img/projectpage/mockups-images/Sansiel/1x/sansiel.webp'
-import Wildride1xw from '../../assets/img/projectpage/mockups-images/Wildride/1x/wildride-2.webp'
-import Moreclix1xw from '../../assets/img/projectpage/mockups-images/Moreclix/1x/moreclix.webp'
+import BB1xw from '../../assets/img/projectpage/mockups-imgs/Bella&Bonna/1x/B&B.webp'
+import Ondoor1xw from '../../assets/img/projectpage/mockups-imgs/Ondoor/Ondoor_Web_1x/ondoor-2.webp'
+import Permatech1xw from '../../assets/img/projectpage/mockups-imgs/Permatech/1x/permatech.webp'
+import Sansiel1xw from '../../assets/img/projectpage/mockups-imgs/Sansiel/1x/sansiel.webp'
+import Wildride1xw from '../../assets/img/projectpage/mockups-imgs/Wildride/1x/wildride-2.webp'
+import Moreclix1xw from '../../assets/img/projectpage/mockups-imgs/Moreclix/1x/moreclix.webp'
 
 
 
-import BBmj from '../../assets/img/projectpage/mockups-images/Bella&Bonna/mobile/B&B.jpg'
-import Ondoormj from '../../assets/img/projectpage/mockups-images/Ondoor/mobile/ondoor.jpg'
-import Permatechmj from '../../assets/img/projectpage/mockups-images/Permatech/mobile/permatech.jpg'
-import Sansielmj from '../../assets/img/projectpage/mockups-images/Sansiel/mobile/sansiel.jpg'
-import Wildridemj from '../../assets/img/projectpage/mockups-images/Wildride/mobile/wildride.jpg'
-import Moreclixmj from '../../assets/img/projectpage/mockups-images/Moreclix/mobile/moreclix.jpg'
+import BBmj from '../../assets/img/projectpage/mockups-imgs/Bella&Bonna/mobile/B&B.jpg'
+import Ondoormj from '../../assets/img/projectpage/mockups-imgs/Ondoor/mobile/ondoor.jpg'
+import Permatechmj from '../../assets/img/projectpage/mockups-imgs/Permatech/mobile/permatech.jpg'
+import Sansielmj from '../../assets/img/projectpage/mockups-imgs/Sansiel/mobile/sansiel.jpg'
+import Wildridemj from '../../assets/img/projectpage/mockups-imgs/Wildride/mobile/wildride.jpg'
+import Moreclixmj from '../../assets/img/projectpage/mockups-imgs/Moreclix/mobile/moreclix.jpg'
 
  
-import BBmw from '../../assets/img/projectpage/mockups-images/Bella&Bonna/mobile/B&B.webp'
-import Ondoormw from '../../assets/img/projectpage/mockups-images/Ondoor/mobile/ondoor.webp'
-import Permatechmw from '../../assets/img/projectpage/mockups-images/Permatech/mobile/permatech.webp'
-import Sansielmw from '../../assets/img/projectpage/mockups-images/Sansiel/mobile/sansiel.webp'
-import Wildridemw from '../../assets/img/projectpage/mockups-images/Wildride/mobile/wildride.webp'
-import Moreclixmw from '../../assets/img/projectpage/mockups-images/Moreclix/mobile/moreclix.webp'
+import BBmw from '../../assets/img/projectpage/mockups-imgs/Bella&Bonna/mobile/B&B.webp'
+import Ondoormw from '../../assets/img/projectpage/mockups-imgs/Ondoor/mobile/ondoor.webp'
+import Permatechmw from '../../assets/img/projectpage/mockups-imgs/Permatech/mobile/permatech.webp'
+import Sansielmw from '../../assets/img/projectpage/mockups-imgs/Sansiel/mobile/sansiel.webp'
+import Wildridemw from '../../assets/img/projectpage/mockups-imgs/Wildride/mobile/wildride.webp'
+import Moreclixmw from '../../assets/img/projectpage/mockups-imgs/Moreclix/mobile/moreclix.webp'
 
 
 class ProjectPage extends Component
