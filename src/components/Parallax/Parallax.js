@@ -57,7 +57,7 @@ class Parallax extends Component{
         <Container>
             <h1 className = "title">
             
-                
+            WE DESIGN. WE DEVELOP. WE DELIVER.
          
          
             </h1>
@@ -89,7 +89,7 @@ class Parallax extends Component{
 
                 <div className = "home_btm_r">
                     <div >
-                        <input required type="text" required placeholder="" value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
+                        <input required type="text" required placeholder="Type in your email address here to get in touch to start your project now..." value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
                         <a href="#CONTACT" ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = "START PROJECT" className = "custom_btn submit" /></a>
                     </div>
                 </div>
