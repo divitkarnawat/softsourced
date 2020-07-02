@@ -22,9 +22,9 @@ class Footer extends Component
                     </Grid>
                     <Grid item className="cd" sm = {4} xs = {12} >
                         <div className="contact_details">
-        <div><i class="fas fa-map-marker-alt"></i> Address</div>
-                            <div><i class="fas fa-phone-alt"></i>Contact Number</div>
-                            <div><i class="fas fa-envelope"></i> kontakt@softsourced.de</div>
+        <div>Address</div>
+                            <div>Contact Number</div>
+                            <div> kontakt@softsourced.de</div>
                         </div>
                     </Grid>
                     <Grid item className="cf" sm = {4} xs = {12}>

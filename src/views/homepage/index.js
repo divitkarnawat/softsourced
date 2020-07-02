@@ -57,7 +57,7 @@ class HomePage extends Component  {
             <div id = "PROJECTS"><Projects /></div> 
             <WhyUs/>
             <div id = "TEAM"><Team /></div>
-            <div id = "PRODUCT & PRICING"><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.state.p_slide_id} /></div>
+            <div id = "PRODUCTS & PRICING"><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.state.p_slide_id} /></div>
             <div id = "BLOG"><Blog/></div>
             <div id = "CONTACT"><Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
             </>

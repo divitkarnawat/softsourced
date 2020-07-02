@@ -56,6 +56,7 @@
             margin: 20px 0 0 10px;
            
         }
+       
     }
     .content_r
     {
@@ -72,6 +73,7 @@
             margin: 20px 10px 0 0;
          
         }
+        
     }
 }
 
@@ -82,6 +84,19 @@
         .content_r
         {
             margin-top: 0px;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px)
+{
+    .whyus_s{
+        .content_r .part
+        {
+            margin-left: 0;
+        }
+        .content_l .part{
+            margin-right: 0;
         }
     }
 }
@@ -129,3 +144,10 @@
     }
 }
 
+@media screen and (max-width: 866px)
+{
+    .whyus_s .img_wrapper
+    {
+        display: none;
+    }
+}

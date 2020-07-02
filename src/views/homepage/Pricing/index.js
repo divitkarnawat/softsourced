@@ -116,7 +116,7 @@ class Pricing extends Component{
             <div className = "section pricing_s">
                 <Container>
                     <h2 className="title">
-                    Pricing List
+                    PRODUCTS & PRICING
                     </h2>
                 <div className="main_slider">
                 

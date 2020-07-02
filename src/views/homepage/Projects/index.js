@@ -69,7 +69,7 @@ class Projects extends Component{
             <div className = "section project_s">
                 <Container>
                     <h2 className = "title">
-                        PAST PROJECTS
+                        PROJECTS
                     </h2>
                     {/* <div className="main_slider">
                 <Slider ref={slider => (this.slider = slider)} {...settings_main}>
@@ -109,8 +109,7 @@ class Projects extends Component{
                                         {projects.desc[project_id]}
                                     </div>
                                     
-                                        <a className = "links" href = {`/projects/${projects.titles[project_id].replace(/ +/g, "")}`}> ...read more </a> 
-                                    
+                                       
                                 </div>
                             </div>
                             </a>
@@ -122,7 +121,7 @@ class Projects extends Component{
                 </div>
           
                 <div>
-                    <div className = {this.state.projects_id.length == 6 ? "dnone" : ""} style={{ fontWeight: 600, cursor: `pointer`}} onClick = {() => this.setState({projects_id: [0,1,2,3,4,5]})}>  See all projects >></div>
+                    <div className = {this.state.projects_id.length == 6 ? "dnone" : ""} style={{ fontWeight: 600, cursor: `pointer`}} onClick = {() => this.setState({projects_id: [0,1,2,3,4,5]})}>  See all projects  &raquo;</div>
                 </div>
                 </Container>
             </div>

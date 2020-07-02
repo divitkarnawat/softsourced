@@ -13,7 +13,7 @@ class Header extends Component{
         this.menuWrapper = React.createRef();
         this.hamburger = React.createRef();
         this.state = {
-            navLinks: ["ABOUT","PRODUCT & PRICING","PROJECTS","TEAM","BLOG","CONTACT"],
+            navLinks: ["ABOUT","PRODUCTS & PRICING","PROJECTS","TEAM","BLOG","CONTACT"],
             scrollCheck: false
         }
     }

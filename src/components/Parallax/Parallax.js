@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Container} from '@material-ui/core';
+
+
 import './Parallax.scss';
+
 
 class Parallax extends Component{
     constructor(props)
@@ -50,9 +53,13 @@ class Parallax extends Component{
     {
     return(
     <div className = "parallax">
+    
         <Container>
             <h1 className = "title">
-            WE DESIGN. WE DEVELOP. WE DELIVER.
+            
+                
+         
+         
             </h1>
 
             <div className="home_btm">
@@ -79,17 +86,17 @@ class Parallax extends Component{
                 
 
                 </div> */}
+
                 <div className = "home_btm_r">
                     <div >
-                        <input required type="text" required placeholder="Type in your email address here to get in touch to start your project now..." value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
-                        <a href="#CONTACT" ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = "CONTINUE" className = "custom_btn submit" /></a>
+                        <input required type="text" required placeholder="" value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
+                        <a href="#CONTACT" ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = "START PROJECT" className = "custom_btn submit" /></a>
                     </div>
                 </div>
                 </div>
          
         </Container>
        
-      
         </div>
 
     )
