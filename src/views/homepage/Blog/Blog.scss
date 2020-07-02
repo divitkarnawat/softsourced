@@ -60,7 +60,9 @@
 .author
 {
     margin-top: 10px;
-    @include flexi(row,center,left);
+    display: flex;
+    align-items: center;
+    justify-content: left;
     &_img_wrapper
     {
         width: 30px;

@@ -28,6 +28,7 @@
     }
     .desc
     {
+        max-width: 100%;
         color: black;
         font-size: 14px;
     }
@@ -92,6 +93,7 @@
     transform: rotate(0.52deg);
   }
 
+ 
   @media screen and (min-width: 1024px)
   {
       .pricing_slide
@@ -152,8 +154,15 @@
     z-index: 100;
     color: black;
     }
+}
     
-    &::before
+      @supports (mix-blend-mode: overlay) {
+
+        .ellipse2, .ellipse3 {
+            display: block;
+        }
+        
+    .pricing_slide::before
     {
         content: attr(data-title);
     height: 36px;
@@ -170,10 +179,11 @@
     clip-path: polygon(0 0, 100% 0, 84% 90%, 16% 90%);
 }
       }
-      .ellipse2, .ellipse3{
-          display: block;
-      }
-  }
+      
+      
+      
+  
+}
 
   @media screen and (min-width: 768px) and (max-width: 900px)
   {

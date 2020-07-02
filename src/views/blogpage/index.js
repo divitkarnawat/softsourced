@@ -10,6 +10,7 @@ import linkedin_logo from "../../assets/img/blog/linkedin_logo.svg";
 import NM_2432020 from "./NM_2432020";
 import ADUBE_2232020 from "./ADUBE_2232020";
 import LMATSAKIS_1032020 from "./LMATSAKIS_1032020";
+import MM_10052020 from "./MM_10052020"
 
 import './BlogPage.scss'
 class BlogPage extends Component
@@ -21,6 +22,14 @@ class BlogPage extends Component
             id: 'lmatsakis_1032020'
         }
         this.blog_content = {
+            mm_10052020:{
+                name: "MARC MULLER",
+                title: "The 10 must-haves your landing page needs to convert",
+                date: "10th May 2020",
+                social_links: [[instagram_logo,'#'],[linkedin_logo,'#'],[facebook_logo,'#'],],
+                imgURL_aut: author1,
+                desc: <MM_10052020 />
+            },
             nm_2432020:{
                 name: "NATASHA MASCARENHAS",
                 title: "TECHCRUNCH",
@@ -60,7 +69,7 @@ class BlogPage extends Component
             <Container>
 
             <h2 className = "title">
-                {this.blog_content[id].name} - {this.blog_content[id].title}
+                {this.blog_content[id].title}
             </h2>
             <div className = "author">
                 <div className = "details">

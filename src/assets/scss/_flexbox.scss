@@ -1,6 +1,8 @@
 @mixin flexi($dir, $align : center, $justify : center) {
     display: flex;
     flex-direction: $dir;
+    justify-content: space-around;
     justify-content: $justify;
     align-items: $align;
+    
 }

@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import About from './About/About';
 import Parallax from '../../components/Parallax/Parallax';

@@ -26,7 +26,7 @@ export default function Product(props)
                                 <div className="prod_item" onClick={()=>props.change_p_slide_id(idx)}> 
                                 <img src={prodSym} className="prodSym"/>
                                 <h4 >{title}</h4>
-                                <p className="desc">{products.desc[idx]}</p>
+                                <p className="desc" style={{width: `100%`}}>{products.desc[idx]}</p>
                                 </div>
                                 </a>
                         );

@@ -7,9 +7,7 @@
   
     /* Set a specific height */
     min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    @include flexi(column, center, space-evenly);
 
   
     /* Create the parallax scrolling effect */
@@ -33,6 +31,10 @@
   
   .parallax .title
   {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
     font-weight: 900;
     font-size: 3rem;
     text-shadow: 2px 1px 20px black;

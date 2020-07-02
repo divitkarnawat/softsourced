@@ -24,7 +24,7 @@ class Footer extends Component
                         <div className="contact_details">
         <div>Address</div>
                             <div>Contact Number</div>
-                            <div> kontakt@softsourced.de</div>
+                            <div> info@softsourced.de</div>
                         </div>
                     </Grid>
                     <Grid item className="cf" sm = {4} xs = {12}>
