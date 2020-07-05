@@ -87,7 +87,7 @@ class Pricing extends Component{
                                             <div className = "desc">
                                             {this.props.t('common:basic.from')}  {this.props.t(`price.${this.state.id}.${idx}`)} €
                                             </div>
-                                            <a className="a-custom_btn" href="#CONTACT"><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
+                                            <a className="a-custom_btn" href = {`#${this.props.t('common:nav.5')}`} ><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
                                             {this.props.t('common:links.pricing')}
                                         </div>  </a>
                                             <img src = {ellipse2} className = "ellipse2" />
