@@ -1,0 +1,21 @@
+{
+    "title": "These are our products:",
+    "pdts_desc": ["We develop e-commerce websites","We develop mobile applications (iOS, Android).","We build APIs."],
+    "part_left": {
+        "title": "Softsourced has it.",
+        "desc":"Softsourced has become a go-to tech company for ambitious small and medium-sized businesses (SMEs), including startups.<br />Whether you need us as project lead or surrogate, our team of designers and developers provides services all along a project lifecycle and is ready to take on yet another success story.<br />We are a trusted partner in the development of Mobile Applications, E-Commerce Websites and APIs."
+    },
+    "part_right":{
+        "title": "The nature of our services is two-fold:",
+        "desc": [
+            {
+                "title": "PROJECT LEAD",
+                "desc": "We carry out your entire project for you. From start to finish."
+            },
+            {
+                "title": "PROJECT SURROGATE",
+                "desc": "You take the project lead. We support you where needed."
+            }
+        ]
+    }
+}

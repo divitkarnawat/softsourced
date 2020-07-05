@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withTranslation} from 'react-i18next';
 import {Container} from '@material-ui/core';
 import {HashLink as Link} from 'react-router-hash-link';
 
@@ -67,9 +68,9 @@ class Blog extends Component{
             <div className="section blog_s">
                 <Container>
                     <div>
-                        <h2 className="title"> BLOG POSTS</h2>
+                        <h2 className="title"> {this.props.t('title')}</h2>
                         <p className="desc c_desc">
-                        In our blog, we publish articles that are of technical nature or about our company to keep you up to speed with latest developments.
+                        {this.props.t('desc')}
                         </p>
                     </div>
                     <div className = "blog_articles">
@@ -85,4 +86,4 @@ class Blog extends Component{
     }
 }
 
-export default Blog;
+export default withTranslation('blog')(Blog);

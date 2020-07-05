@@ -1,0 +1,15 @@
+{
+    "title": "WHY YOU ARE IN GOOD COMPANY WITH US",
+    "content_l" : {
+        "titles" : ["Commitment to deliver quality","Immediate scalability & synergy"],
+        "desc" : ["We put on our a-game from project initiation to conclusion.<br />Softsourced commits to deliver an optimal product.<br />No code refactoring needed whatsoever.",
+                "Due to our team and network of hand-picked designers and developers, we are able to put together a highly skilled workforce in no time - no matter the scale of the project."
+                ]
+},
+"content_r": {
+    "titles" : ["Track & make requests along the way","Sustainable development"],
+    "desc" : ["Track progress on project milestones and receive status updates via a unique link online.<br />Make requests along the project lifecycle.",
+            "We are committed to delivering durable products.<br />We offer maintenance packages for sustainability.<br />We are green hosting advocates."
+            ]
+}
+}

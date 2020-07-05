@@ -1,0 +1,48 @@
+{
+    "nav": ["ABOUT","SERVICES & PRICING","PROJECTS","TEAM","BLOG","CONTACT"],
+    "main_cat": ["E-Commerce","Mobile Applications","API Development"],
+    "sub_cat": [
+        [
+         "Shopify",
+         "WooCommerce",
+         "Headless"
+        ],
+        [
+            "Food Delivery",
+            "Social Networking Platform",
+            "Messaging with Secure File Storage"
+        ],
+        [
+            "Connecting Bank Account to Accounting, Reporting and Invoice Generation",
+            "ERP to the Rest of the Organisation",
+            "API Based Microservices on a Case by Case Basis"
+        ]
+    ],
+    "basic": {
+        "time": "hours",
+        "from": "from",
+        "submit": "SUBMIT"
+    },
+    "links": {
+        "pdt_pricing": "See products & pricing ",
+        "projects": "See all projects",
+        "pricing": "CHOOSE PLAN",
+        "contact": "I agree with <1>Terms & Conditions</1> and <3>Privacy Policy</3>.*"
+    },
+    "footer":
+    {
+        "exp": "our expertise",
+        "pjts": "our projects",
+        "n_i": {
+            "n_i": "news and info",
+            "blog": "blog",
+            "abt_softy": "about softsourced"
+        },
+        "c_i": "contact info",
+        "careers": "careers",
+        "contact": "contact us",
+        "imprint": "imprint",
+        "tnc": "terms and conditions",
+        "pp": "privacy policy"
+            }
+}

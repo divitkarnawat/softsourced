@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 import {Container} from '@material-ui/core';
-import Slider from "react-slick";
+
 import Fade from 'react-reveal/Fade';
 
 import './Projects.scss';
@@ -34,18 +35,9 @@ class Projects extends Component{
         // const ran = Math.random();
      
         // const projects_cat = [[0,2],[3,4,5],[0,1,3,6]];
-        const projects = {
-            titles:["bella & bona","permatech","sansiel","ondoor","wildride","moreclix"],
-            desc: [
-                    "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
-                    "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
-                    "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
-                    "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
-                    "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
-                    "Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
-                                ],
-            imgURLs:[proj1s,proj2s,proj3s,proj4s,proj5s,proj6s]
-        }
+        
+          const imgURLs=[proj1s,proj2s,proj3s,proj4s,proj5s,proj6s]
+        
         // const settings_main = {
         //     speed: 500,
         //     slidesToShow: 3,
@@ -69,7 +61,7 @@ class Projects extends Component{
             <div className = "section project_s">
                 <Container>
                     <h2 className = "title">
-                        PROJECTS
+                        {this.props.t('title')}
                     </h2>
                     {/* <div className="main_slider">
                 <Slider ref={slider => (this.slider = slider)} {...settings_main}>
@@ -96,17 +88,17 @@ class Projects extends Component{
                         this.state.projects_id.map((project_id, idx)=>{
                             return(
                                 <Fade clear  spy = {0} appear = {true} >
-                                <a  href = {`/projects/${projects.titles[project_id].replace(/ +/g, "")}`}>
+                                <a  href = {`/projects/${this.props.t(`projects.title.${project_id}`).replace(/ +/g, "")}`}>
                                 <div className="project">
                                 <div className = "img_wrapper">
-                                    <img src={projects.imgURLs[project_id]} />
+                                    <img src={imgURLs[project_id]} />
                                 </div>
                                     <div className="content_wrapper">
                                     <div className = "title">
-                                        {projects.titles[project_id]}
+                                        {this.props.t(`projects.title.${project_id}`)}
                                     </div>
                                     <div className = "desc">
-                                        {projects.desc[project_id]}
+                                    {this.props.t(`projects.desc.${project_id}`)}
                                     </div>
                                     
                                        
@@ -121,7 +113,7 @@ class Projects extends Component{
                 </div>
           
                 <div>
-                    <div className = {this.state.projects_id.length == 6 ? "dnone" : ""} style={{ fontWeight: 600, cursor: `pointer`}} onClick = {() => this.setState({projects_id: [0,1,2,3,4,5]})}>  See all projects  &raquo;</div>
+                    <div className = {this.state.projects_id.length == 6 ? "dnone" : ""} style={{ fontWeight: 600, cursor: `pointer`}} onClick = {() => this.setState({projects_id: [0,1,2,3,4,5]})}>  {this.props.t('common:links.projects')}  &raquo;</div>
                 </div>
                 </Container>
             </div>
@@ -131,4 +123,4 @@ class Projects extends Component{
 }
 
 
-export default Projects;
+export default withTranslation('projects')(Projects);

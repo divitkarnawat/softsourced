@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Container} from '@material-ui/core';
-import Slider from 'react-slick';
-
+import { Trans, withTranslation } from 'react-i18next';
+import i18n from "i18next";
 
 import partner1 from '../../../assets/img/about/partner1.svg';
 import partner2 from '../../../assets/img/about/partner2.jpg';
@@ -13,6 +13,8 @@ import './About.scss'
 class About extends Component
 {
     render(){
+
+
         const settings_main = {
             speed: 500,
             slidesToShow: 5,
@@ -34,15 +36,22 @@ class About extends Component
             <div className="section about_s">
                 <Container> 
                     <div className="m_content">
-                        <h1 className="title"> this is softsourced.</h1>
+                        <h1 className="title"> {this.props.t('title')}</h1>
                         <div className="desc">
-                       <p> When the two of us, Marc & Hanush, founded Softsourced in 2017,<br /> we set out on the mission to offer premium IT services to everyone around the globe.</p>
+                     
+                        {this.props.t('desc', {returnObjects: true}).map(item=>{
+                            return(
+                                <p dangerouslySetInnerHTML={{__html: item}} />
+
+                            );
+                        })}
+                       {/* <p> When the two of us, Marc & Hanush, founded Softsourced in 2017,<br /> we set out on the mission to offer premium IT services to everyone around the globe.</p>
 
 <p>To live up to the promise of being the one-stop-shop for tech projects,<br />we have had to attract great minds that collide.</p>
 
 <p>Today, Softsourced is a Digital Solutions Studio made of friends & intellectual adversaries.<br /> Most of us are top-tier graduates from the IIT, one of the most reputable institutes of technology in the world.</p>
 
-<p>If you can't find us close to our roots and offices in Munich, Germany, or Bangalore, India, we have just found yet another remote desk to work from. Don't worry about us being out and about, we call the digital space our home.</p>
+<p>If you can't find us close to our roots and offices in Munich, Germany, or Bangalore, India, we have just found yet another remote desk to work from. Don't worry about us being out and about, we call the digital space our home.</p> */}
 {/* 
                         We are a Digital Solutions Studio based in Munich, Germany. <br/>
 Our dynamic team of young and creative minds in the design and development team knows no borders. <br/>
@@ -75,4 +84,4 @@ What makes us unique is the nomadic approach we take to run our company. We are 
         );
     }
 }
-export default About;
+export default withTranslation('about')(About);

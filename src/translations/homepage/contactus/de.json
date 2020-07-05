@@ -1,0 +1,38 @@
+{
+    "title": "",
+    "contact_cat": ["PROJEKTANFRAGE","TRETE UNSEREM TEAM BEI","ANDERE FRAGEN"],
+    "budget": {
+        "title": "Welches Budget steht Ihnen zur Verfügung?",
+        "options": ["2 - 3k","3 - 10k","10 - 50k","> 50k"],
+        "placeholder": "Unser Budget liegt bei"
+    },
+    "main_cat": {
+        "title":"Welche Kategorien treffen auf Ihr Projektvorhaben zu?",
+        "placeholder": "Folgendes Projekt würden wir gerne mit Softsourced realisieren:"
+    },
+    "sub_cat": {
+        "title":"Welche Art von Projekt dürfen wir für Sie umsetzen?"
+    },
+    "time": {
+        "title": "Wann wollen Sie Ihr Projekt mit uns starten?",
+        "options":["jetzt","innerhalb der nächsten 7 Tage","innerhalb der nächsten 14 Tage","innerhalb der nächsten paar Monate"],
+        "placeholder": "Wollen wir mit dem Projekt loslegen."
+    },
+    "display_box":[
+        "Geben Sie hier optional eine kurze Beschreibung Ihres Projekts ein.",
+        "Stellen Sie sich hier in wenigen Worten vor. Wir freuen uns, mehr über Sie zu hören.",
+        "Geben Sie hier Ihre Nachricht ein."
+        
+    ],
+    "placeholders":
+    {
+        "fname": "Vorname",
+        "lname": "Nachname",
+        "email": "E-Mail-Adresse",
+        "pno": "Rufnummer",
+        "linkedin": "LinkedIn",
+        "resume": "Fortsetzen",
+        "upload": "Hochladen"
+    },
+    "extra": "Die von Ihnen gesendete Projektanfrage ist natürlich komplett unverbindlich. Es entstehen hierbei keine Kosten oder Gebühren für Sie."
+    }

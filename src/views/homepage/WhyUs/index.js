@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import {withTranslation} from 'react-i18next';
 import {Grid, Container} from '@material-ui/core';
 
 import './WhyUs.scss';
-import img_wrapper from '../../../assets/img/whyus/img_wrapper.jpg';
-import img_wrapper_w from '../../../assets/img/whyus/img_wrapper.webp';
+import whyus_img from '../../../assets/img/whyus/whyus_img.png';
+
 import sym1 from '../../../assets/img/whyus/sym1.jpg';
 import sym2 from '../../../assets/img/whyus/sym2.jpg';
 import sym3 from '../../../assets/img/whyus/sym3.svg';
@@ -13,17 +14,11 @@ class WhyUs extends Component{
     render()
     {
         const content_l = {
-            titles : ["Commitment to deliver quality","Immediate scalability & synergy"],
-            desc : ["We put on our a-game from project initiation to conclusion.<br />Softsourced commits to deliver an optimal product.<br />No code refactoring needed whatsoever.",
-                    "Due to our team and network of hand-picked designers and developers, we are able to put together a highly skilled workforce in no time - no matter the scale of the project."
-                    ],
+           
             syms : [sym1, sym2]
         }
         const content_r = {
-            titles : ["Track & make requests along the way","Sustainable development"],
-            desc : ["Track progress on project milestones and receive status updates via a unique link online.<br />Make requests along the project lifecycle.",
-                    "We are committed to delivering durable products.<br />We offer maintenance packages for sustainability.<br />We are green hosting advocates."
-                    ],
+           
             syms : [sym3, sym4]
         }
 
@@ -31,13 +26,13 @@ class WhyUs extends Component{
             <div className = "section whyus_s">
                 <Container>
                 <h2 className = "title">
-                    WHY YOU ARE IN GOOD COMPANY WITH US
+                    {this.props.t('title')}
                 </h2>
                 <Grid container>
                     <Grid item lg={5} xs={12}>
                         <div className = "content_l">
                             {
-                                content_l.titles.map((title,idx)=>
+                                this.props.t('content_l.titles', {returnObjects: true}).map((title,idx)=>
                                 {
                                     return(
                                         <div className = "part">
@@ -46,7 +41,7 @@ class WhyUs extends Component{
                                             <div className = "title">
                                                 {title}
                                             </div>
-                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: content_l.desc[idx] }} >
+                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: this.props.t(`content_l.desc.${idx}`) }} >
                                                 
                                             </div>
                                             </div>
@@ -69,8 +64,7 @@ class WhyUs extends Component{
                             
                                
                                  <picture>
-                                    <source srcset = {img_wrapper_w} type="image/webp"/>
-                                    <img src = {img_wrapper} alt="img_whyus" />    
+                                    <img src = {whyus_img} alt="img_whyus" />    
                                 </picture>
                                 </div>)
                             }
@@ -80,7 +74,7 @@ class WhyUs extends Component{
                     <Grid item lg={5} xs={12}>
                     <div className = "content_r">
                             {
-                                content_r.titles.map((title,idx)=>
+                                this.props.t('content_r.titles', {returnObjects: true}).map((title,idx)=>
                                 {
                                     return(
                                         <div className = "part">
@@ -91,7 +85,7 @@ class WhyUs extends Component{
                                             <div className = "title">
                                                 {title}
                                             </div>
-                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: content_r.desc[idx] }}>
+                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: this.props.t(`content_r.desc.${idx}`) }}>
                                             
                                             </div>
                                             </div>
@@ -110,4 +104,4 @@ class WhyUs extends Component{
 
 }
 
-export default WhyUs;
+export default withTranslation('whyus')(WhyUs);

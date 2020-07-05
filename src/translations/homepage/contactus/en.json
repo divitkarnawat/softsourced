@@ -1,0 +1,39 @@
+{
+    "title":"CONTACT US",
+    "contact_cat": ["PROJECT REQUEST","JOIN OUR TEAM","OTHER QUERIES"],
+    "budget": {
+        "title": "What is your budget?",
+        "options": ["2 - 3k","3 - 10k","10 - 50k","> 50k"],
+        "placeholder": "Our budget is "
+    },
+    "main_cat": {
+        "title":"Which categories apply to your project?",
+        "placeholder": "We wish to work on the following projects: "
+    },
+    "sup_cat": {
+        "title": "Which type(s) of product support do you need?"
+    },
+    "time": {
+        "title": "When do you want to kick off your project with us?",
+        "options": ["now","within the next 7 days","within the next 14 days","within the next few months"],
+        "placeholder":"We would like to begin "
+    },
+    
+    "display_box": [
+            "Type in a brief description of your project here.",
+            "Introduce yourself in a few words here. We are excited to hear more about you.",
+            "Type in your message here."
+],
+    "placeholders":
+    {
+        "fname": "First Name*",
+        "lname": "Last Name*",
+        "email": "E-Mail*",
+        "pno": "Phone Number",
+        "linkedin": "LinkedIn",
+        "resume": "Resume...",
+        "upload": "Upload"
+    },
+    "extra": "This support request is of course non-binding. No costs or fees are incurred."
+    
+}

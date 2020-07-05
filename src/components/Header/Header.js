@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react';
+import {withTranslation} from 'react-i18next';
 import {HashLink as Link} from 'react-router-hash-link';
 import './Header.scss';
 import CustomisedButton from '../CustomisedButton';
@@ -12,12 +13,18 @@ class Header extends Component{
         this.headerNavbar = React.createRef();
         this.menuWrapper = React.createRef();
         this.hamburger = React.createRef();
+        this.lng = "english"
         this.state = {
-            navLinks: ["ABOUT","PRODUCTS & PRICING","PROJECTS","TEAM","BLOG","CONTACT"],
             scrollCheck: false
         }
     }
 
+    changeLanguage = (lng) =>{
+       
+            this.props.i18n.changeLanguage(lng);
+            this.lng = lng == "en" ? "en" : "de"
+      
+    }
     handleHamburger = () =>
     {   
         if(window.innerWidth < 1354)
@@ -65,8 +72,8 @@ class Header extends Component{
 
 
     render(){
-       
-        const navlinks = this.state.navLinks.map((navLink)=>{
+        console.log(this.props.i18n)
+        const navlinks = this.props.t('common:nav', {returnObjects: true}).map((navLink)=>{
             
             return(
             <div className="navLink" onClick={this.handleHamburger}>
@@ -111,8 +118,10 @@ class Header extends Component{
                                     <label class="button">
                     <input type="checkbox" />
                     <span></span>
-                    <span></span>
-                    <span></span>
+                    <span onClick={()=>this.props.i18n.changeLanguage('en')} className = {this.props.i18n.language=="en" ? "lng_selected" : ""}></span>
+                    <span onClick={()=>this.props.i18n.changeLanguage('de')} className = {this.props.i18n.language=="de" ? "lng_selected" : ""}></span>
+                    {/* <span onClick = {()=> this.props.i18n.changeLanguage("en")}></span>
+                    <span onClick = {()=> this.props.i18n.changeLanguage("de")}></span> */}
                     </label>
                 </a>
                 </div>
@@ -130,4 +139,4 @@ class Header extends Component{
     }
 }
 
-export default Header;
+export default withTranslation()(Header);

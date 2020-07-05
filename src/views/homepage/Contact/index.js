@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import {withTranslation, Trans} from 'react-i18next';
 import Slider from 'react-slick';
-import {HashLink as Link} from 'react-router-hash-link';
+
 import {Container} from '@material-ui/core';
 import Contact1 from './Contact1';
 
@@ -14,7 +15,7 @@ class Contact extends Component
         this.submitbtn = React.createRef();
         this.state = {
             cur_contact: 0,
-            resume: 'Resume...',
+            resume: this.props.t('placeholders.resume'),
             prevpropid: {
                 email: 0,
                 support: 0
@@ -42,29 +43,6 @@ class Contact extends Component
         };
 
         
-        this.feedback = {
-            budget: ["2 - 3k","3 - 10k","10 - 50k","> 50k"],
-            time: ["now","within the next 7 days","within the next 14 days","within the next few months"],
-            support_titles: ["E-COMMERCE","MOBILE APPLICATION","API DEVELOPMENT"],
-            support_desc: 
-            [
-            [
-             "Shopify",
-             "WooCommerce",
-             "Headless"
-            ],
-            [
-                "Food Delivery",
-                "Social Networking Platform",
-                "Messaging with Secure File Storage"
-            ],
-            [
-                "Connecting Bank Account to Accounting, Reporting and Invoice Generator",
-                "ERP to the Rest of the Organisation",
-                "API Based Microservices on a Case by Case Basis"
-            ]
-        ]
-    }
 
 
     }
@@ -254,19 +232,7 @@ class Contact extends Component
     render()
     {
         
-      
-        
-
- 
-       
-        const display_box_content = [
-                                        "Type in a brief description of your project here.",
-                                        "Introduce yourself in a few words here. We are excited to hear more about you.",
-                                        "Type in your message here."
-        ]
-
-
-        const settings_main = {
+      const settings_main = {
             speed: 500,
             slidesToShow: 3,
             
@@ -291,13 +257,13 @@ class Contact extends Component
         return(
             <div className = "section contact_s">
                 <h2 className = "title">
-                    CONTACT US
+                    {this.props.t('title')}
                 </h2>
                 <Container>
                 <div className="main_slider">
                 <Slider {...settings_main}>
                 {
-                    ["PROJECT REQUEST","JOIN OUR TEAM","OTHER QUERIES"].map((item,idx)=>
+                   this.props.t('contact_cat', {returnObjects: true}).map((item,idx)=>
                     {
                               
                         return(
@@ -312,18 +278,18 @@ class Contact extends Component
                 </div>
                 <form onSubmit = {this.handleSubmit}>
                 <div className = "contact_wrapper">
-                    {this.state.cur_contact == 0 ? <Contact1 feedback = {this.feedback} proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
+                    {this.state.cur_contact == 0 ? <Contact1  proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
                     
                     <div className = "form_wrapper">
                         {
                             this.state.cur_contact == 0 ? 
                         (<div className = "display_box">
-                            <p> We would like to begin <b>{this.feedback.time[this.state.proj_details.time]}</b></p>
+                            <p> {this.props.t('time.placeholder')} <b>{this.props.t(`time.options.${this.state.proj_details.time}`)}</b></p>
                             {
                                 this.state.proj_details.support.size > 0 ? (
                                 <>
                                 
-                                <p> We wish to work on the following projects: </p>
+                                <p> {this.props.t('main_cat.placeholder')} </p>
                             <ul>
                             {
                                
@@ -331,12 +297,12 @@ class Contact extends Component
                                     
                                     let support_cat_list = Array.from(item[1]).map(desc=>{
                                         return(
-                                        <p >{this.feedback.support_desc[item[0]][desc]}</p>);
+                                        <p >{this.props.t(`common:sub_cat.${item[0]}.${desc}`)}</p>);
                                     }) 
                                     return(
                                         
                                         <li style={{marginBottom: `1em`}}>
-                                        <p><b> {this.feedback.support_titles[item[0]]}</b></p>
+                                        <p><b> {this.props.t(`common:main_cat.${item[0]}`)}</b></p>
                                         <p> {support_cat_list}</p>
                                         </li>
                                     );
@@ -345,40 +311,40 @@ class Contact extends Component
                             </ul>
                             </>): ''
     }
-                            <p> Our budget is <b>{this.feedback.budget[this.state.proj_details.budget]} EUR</b></p>
+                            <p> {this.props.t('budget.placeholder')} <b>{this.props.t(`budget.options.${this.state.proj_details.budget}`)} EUR</b></p>
                         </div>) : ''
     }
-                        <textarea rows="4"  value= {this.state.message} name="message" onChange = {this.handleChange} placeholder={display_box_content[this.state.cur_contact]} />
+                        <textarea rows="4"  value= {this.state.message} name="message" onChange = {this.handleChange} placeholder={this.props.t(`display_box.${this.state.cur_contact}`)} />
                            
 
                         <div className = "main_form">
                            
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = "First Name*" />
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = "Last Name*"/>
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = "E-Mail*" className = {this.errors.has("email") ? 'invalid': ''} />
-                                <input type="tel"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = "Phone Number" minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = {this.props.t('placeholders.fname')} />
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = {this.props.t('placeholders.lname')}/>
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = {this.props.t('placeholders.email')} className = {this.errors.has("email") ? 'invalid': ''} />
+                                <input type="tel"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = {this.props.t('placeholders.pno')} minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
                                 {
-                                    this.state.cur_contact == 1 ? <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = "LinkedIn"/> : ''
+                                    this.state.cur_contact == 1 ? <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = {this.props.t('placeholders.linkedin')}/> : ''
                                 }   
                                 {
                                     this.state.cur_contact == 1 ? <>
-                                        <div className={`file-upload ${this.state.resume != "Resume..." ? 'active' : ''}`}>
+                                        <div className={`file-upload ${this.state.resume != this.props.t('placeholders.resume') ? 'active' : ''}`}>
                                             <div className="file-select"> 
                                                 <div className="file-select-name" id="noFile">{this.state.resume}</div> 
-                                                <div className="file-select-button" id="fileName">Upload</div>
+                                                <div className="file-select-button" id="fileName">{this.props.t('placeholders.upload')}</div>
                                                 <input type="file" name="resume" id="chooseFile" onChange={this.handleChange} />
                                             </div>
                                         </div>
                                     </>
                                      : ''
                                 }  
-                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc">I agree with <a href="/terms-and-conditions/" target='_blank'>Terms & Conditions</a> and <a target='_blank' href="/privacy-policy/"> Privacy Policy.*</a></label>
+                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc"><Trans i18nKey="common:links.contact">I agree with <a href="/terms-and-conditions/" target='_blank'>Terms & Conditions</a> and <a target='_blank' href="/privacy-policy/"> Privacy Policy.*</a></Trans> </label>
                         </div>
                     </div>
                 </div>
 
-                            <input type="submit" value = "SUBMIT" className = "custom_btn submit" ref={this.submitbtn} />
-                            {this.state.cur_contact == 0 ? <p className="desc">This support request is of course non-binding. No costs or fees are incurred.</p> : ''}
+                            <input type="submit" value = {this.props.t('common:basic.submit')} className = "custom_btn submit" ref={this.submitbtn} />
+                            {this.state.cur_contact == 0 ? <p className="desc">{this.props.t('extra')}</p> : ''}
                         </form>
                 </Container>
             </div>
@@ -388,4 +354,4 @@ class Contact extends Component
 
 
 
-export default Contact;
+export default withTranslation('contactus')(Contact);

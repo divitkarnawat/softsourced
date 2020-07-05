@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { Trans, withTranslation } from 'react-i18next';
 import {Grid, Container, Box} from '@material-ui/core';
 
 import './Product.scss'
 import prodSym from '../../../assets/img/prod_sym.svg';
-export default function Product(props)
-{
-    const products = {
-        titles: ["E-COMMERCE","MOBILE APPLICATIONS","API DEVELOPMENT"],
-        desc: ["We develop e-commerce websites","We develop mobile applications (iOS, Android).","We build APIs."]
+class Product extends Component{
+
+    constructor(props)
+    {
+        super(props);
     }
+    render()
+    {
+
+    
     return(
         <>
         <div className="section prod_s">
@@ -20,13 +25,13 @@ export default function Product(props)
             <div>
                 <Container >
                     <div className = "prod_items">
-                    {products.titles.map((title,idx)=>{
+                    {this.props.t('common:main_cat', {returnObjects: true}).map((title,idx)=>{
                         return(
-                                <a href="#PRODUCT & PRICING">
-                                <div className="prod_item" onClick={()=>props.change_p_slide_id(idx)}> 
+                                <a href={`#${this.props.t('common:nav.1')}`}>
+                                <div className="prod_item" onClick={()=>this.props.change_p_slide_id(idx)}> 
                                 <img src={prodSym} className="prodSym"/>
-                                <h4 >{title}</h4>
-                                <p className="desc" style={{width: `100%`}}>{products.desc[idx]}</p>
+                                <h4 style={{textTransform : `uppercase`}}>{title}</h4>
+                                <p className="desc" style={{width: `100%`}}>{this.props.t(`pdts_desc.${idx}`)}</p>
                                 </div>
                                 </a>
                         );
@@ -34,26 +39,32 @@ export default function Product(props)
                     </div>
                     <Grid container  direction="row-reverse">
                         <Grid item  md={4} xs={12} style={{textAlign: 'center'}}>
-                            <a href="/#PRODUCT & PRICING">See products & pricing &raquo;</a>
+                            <a href="/#PRODUCT & PRICING">{this.props.t('common:links.pdt_pricing')} &raquo;</a>
                         </Grid>
                     
                 </Grid>
                     <Grid container >
                         <Grid item md={6}>
                             <div className="part part-specific">
-                            <h3 className=""> Softsourced has it. </h3>
-                            <p className="desc">Softsourced has become a go-to tech company for ambitious small and medium-sized businesses (SMEs), including startups.<br />Whether you need us as project lead or surrogate, our team of designers and developers provides services all along a project lifecycle and is ready to take on yet another success story.<br />We are a trusted partner in the development of Mobile Applications, E-Commerce Websites and APIs.</p>
+                            <h3 className=""> {this.props.t('part_left.title')} </h3>
+                            <p className="desc" dangerouslySetInnerHTML = {{__html: this.props.t('part_left.desc')}} />
                             </div>
                         </Grid>
                         <Grid item md={6}>
                         <div className="part">
-                            <h3 className=""> The nature of our services is two-fold: </h3>
+                            <h3 className=""> {this.props.t('part_right.title')} </h3>
                             <ol>
-                                <li> <h4> PROJECT LEAD</h4></li>
-                                <p className="desc">We carry out your entire project for you. From start to finish. </p>
-
-                            <li><h4>PROJECT SURROGATE</h4></li>
-                                <p className="desc">You take the project lead. We support you where needed.</p>
+                                {
+                                    this.props.t('part_right.desc', {returnObjects: true}).map(({title,desc})=>{
+                                        return(
+                                            <>
+                                            <li> <h4 style={{textTransform: `uppercase`}}> {title} </h4></li>
+                                            <p className="desc">{desc} </p>
+                                            </>
+                                        );                                     
+                                    })
+                                }
+                               
                             </ol>
                             </div>
                         </Grid>
@@ -64,3 +75,5 @@ export default function Product(props)
         </>
     );
 }
+}
+export default withTranslation('product_pricing')(Product);

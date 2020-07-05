@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Container} from '@material-ui/core';
-
-
+import { withTranslation } from 'react-i18next';
 import './Parallax.scss';
 
 
@@ -51,16 +50,17 @@ class Parallax extends Component{
    
     render()
     {
+       
     return(
     <div className = "parallax">
     
         <Container>
             <h1 className = "title">
             
-            WE DESIGN. WE DEVELOP. WE DELIVER.
-         
+            {this.props.t('title')}
          
             </h1>
+            {/* <p class="line-1 anim-typewriter">Animation typewriter style using css steps() </p> */}
 
             <div className="home_btm">
             {/* <div className = "home_btm_l">
@@ -89,8 +89,8 @@ class Parallax extends Component{
 
                 <div className = "home_btm_r">
                     <div >
-                        <input required type="text" required placeholder="Type in your email address here to get in touch to start your project now..." value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
-                        <a href="#CONTACT" ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = "START PROJECT" className = "custom_btn submit" /></a>
+                        <input required type="text" required placeholder={this.props.t("placeholder")} value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
+                        <a href={`#${this.props.t('common:nav.5')}`} ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = {this.props.t("btn")} className = "custom_btn submit" /></a>
                     </div>
                 </div>
                 </div>
@@ -103,4 +103,4 @@ class Parallax extends Component{
 }
 }
 
-export default Parallax;
+export default withTranslation('parallax')(Parallax);

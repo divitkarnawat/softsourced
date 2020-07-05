@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {withTranslation} from 'react-i18next';
 class Contact1 extends Component{
     constructor(props)
     {
@@ -18,11 +18,11 @@ class Contact1 extends Component{
                 </div> */}
                 <div className = "part">
                 <div>
-                When do you want to kick off your project with us?
+               {this.props.t('time.title')}
                 </div>
                 <div className = "grp_btn_time">
                 {
-                    this.props.feedback.time.map((item,idx)=>
+                   this.props.t('time.options', {returnObjects: true}).map((item,idx)=>
                     {
                               
                         return(
@@ -37,11 +37,11 @@ class Contact1 extends Component{
 
                 <div className = "part">
                 <div>
-                    Which categories apply to your project?
+                    {this.props.t('main_cat.title')}
                 </div>
                 <div className = "grp_btn_support">
                 {
-                    this.props.feedback.support_titles.map((item,idx)=>
+                    this.props.t('common:main_cat', {returnObjects: true }).map((item,idx)=>
                     {
                              let support = this.props.proj_details.support;
                               
@@ -56,11 +56,11 @@ class Contact1 extends Component{
                 </div>
                 <div className = "part">
                 <div>
-                    Which type(s) of product support do you need?
+                   {this.props.t('sub_cat.title')}
                 </div>
                 <div className = "grp_btn_support_cat">
                 {
-                    this.props.feedback.support_desc[this.props.proj_details.support_id].map((desc,idx)=>
+                    this.props.t(`common:sub_cat.${this.props.proj_details.support_id}`, {returnObjects: true}).map((desc,idx)=>
                     {
                               
                         return(
@@ -75,11 +75,11 @@ class Contact1 extends Component{
 
                  <div className = "part">
                 <div>
-                    What is your budget?
+                    {this.props.t('budget.title')}
                 </div>
                 <div className = "grp_btn_price">
                 {
-                    this.props.feedback.budget.map((item,idx)=>
+                    this.props.t('budget.options', {returnObjects: true}).map((item,idx)=>
                     {
                               
                         return(
@@ -97,4 +97,4 @@ class Contact1 extends Component{
     
 }
 
-export default Contact1;
+export default withTranslation('contactus')(Contact1);

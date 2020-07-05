@@ -159,7 +159,8 @@ class ProjectPage extends Component
         this.setState({proj_id})
     }
     render()
-    {
+    {   
+        console.log(this.props);
 
         return(
             <div className = "section projectpage-s">

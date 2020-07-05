@@ -1,0 +1,47 @@
+{
+    "nav": ["ÜBER UNS","LEISTUNGEN & PREISLISTE","PROJEKTE","TEAM","BLOG", "KONTAKT"],
+    "main_cat": ["E-Commerce","Mobile Applications","API Development"],
+    "sub_cat": [
+        [
+            "Shopify",
+            "WooCommerce",
+            "Headless"
+           ],
+           [
+            "Food Delivery",
+            "Social Networking Plattform",
+            "Messaging mit sicherer Datenspeicherung"
+        ],
+        ["Geschäftskonto mit Buchhaltung, Reporting, Rechnungsstellung verbinden",
+        "Enterprise-Resource-Planning (ERP) - alle unternehmerischen Aufgaben umfassend",
+    "Microservices auf API-Basis - individuell dem Unternehmen angepasst"]
+    ],
+    
+    "basic": {
+        "time": "arbeitsstunden",
+        "from": "ab",
+        "submit": "ABSENDEN"
+    },
+    "links": {
+        "pdt_pricing": "Zu Leistungen & Preisliste ",
+        "projects": "Zu allen Projekten",
+        "pricing": "Wählen Sie einen Plan",
+        "contact": "Ich bin mit den <1>AGBs</1> und den <3>Datenschutzrichtlinien</3> einverstanden.*"
+    },
+    "footer":
+    {
+        "exp": "Unser Erfahrungsschatz",
+        "pjts": "unsere Projekte",
+        "n_i": {
+            "n_i": "Nachrichten und Infos",
+            "blog": "blog",
+            "abt_softy": "Über Softsourced"
+        },
+        "c_i": "Kontaktinformation",
+        "careers": "Karriere",
+        "contact": "kontakt uns",
+        "imprint": "impressum",
+        "tnc": "AGBs",
+        "pp": "Datenschutz Richtlinien"
+            }
+}

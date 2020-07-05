@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withTranslation} from 'react-i18next';
 import {Container} from '@material-ui/core';
 import './Pricing.scss';
 import ellipse2 from '../../../assets/img/pricing/ellipse2.svg';
@@ -14,114 +15,41 @@ class Pricing extends Component{
         this.state = {
             id: 0,
             prevprops_id: 0,
-            titles: ['E-Commerce','Mobile Applications','API Development'],
             
-            subtitles: [
-                [
-                 "Shopify",
-                 "WooCommerce",
-                 "Headless"
-                ],
-                [
-                    "Food Delivery",
-                    "Social networking platform",
-                    "Messaging with secure file storage"
-                ],
-                [
-                    "Connecting bank account to accounting, reporting and invoice generation",
-                    "ERP to the rest of the organisation",
-                    "API based microservices on a case by case basis"
-                ]
-            ],
-            desc: [
-                [
-                    "",
-                    "",
-                    ""  
-                ],['','',''],['','','']
-            ],
-            time_hr: [
-                        [
-                            "50 - 500", "70 - 150","200 - 1000"
-                        ],
-                        [
-                            "500 - 1000", "500 - 1200", "700 - 1400"
-                        ],
-                        [
-                            "100 - 300", "150 - 500", "from 300"
-                        ]
-                    ],
-            price: [
-                        [
-                            "from 2.75k", "from 3.5k", "from 10k"
-                        ],
-                        [
-                            "from 27k", "from 27k", "from 35k"
-                        ],
-                        [
-                            "from 5k", "from 8k", "from 15k"
-                        ]
-                    ]
+           
 
         }
     }
   
     render()
     {
-        
+    console.log(this.props)
     if(this.props.p_slide_id != this.state.prevprops_id)
     {
         this.setState({id: this.props.p_slide_id, prevprops_id: this.props.p_slide_id});
     }
 
-      const sync_slider = 
-      
-      <div className = "sync_slider">
-                 
-      {
-          this.state.titles.map((title,idx)=>
-          {
-              return(
-                  <div className = "slide_wrapper" key={idx}>
-                      <div  className = "pricing_slide" data-title = {this.state.titles[this.state.id]}  >
-                      <div className = "desc">
-                              {this.state.subtitles[this.state.id][idx]}
-                          </div>
-                          <div className = "desc" className = {this.state.desc[this.state.id][idx] == '' ? 'dnone':''}>
-                              {this.state.desc[this.state.id][idx]}
-                          </div>
-                          <div className = "desc">
-                              {this.state.time_hr[this.state.id][idx]} hours 
-                          </div>
-                          <div className = "desc">
-                              {this.state.price[this.state.id][idx]} €
-                          </div>
-                          <a href="#CONTACT"><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
-                          CHOOSE PLAN
-                      </div>  </a>
-                          <img src = {ellipse2} className = "ellipse2" />
-<img src = {ellipse3} className = "ellipse3" />
-                      </div>
+     
+    
+                              
+                      
                       
 
                     
-                  </div>
-              );
-          })
-      }
-
-</div>
+     
+            
+      
         return(
             
             <div className = "section pricing_s">
                 <Container>
                     <h2 className="title">
-                    PRODUCTS & PRICING
+                    {this.props.t('title')}
                     </h2>
                 <div className="main_slider">
                 
                 {
-                    this.state.titles.map((item,idx)=>
+                    this.props.t('common:main_cat', {returnObjects: true}).map((item,idx)=>
                     {
                    
                         
@@ -142,25 +70,25 @@ class Pricing extends Component{
                  <div className = "sync_slider">
                  
                         {
-                            this.state.titles.map((title,idx)=>
+                            this.props.t('common:main_cat', {returnObjects: true}).map((title,idx)=>
                             {
                                 return(
                                     <div className = "slide_wrapper" key={idx}>
-                                        <div  className = "pricing_slide" data-title = {this.state.titles[this.state.id]}  >
+                                        <div  className = "pricing_slide" data-title = {this.props.t(`common:main_cat.${this.state.id}`)}  >
                                         <div className = "desc">
-                                                {this.state.subtitles[this.state.id][idx]}
+                                        {this.props.t(`common:sub_cat.${this.state.id}.${idx}`)}
                                             </div>
-                                            <div  className = {`desc ${this.state.desc[this.state.id][idx] == '' ? 'dnone':''}`}>
+                                            {/* <div  className = {`desc ${this.state.desc[this.state.id][idx] == '' ? 'dnone':''}`}>
                                                 {this.state.desc[this.state.id][idx]}
+                                            </div> */}
+                                            <div className = "desc">
+                                            {this.props.t(`time_hr.${this.state.id}.${idx}`)} {this.props.t('common:basic.time')} 
                                             </div>
                                             <div className = "desc">
-                                                {this.state.time_hr[this.state.id][idx]} hours 
-                                            </div>
-                                            <div className = "desc">
-                                                {this.state.price[this.state.id][idx]} €
+                                            {this.props.t('common:basic.from')}  {this.props.t(`price.${this.state.id}.${idx}`)} €
                                             </div>
                                             <a className="a-custom_btn" href="#CONTACT"><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
-                                            CHOOSE PLAN
+                                            {this.props.t('common:links.pricing')}
                                         </div>  </a>
                                             <img src = {ellipse2} className = "ellipse2" />
                 <img src = {ellipse3} className = "ellipse3" />
@@ -181,4 +109,4 @@ class Pricing extends Component{
     }
 }
 
-export default Pricing;
+export default withTranslation('pricing')(Pricing);

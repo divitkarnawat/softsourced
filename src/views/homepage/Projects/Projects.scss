@@ -11,7 +11,7 @@ padding-bottom: 70px;
 }
 .projects
 {
-    @include flexi(row);
+    @include flexi(row,top);
     flex-wrap: wrap;
     margin-bottom: 40px;
     overflow: hidden;

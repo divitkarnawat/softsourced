@@ -1,4 +1,4 @@
-import React , { Suspense, lazy}from 'react';
+import React , { Component, Suspense, lazy}from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Header from './components/Header/Header.js';
@@ -10,26 +10,43 @@ const PrivacyPolicy = lazy(()=>import('./views/documents/PrivacyPolicy'));
 const TnC = lazy(()=>import('./views/documents/TnC'));
 const HomePage = lazy(() => import('./views/homepage'));
 
-function App() {
+class App extends Component {
+  constructor(props)
+  {
+    super(props);
+    this.state ={
+      p_slide_id: 0
+    }
+  }
+ 
+  change_p_slide_id = (p_slide_id) =>
+    {
+        this.setState({p_slide_id});
+    }
+    render()
+    {
+
+    
   return (
   <Router>
   <Header />
   <Suspense fallback={<Loader />}>
   <Switch>
-    <Route exact path = "/" component = {HomePage} />
     <Route path = "/blog/:author/:blogid" component = {BlogPage} />
     <Route path = "/projects/:pname" component = {ProjectPage} />
     <Route path = "/privacy-policy/" component = {PrivacyPolicy} />
     <Route path = "/terms-and-conditions/" component = {TnC} />
     <Route path = "/imprint/" component = {TnC} />
     <Route path = "/data-protection/" component = {PrivacyPolicy} />
+    <Route path = "/"  ><HomePage p_slide_id = {this.state.p_slide_id} change_p_slide_id = {this.change_p_slide_id.bind(this)} /> </Route>
   </Switch>
   
   
-  <Footer />
+  <Footer  change_p_slide_id = {this.change_p_slide_id.bind(this)} />
   </Suspense>
   </Router>    
   );
+    }
 }
 
 export default App;
