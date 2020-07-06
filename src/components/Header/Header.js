@@ -118,7 +118,7 @@ class Header extends Component{
                                     <label class="button">
                     <input type="checkbox" />
                     <span></span>
-                    <span onClick={()=>this.props.i18n.changeLanguage('en')} className = {this.props.i18n.language=="en" ? "lng_selected" : (this.props.i18n.language=="en-US" ? "lng_selected" : "")}></span>
+                    <span onClick={()=>this.props.i18n.changeLanguage('en')} className = {this.props.i18n.language!="de" ? "lng_selected" : ""}></span>
                     <span onClick={()=>this.props.i18n.changeLanguage('de')} className = {this.props.i18n.language=="de" ? "lng_selected" : ""}></span>
                     {/* <span onClick = {()=> this.props.i18n.changeLanguage("en")}></span>
                     <span onClick = {()=> this.props.i18n.changeLanguage("de")}></span> */}
