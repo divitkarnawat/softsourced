@@ -23,7 +23,7 @@ class Pricing extends Component{
   
     render()
     {
-    console.log(this.props)
+  
     if(this.props.p_slide_id != this.state.prevprops_id)
     {
         this.setState({id: this.props.p_slide_id, prevprops_id: this.props.p_slide_id});
