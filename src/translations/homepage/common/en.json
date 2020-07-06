@@ -21,7 +21,11 @@
     "basic": {
         "time": "hours",
         "from": "from",
-        "submit": "SUBMIT"
+        "submit": "SUBMIT",
+        "germany": "Germany",
+        "india": "India",
+        "sales": "Sales",
+        "technology": "Technology"
     },
     "links": {
         "pdt_pricing": "See products & pricing ",

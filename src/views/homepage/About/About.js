@@ -3,11 +3,14 @@ import {Container} from '@material-ui/core';
 import { Trans, withTranslation } from 'react-i18next';
 import i18n from "i18next";
 
+import marc_casual from '../../../assets/img/team/profile_marc_casual.png';
+import hanush_casual from '../../../assets/img/team/profile_hanush_casual.png';
 import partner1 from '../../../assets/img/about/partner1.svg';
 import partner2 from '../../../assets/img/about/partner2.jpg';
 import partner3 from '../../../assets/img/about/partner3.jpg';
 import partner4 from '../../../assets/img/about/partner4.jpg';
 import partner5 from '../../../assets/img/about/partner5.jpg';
+
 
 import './About.scss'
 class About extends Component
@@ -39,12 +42,24 @@ class About extends Component
                         <h1 className="title"> {this.props.t('title')}</h1>
                         <div className="desc">
                      
-                        {this.props.t('desc', {returnObjects: true}).map(item=>{
-                            return(
-                                <p dangerouslySetInnerHTML={{__html: item}} />
+                     {this.props.t('desc', {returnObjects: true}).map(item=>{
+                         return(
+                             <p dangerouslySetInnerHTML={{__html: item}} />
 
-                            );
-                        })}
+                         );
+                     })}
+                 
+                     </div>
+                        <div className = "descNimg">
+                            
+                            <div className = "img_wrapper">
+                                <img src = {marc_casual} alt="marc" />
+                            </div>
+                            <div className = "img_wrapper">
+                                <img src = {hanush_casual} alt="hanush" />
+                            </div>
+                            
+                       
                        {/* <p> When the two of us, Marc & Hanush, founded Softsourced in 2017,<br /> we set out on the mission to offer premium IT services to everyone around the globe.</p>
 
 <p>To live up to the promise of being the one-stop-shop for tech projects,<br />we have had to attract great minds that collide.</p>

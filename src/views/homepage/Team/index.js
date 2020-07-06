@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import {withTranslation} from 'react-i18next';
 import {Container} from '@material-ui/core';
 import './Team.scss';
-import profile_pic from '../../../assets/img/sample_profile.jpg';
+import profile_pic_marc from '../../../assets/img/team/profile_marc_formal.png';
+import profile_pic_hanush from '../../../assets/img/team/profile_hanush_formal.png';
 class Team extends Component
 {
 
@@ -11,10 +13,11 @@ class Team extends Component
             const useTagF = '<use xlink:href="#icon-facebook" />';
             const useTagL = '<use xlink:href="#icon-linkedin" />';
             const tcontent = {
-                name: ["John Doe","John Doe","John Doe"],
-                desig: ["CEO","COO","CTO"],
-                loc: ["Germany","Germany","Germany"],
-                slinks: [["#","#"],["#","#"],["#","#"]]
+                name: ["Marc Mueller","Hanush Pillai"],
+                desig: [this.props.t('common:basic.sales'),this.props.t('common:basic.technology')],
+                loc: [this.props.t('common:basic.germany'),this.props.t('common:basic.india')],
+                slinks: [["https://www.linkedin.com/in/marc-mueller-7a4987a3/","#"],["https://www.linkedin.com/in/hanushpillai/","#"]],
+                img: [[profile_pic_marc,profile_pic_marc],[profile_pic_hanush,profile_pic_hanush]]
 
             }
         
@@ -33,7 +36,7 @@ class Team extends Component
         return(
             <div class="profile-card js-profile-card">
     <div class="profile-card__img">
-      <img src={profile_pic} alt="profile card" />
+      <img src={tcontent.img[idx][0]} alt="profile card" />
     </div>
 
     <div class="profile-card__cnt js-profile-cnt">
@@ -119,4 +122,4 @@ class Team extends Component
 
 
 
-export default Team;
+export default withTranslation()(Team);

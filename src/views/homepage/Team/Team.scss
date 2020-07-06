@@ -31,15 +31,21 @@
  
 
   margin: auto;
-  box-shadow: 0px 20px 45px rgba(9, 9, 9, 0.15);
+  box-shadow: 0px 10px 45px rgba(9, 9, 9, 0.15);
   background: #fff;
   border-radius: 12px;
   padding: 22px;
   position: relative;
-  width: 265px;
+  // width: 265px;
+  width: 310px;
   margin-bottom: 70px;
+  transition: .3s;
 
-
+  &:hover
+  {
+    box-shadow: 0px 20px 45px rgba(4, 4, 4, 0.25);
+    transition: .3s;
+  }
  
   &__img {
     width: 190px;
@@ -68,7 +74,7 @@
   }
 
   &__cnt {
-    margin-top: -35px;
+    margin-top: -60px;
     text-align: center;
     padding: 20px;
   
@@ -79,7 +85,7 @@
     font-weight: 700;
     font-size: 24px;
     color: $primary_color;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   &__txt {
@@ -94,7 +100,7 @@
 
 
   &-social {
-    margin-top: 25px;
+
     display: flex;
     justify-content: center;
     align-items: center;

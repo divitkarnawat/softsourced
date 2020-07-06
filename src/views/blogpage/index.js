@@ -3,7 +3,7 @@ import {Container} from "@material-ui/core";
 import blog3s from '../../assets/img/blog1s.jpg';
 import blog2s from '../../assets/img/blog2s.jpg';
 import blog1s from '../../assets/img/blog3s.jpg';
-import author1 from '../../assets/img/sample_profile.jpg';
+import author1 from '../../assets/img/blog/author.jpg';
 import instagram_logo from "../../assets/img/blog/instagram_logo.svg";
 import facebook_logo from "../../assets/img/blog/facebook_logo.svg";
 import linkedin_logo from "../../assets/img/blog/linkedin_logo.svg";
@@ -23,7 +23,7 @@ class BlogPage extends Component
         }
         this.blog_content = {
             mm_10052020:{
-                name: "MARC MULLER",
+                name: "MARC MUELLER",
                 title: "The 10 must-haves your landing page needs to convert",
                 date: "10th May 2020",
                 social_links: [[instagram_logo,'#'],[linkedin_logo,'#'],[facebook_logo,'#'],],

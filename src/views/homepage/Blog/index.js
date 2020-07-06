@@ -7,7 +7,7 @@ import './Blog.scss';
 import blog3s from '../../../assets/img/blog1s.jpg';
 import blog2s from '../../../assets/img/blog2s.jpg';
 import blog1s from '../../../assets/img/blog3s.jpg';
-import author1 from '../../../assets/img/sample_profile.jpg';
+import author1 from '../../../assets/img/blog/author.jpg';
 
 class Blog extends Component{
     
@@ -15,7 +15,7 @@ class Blog extends Component{
     {
         const content = {
             bid: ["mm_10052020",'nm_2432020',"adube_2232020"],
-            author: [["MARC","MULLER"],["NATASHA","MASCARENHAS"],["AAKARSH","DUBE"]],
+            author: [["MARC","MUELLER"],["NATASHA","MASCARENHAS"],["AAKARSH","DUBE"]],
             pdate: ["10th May 2020","24th March 2020", "22nd March 2020"],
             titles: ["The 10 must-haves your landing page needs to convert","TECHCRUNCH","MASHABLE"],
             desc: ["Paid search, Search Engine Advertising (SEA) are great – but have you spent enough time and money on your SEO-strategy?",

@@ -46,7 +46,7 @@
     @include flexi(column, center, space-evenly);
     padding: 8px;
     padding-bottom: 2px;
-    // font-size: 14px !important;
+  
     height: 120px;    
 
     margin: auto;
@@ -214,7 +214,22 @@
         left: 0;
         }
     }
+    .pricing_s .pricing_slide .desc:first-child
+    {
+        animation: flash 1s linear alternate infinite;
+    }
 
+}
+@keyframes flash
+{
+    from{
+        color: black;
+
+    }
+    to
+    {
+        color: $primary_color;
+    }
 }
  
 

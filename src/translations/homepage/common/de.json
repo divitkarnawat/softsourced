@@ -20,7 +20,11 @@
     "basic": {
         "time": "arbeitsstunden",
         "from": "ab",
-        "submit": "ABSENDEN"
+        "submit": "ABSENDEN",
+        "germany": "Deutschland",
+        "india": "Indien",
+        "sales": "Der Umsatz",
+        "technology": "Technologie"
     },
     "links": {
         "pdt_pricing": "Zu Leistungen & Preisliste ",

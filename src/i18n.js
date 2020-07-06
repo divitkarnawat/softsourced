@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import detector from 'i18next-browser-languagedetector';
 import common_en from './translations/homepage/common/en.json';
 import common_de from './translations/homepage/common/de.json';
 import parallax_en from './translations/homepage/parallax/en.json';
@@ -45,10 +46,12 @@ const resources = {
 };
 
 i18n
+  .use(detector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "en",
+    // lng: "de",
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false // react already safes from xss
     }
