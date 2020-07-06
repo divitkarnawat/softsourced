@@ -88,7 +88,7 @@ class Projects extends Component{
                         this.state.projects_id.map((project_id, idx)=>{
                             return(
                                 <Fade clear  spy = {0} appear = {true} >
-                                <a  href = {`/projects/${this.props.t(`projects.title.${project_id}`).replace(/ +/g, "")}`}>
+                                <a  href = {`/projects/${this.props.t(`projects.title.${project_id}`).replace(/ +/g, "")}`} target="_blank">
                                 <div className="project">
                                 <div className = "img_wrapper">
                                     <img src={imgURLs[project_id]} />

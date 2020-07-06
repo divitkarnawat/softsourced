@@ -14,14 +14,14 @@ class Blog extends Component{
     render()
     {
         const content = {
-            bid: ['nm_2432020',"adube_2232020","lmatsakis_1032020"],
-            author: [["NATASHA","MASCARENHAS"],["AAKARSH","DUBE"],["LOUISE","MATSAKIS"]],
-            pdate: ["24th March 2020","22nd March 2020", "10th March 2020"],
-        titles: ["TECHCRUNCH","MASHABLE","WIRED"],
-            desc: ["The COVID-19 pandemic has already triggered a number of layoffs across industries, from travel companies to scooter startups...",
+            bid: ["mm_10052020",'nm_2432020',"adube_2232020"],
+            author: [["MARC","MULLER"],["NATASHA","MASCARENHAS"],["AAKARSH","DUBE"]],
+            pdate: ["10th May 2020","24th March 2020", "22nd March 2020"],
+            titles: ["The 10 must-haves your landing page needs to convert","TECHCRUNCH","MASHABLE"],
+            desc: ["Paid search, Search Engine Advertising (SEA) are great – but have you spent enough time and money on your SEO-strategy?",
+                "The COVID-19 pandemic has already triggered a number of layoffs across industries, from travel companies to scooter startups...",
                     "Microsoft has issued a security guidance advisory that there are vulnerabilities in its Windows products. The security flaws are...",
-                    "The term minimalism is also used to describe a trend in design and architecture where in the subject is reduced to its necessary elements..."
-                ],
+                     ],
             imgURL_art: [[blog1s],[blog2s],[blog3s]],
             imgURL_aut: [author1,author1,author1]
         }    
@@ -31,7 +31,7 @@ class Blog extends Component{
             let name = content.author[idx][0] + '-' + content.author[idx][1]; 
             return(
                 <>
-                <Link to={{pathname:`/blog/${name}/${content.bid[idx]}/`}}>
+                <a href={`/blog/${name}/${content.bid[idx]}/`}>
                 <div className="blog_article">
                     <div className = "img_wrapper">
                         <img src={content.imgURL_art[idx][0]} />
@@ -60,7 +60,7 @@ class Blog extends Component{
                         
                     </div>
                 </div>
-                </Link>
+                </a>
                 </>
             )
         })

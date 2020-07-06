@@ -13,7 +13,7 @@
 }
 .blog_articles
 {
-    @include flexi(row);
+    @include flexi(row, flex-start);
     flex-wrap: wrap;
 }
 
@@ -25,6 +25,7 @@
     .title
     {
         text-align: left;
+        height: 38px;
     }
     img
     {
