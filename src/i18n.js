@@ -20,6 +20,9 @@ import blog_de from './translations/homepage/blog/de.json';
 import contactus_en from './translations/homepage/contactus/en.json';
 import contactus_de from './translations/homepage/contactus/de.json';
 
+import projectpage_en from './translations/projectpage/en.json';
+import projectpage_de from './translations/projectpage/de.json';
+
 const resources = {
   en: {
     common: common_en,
@@ -30,7 +33,8 @@ const resources = {
     whyus: whyus_en,
     pricing: pricing_en,
     blog: blog_en,
-    contactus: contactus_en
+    contactus: contactus_en,
+    projectpage: projectpage_en
   },
   de: {
     common: common_de,
@@ -41,7 +45,8 @@ const resources = {
     whyus: whyus_de,
     pricing: pricing_de,
     blog: blog_de,
-    contactus: contactus_de
+    contactus: contactus_de,
+    projectpage: projectpage_de
   }
 };
 

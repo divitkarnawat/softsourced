@@ -81,8 +81,8 @@ class Footer extends Component
               
                 <Grid container className="ext_footer" >
                     <Grid item sm={3} xs = {12}><div style={{ margin: `auto`,textAlign: `left`}}>Germany</div></Grid>
-                    <Grid item sm={6} xs = {12}></Grid>
-                    <Grid item sm={3} xs = {12}>
+                    <Grid item md={6} sm={4} xs = {12}></Grid>
+                    <Grid item md={3} sm={5} xs = {12}>
                         <div className = "documents" >
                         <a href="https://www.linkedin.com/company/softsourced/jobs/" target='_blank'>{this.props.t('common:footer.careers')}</a>
                         <a href={`#${this.props.t('common:nav.5')}`} >{this.props.t('common:footer.contact')}</a>
@@ -93,8 +93,8 @@ class Footer extends Component
                 <Grid container className="fdivider"></Grid>
                 <Grid container className="ext_footer" style={{marginTop: `10px`}}>
                     <Grid item sm={3} xs = {12}>© COPYRIGHT SOFTSOURCED</Grid>
-                    <Grid item sm={6} xs = {12}></Grid>
-                    <Grid item sm={3} xs = {12}>
+                    <Grid item md={6} sm={2} xs = {12}></Grid>
+                    <Grid item md={3} sm={7} xs={12}>
                         <div className = "documents" >
                         <a href="/terms-and-conditions/" target='_blank'>{this.props.t('common:footer.tnc')}</a>
                         <a href="/privacy-policy" target='_blank'>{this.props.t('common:footer.pp')}</a>

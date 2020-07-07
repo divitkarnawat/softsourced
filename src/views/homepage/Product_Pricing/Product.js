@@ -39,7 +39,7 @@ class Product extends Component{
                     </div>
                     <Grid container  direction="row-reverse">
                         <Grid item  md={4} xs={12} style={{textAlign: 'center'}}>
-                            <a href="/#PRODUCT & PRICING">{this.props.t('common:links.pdt_pricing')} &raquo;</a>
+                            <a href={`#${this.props.t('common:nav.1')}`}>{this.props.t('common:links.pdt_pricing')} &raquo;</a>
                         </Grid>
                     
                 </Grid>

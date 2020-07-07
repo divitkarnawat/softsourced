@@ -63,6 +63,8 @@ class BlogPage extends Component
 
     render()
     {
+
+        
         let id = this.props.match.params.blogid;
         return(
             <div className = "section blogpage_s" id="blogpage">
@@ -74,7 +76,7 @@ class BlogPage extends Component
             <div className = "author">
                 <div className = "details">
                     <div className = "img_wrapper">
-                                    <img src = {`http://ec2-35-158-221-15.eu-central-1.compute.amazonaws.com/${this.blog_content[id].imgURL_aut}`} alt={this.blog_content[id].name}/>
+                                    <img src = {author1} alt={this.blog_content[id].name}/>
                                 </div>
                                 <div className = "nd">
                                     <div className = "name desc">

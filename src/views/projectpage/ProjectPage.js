@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withTranslation} from 'react-i18next';
 import {Container, Grid, Tooltip} from '@material-ui/core';
 import './ProjectPage.scss'
 
@@ -63,22 +64,7 @@ class ProjectPage extends Component
                 "Permatech",
                 "Wildride"
                     ],
-            challenges: [
-                "Disjoint systems and manual processes are how companies start but not how they scale. The lack of tech infrastructure coupled with no in-house expertise compounded operational failures. Lunch delivery targeting companies using a ghost kitchen to produce the food cuts down on complexity but needs end to end automation to challenge competitors like Lieferando. With no standard answer to their problem available, Bella & Bona was looking for a customised solution.",
-                "To create a mobile application able to showcase an entire supermarket in the palm of your hand. Studies show that online grocery customers hold extremely high expectations towards the convenience of their purchasing experience. This can only be met with a thought through layout & design to create the most seamless user experience.",
-                "The team wanted a dynamic website to show their skills to customers. Although they created their own designs, they did not have the technical capability to execute on it.",
-                "The Sansiel team was looking for an inspirational business website to showcase their revolutionary product, a surface sanitising spray. With the product already developed and approved, the accordance between offline and online had yet to be found.",
-                "The Permatech Team was looking to create a design that represents the team and their development capability. Although regular Content Management Systems like Wordpress, Drupal and Joomla can do the job in terms of design they lack optimisations and use dated technologies like PHP and unreliable plugins.",
-                "To create a brilliantly clever application for users to express a preference towards the kind of place to go out to have a drink or eat, while keeping the place they end up a secret. It is all about creating a jolly surprise that is most certain to convene and please: Uber & Google Maps, both integrated into the app, allow for a safe journey to the unknown venue."
-            ],
-            solutions: [
-                "Softsourced assembled a full stack team within 2 weeks and developed the beta within 7 weeks: In a headless redesign we implemented an API-based order management system to achieve smart automation in the processes from order submission to delivery  that communicates with a self-learning stock management software. Softsourced continues to assist the team with expansion and maintenance.",
-                "After receiving the request for help, a full stack team was put together in the matter of days to dedicate their brain power. Our team of designers & developers assisted in this project as a partner - we filled the role as project surrogate. We came up with a series of prototypes that went into testing phase. The most optimal version was refined to perfection. Three months after project initiation we ended up with a final product. By now, ondoor has been downloaded more than a million times and successfully delivered more than ten million orders for groceries.",
-                "Our team of designers reviewed and neatened up their already outstanding design. Our team of developers had the website implemented in the span of two weeks.",
-                "Even though WordPress is widely acknowledged for the development of professional business websites, Sansiel deserved something much more optimised in terms of page speed and security. So we built on React JS. On top of that, Sansiel’s communication to us was excellent, which is how we were able to create quality content fitted into a clear-cut layout. The Softsourced team was able to deliver the project in a span of three weeks.",
-                "With our team of designers and developers we were able to design and develop the essence of the company within a matter of weeks all while prototyping the design with Invision and implementing a modern CMS. This provides future-proofing, easy edits while at the same time offering the blazing speed and SEO that Softsourced is well known for.",
-                "A pragmatic & witty approach found an eye-catching design, where a lot of effort went into doing justice to the element of surprise. Our team was able to deliver in under two months. Ondoor’s app has helped users explore the beautiful world outside. All that in a few taps."
-            ],
+            
             techstack: [
                 ["Node.js","React.js & React Native","MySQL","AWS"],
                 ["Swift","Android Studio - Java"],
@@ -186,21 +172,21 @@ class ProjectPage extends Component
                 <Grid container>
                     <Grid item md={8} xs={12} className = "proj_main">
                         <div className = "challenges">
-                            <h3> CHALLENGE</h3>
-                            <div> {this.content.challenges[this.state.proj_id]}</div>
+                            <h3> {this.props.t('basic.challenge')}</h3>
+                            <div> {this.props.t(`challenges.${this.state.proj_id}`)}</div>
                         </div>
                         <div className = "solutions">
-                            <h3> SOLUTION </h3>
-                            <div>{this.content.solutions[this.state.proj_id]}</div>
+                            <h3> {this.props.t('basic.solution')} </h3>
+                            <div>{this.props.t(`solutions.${this.state.proj_id}`)}</div>
                         </div>
                     </Grid>
                     <Grid item md={4} xs={12} className = "proj_side">
                         <div>
-                           <h4> INDUSTRY</h4>
+                           <h4> {this.props.t('basic.industry')}</h4>
                            <div>{this.content.industry[this.state.proj_id]}</div>
                         </div>
                         <div className = "platform">
-                           <h4> PLATFORM</h4>
+                           <h4> {this.props.t('basic.platform')}</h4>
                            <div>
                             {
                                 this.content.platforms[this.state.proj_id].map(item => {
@@ -212,7 +198,7 @@ class ProjectPage extends Component
                             </div>
                         </div>
                         <div>
-                            <h4>TECH USED</h4>
+                            <h4>{this.props.t('basic.tech')}</h4>
                             <div>
                                 {
                                     this.content.techstack[this.state.proj_id].map(item=>{
@@ -222,7 +208,7 @@ class ProjectPage extends Component
                             </div>
                         </div>
                         <div className = "stats">
-                        <h4>    STATS</h4>
+                        <h4>    {this.props.t('basic.stats')}</h4>
                         <div>
                             {
                                 this.content.timeline[this.state.proj_id].map((item,idx) =>
@@ -238,7 +224,7 @@ class ProjectPage extends Component
                         </div>
                         </div>
                         <div className = "capabilities">
-                            <h4>CAPABILITIES USED</h4>
+                            <h4>{this.props.t('basic.capa')}</h4>
                             <div>
                             {
                                 this.content.capabilities[this.state.proj_id].map((item,idx) =>
@@ -262,4 +248,4 @@ class ProjectPage extends Component
 
 }
 
-export default ProjectPage;
+export default withTranslation('projectpage')(ProjectPage);
