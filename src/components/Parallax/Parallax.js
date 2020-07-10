@@ -11,6 +11,12 @@ import home_bg1xw from '../../assets/img/home_bg_img/1x/home_bg.webp';
 import home_bg2xw from '../../assets/img/home_bg_img/2x/home_bg.webp';
 import home_bg3xw from '../../assets/img/home_bg_img/3x/home_bg.webp';
 
+import home_bgmw from '../../assets/img/home_bg_img/mobile/home_bg.webp';
+import home_bgmj from '../../assets/img/home_bg_img/mobile/home_bg.jpg';
+
+
+
+
 class Parallax extends Component{
     constructor(props)
     {
@@ -63,12 +69,12 @@ class Parallax extends Component{
         <div className = "parallax_img_wrapper">
         <picture>
 	<source
-		media="(max-width: 420px)"
-		srcset= {`${home_bg1xw} 1x,${home_bg2xw} 2x,${home_bg3xw} 3x`}
+		media="(max-width: 500px)"
+		srcset= {home_bgmw}
 		type="image/webp" />
 	<source
-		media="(max-width: 420px)"
-		srcset={`${home_bg1xj} 1x,${home_bg2xj} 2x,${home_bg3xj} 3x`} />
+		media="(max-width: 500px)"
+		srcset={home_bgmj} />
 	<source
 		srcset= {`${home_bg1xw} 1x,${home_bg2xw} 2x,${home_bg3xw} 3x`}
 		type="image/webp" />

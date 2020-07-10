@@ -337,6 +337,16 @@ class Contact extends Component
          this.recaptchaRef = refer;
       }
    
+
+      onLoadRecaptcha() {
+        if (this.recaptchaRef) {
+            this.recaptchaRef.reset();
+        }
+    }
+    verifyCallback(recaptchaToken) {
+      // Here you will get the final recaptchaToken!!!  
+      console.log(recaptchaToken, "<= your recaptcha token")
+    }
     render()
     {
         
@@ -452,7 +462,7 @@ class Contact extends Component
                     </div>
                 </div>
                 <div className = "recapatcha-wrapper">
-                    <ReCaptchaValidation handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/>
+                    <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/>
                 {/* <ReCAPTCHAWrapper
     
     ref={this.recaptchaRef}

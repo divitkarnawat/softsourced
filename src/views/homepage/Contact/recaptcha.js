@@ -52,6 +52,7 @@ export default class ReCaptchaValidation extends React.Component {
       }
       
     }
+   
   
     render () {
       const { apiKey, className, handleChange, lang } = this.props
@@ -61,6 +62,8 @@ export default class ReCaptchaValidation extends React.Component {
    <>
           {Recaptcha && (
             <Recaptcha
+            onloadCallback={this.props.onLoadRecaptcha}
+            verifyCallback={this.props.verifyCallback}
                 key = {this.state.key}
               sitekey={apiKey}   
               hl = {this.props.lang}  
