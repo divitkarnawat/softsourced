@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {Container} from '@material-ui/core';
-import { Trans, withTranslation } from 'react-i18next';
-import i18n from "i18next";
+import { withTranslation } from 'react-i18next';
+
 
 import marc_casual from '../../../assets/img/team/profile_marc_casual.png';
 import hanush_casual from '../../../assets/img/team/profile_hanush_casual.png';
+import marc_casualw from '../../../assets/img/team/profile_marc_casual.webp';
+import hanush_casualw from '../../../assets/img/team/profile_hanush_casual.webp';
 import partner1 from '../../../assets/img/about/partner1.svg';
 import partner2 from '../../../assets/img/about/partner2.jpg';
 import partner3 from '../../../assets/img/about/partner3.jpg';
@@ -61,12 +63,26 @@ class About extends Component
                      </div>
              
                         <div className = "descNimg">
-                            
+                       
+
+
                             <div className = "img_wrapper" name-member="Marc Mueller">
-                                <img src = {marc_casual} alt="marc" />
+                            <picture>
+                            <source
+                                srcset={marc_casualw}
+                                type="image/webp" />
+                            <img
+                                src={marc_casual} alt="team member" />
+                        </picture>
                             </div>
                             <div className = "img_wrapper" name-member="Hanush Pillai">
-                                <img src = {hanush_casual} alt="Hanush" />
+                            <picture>
+                            <source
+                                srcset={hanush_casualw}
+                                type="image/webp" />
+                            <img
+                                src={hanush_casual} alt="team member" />
+                        </picture>
                             </div>
                         </div>
                             
