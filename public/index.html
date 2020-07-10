@@ -12,8 +12,15 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" media="print" onload="this.media='all'; this.onload=null;">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" media="print" onload="this.media='all'; this.onload=null;">
-    <script src="https://www.google.com/recaptcha/api.js?onload=onLoadRecaptcha&render=explicit"
-    async defer>
+    <script type="text/javascript">
+      let onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO'
+        });
+      };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+         defer>
 </script>
 <!--     
     <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
