@@ -3,6 +3,13 @@ import {Container} from '@material-ui/core';
 import { withTranslation } from 'react-i18next';
 import './Parallax.scss';
 
+import home_bg1xj from '../../assets/img/home_bg_img/1x/home_bg.jpg';
+import home_bg2xj from '../../assets/img/home_bg_img/2x/home_bg.jpg';
+import home_bg3xj from '../../assets/img/home_bg_img/3x/home_bg.jpg';
+
+import home_bg1xw from '../../assets/img/home_bg_img/1x/home_bg.webp';
+import home_bg2xw from '../../assets/img/home_bg_img/2x/home_bg.webp';
+import home_bg3xw from '../../assets/img/home_bg_img/3x/home_bg.webp';
 
 class Parallax extends Component{
     constructor(props)
@@ -53,13 +60,41 @@ class Parallax extends Component{
        
     return(
     <div className = "parallax">
+        <div className = "parallax_img_wrapper">
+        <picture>
+	<source
+		media="(max-width: 420px)"
+		srcset= {`${home_bg1xw} 1x,${home_bg2xw} 2x,${home_bg3xw} 3x`}
+		type="image/webp" />
+	<source
+		media="(max-width: 420px)"
+		srcset={`${home_bg1xj} 1x,${home_bg2xj} 2x,${home_bg3xj} 3x`} />
+	<source
+		srcset= {`${home_bg1xw} 1x,${home_bg2xw} 2x,${home_bg3xw} 3x`}
+		type="image/webp" />
+	<img
+		src={home_bg1xj} alt="softsourced bg image"
+		srcset={`${home_bg2xj} 2x,
+				${home_bg3xj} 3x`} />
+</picture>
+        </div>
     
-        <Container>
-            <h1 className = "title">
-            
-            {this.props.t('title')}
+        <Container className = "content_wrapper">
+            <div className = "title">
+        
+            <div className = "anim-typewriter title_1">
+                {/* <div className="title_1">             */}
+            {this.props.t('title.0')}
+            {/* </div> */}
+            </div>
+            <div className = "title_2">            
+            {this.props.t('title.1')}
+            </div>
+            <div className = "title_3">            
+            {this.props.t('title.2')}
+            </div>
          
-            </h1>
+            </div>
             {/* <p class="line-1 anim-typewriter">Animation typewriter style using css steps() </p> */}
 
             <div className="home_btm">

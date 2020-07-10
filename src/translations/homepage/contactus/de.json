@@ -1,6 +1,6 @@
 {
     "title": "",
-    "contact_cat": ["PROJEKTANFRAGE","TRETE UNSEREM TEAM BEI","ANDERE FRAGEN"],
+    "contact_cat": ["PROJEKTANFRAGE","TRITT UNSEREM TEAM BEI","SONSTIGE FRAGEN"],
     "budget": {
         "title": "Welches Budget steht Ihnen zur Verfügung?",
         "options": ["2 - 3k","3 - 10k","10 - 50k","> 50k"],
@@ -15,7 +15,7 @@
     },
     "time": {
         "title": "Wann wollen Sie Ihr Projekt mit uns starten?",
-        "options":["jetzt","innerhalb der nächsten 7 Tage","innerhalb der nächsten 14 Tage","innerhalb der nächsten paar Monate"],
+        "options":["Jetzt","Innerhalb der nächsten 7 Tage","Innerhalb der nächsten 14 Tage","Innerhalb der nächsten paar Monate"],
         "placeholder": "Wollen wir mit dem Projekt loslegen."
     },
     "display_box":[
@@ -26,9 +26,9 @@
     ],
     "placeholders":
     {
-        "fname": "Vorname",
-        "lname": "Nachname",
-        "email": "E-Mail-Adresse",
+        "fname": "Vorname*",
+        "lname": "Nachname*",
+        "email": "E-Mail-Adresse*",
         "pno": "Rufnummer",
         "linkedin": "LinkedIn",
         "resume": "Fortsetzen",

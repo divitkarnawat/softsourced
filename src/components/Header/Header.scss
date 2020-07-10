@@ -11,7 +11,7 @@
     background: white;
     transition: .2s;
     z-index: 15;
-    @include flexi(row, center, space-evenly);
+    @include flexi(row, center, space-between);
 
     .custom_btn
     {
@@ -46,8 +46,13 @@
       padding: 0;
       display: block;
       letter-spacing: 0;
-      width: 100px;
-      height: 93.33px;
+      
+    }
+    img
+    {
+      max-height: 80px;
+      max-width: 261px;
+      object-fit: contain !important;
     }
 }
 img{
@@ -81,6 +86,8 @@ img{
     min-height: 100vh;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     background-color: #17f9f2;
     background-image: linear-gradient(45deg, #17f9f2 0%, white 70%);;
   /*  background: #4776E6;  
@@ -219,7 +226,7 @@ background: linear-gradient(to right, #8E54E9, #4776E6);  */
       .brandLogo
       {
           padding: 0;
-          width: 65%;
+        
       }
       .desktopView  
       {
@@ -276,7 +283,7 @@ background: linear-gradient(to right, #8E54E9, #4776E6);  */
        z-index: 10;
        width: 46.4px;
        height: 28.8px;
-       transition: opacity .3s ease 100ms;
+       transition: opacity .2s ease 100ms;
        
        &:after {
          position: absolute;
@@ -303,7 +310,7 @@ background: linear-gradient(to right, #8E54E9, #4776E6);  */
       &:after {
         content: "EN";
         left: 12.8px;
-      }
+      } 
     }
       
     &:last-of-type { 

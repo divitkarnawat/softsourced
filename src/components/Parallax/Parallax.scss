@@ -3,7 +3,7 @@
 
 .parallax {
     /* The image used */
-    background: url("../../assets/img/home_bg_img/home_bg1x.jpg");
+    // background: url("../../assets/img/home_bg_img/home_bg1x.jpg");
   
     /* Set a specific height */
     min-height: 100vh; 
@@ -11,68 +11,102 @@
 
   
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: 22%;
-    background-repeat: no-repeat;
-    background-size: cover;
+//     background-attachment: fixed;
+//     background-position: 40%;
+//     background-repeat: no-repeat;
+//     background-size: cover;
 
--webkit-background-position: center;
--webkit-background-repeat: no-repeat;
--webkit-background-size: cover;
+// -webkit-background-position: center;
+// -webkit-background-repeat: no-repeat;
+// -webkit-background-size: cover;
 
--moz-background-position: center;
--moz-background-repeat: no-repeat;
--moz-background-size: cover;
+// -moz-background-position: center;
+// -moz-background-repeat: no-repeat;
+// -moz-background-size: cover;
 
   }
   
  
 
+
   
-  .parallax .title
+  .parallax 
+  
+  {
+    .content_wrapper
+    {
+      background-color: rgba(0, 0, 0, 0.3);
+      min-width: 100%;
+      overflow: hidden;
+      max-height: 100vh;
+    }
+    
+  .title
   {
     display: flex;
-    
+    flex-direction: column;
     justify-content: center;
     height: 100vh;
     align-items: center;
     font-weight: 900;
     font-size: 3rem;
-    text-shadow: 2px 1px 20px black;
+    text-shadow: 2px 1px 20px black, -1px 4px 13px white;
     color: white;
-  }
-   
-    .line-1{
-      color: white;
-      font-weight: 900;
-    font-size: 3rem;
-    text-shadow: 2px 1px 20px black;
-      position: relative;
-      top: 50%;  
-      
-      margin: 0 auto;
-      border-right: 2px solid rgba(255,255,255,.75);
     
-      text-align: center;
- 
-      overflow: hidden;
-      transform: translateY(-50%);    
   }
+  .title_1
+  {
+    font-size: .5em;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-right: 2px solid transparent;
+ 
+  }
+
+
+}
+
+
+@keyframes fadein
+{
+  from{
+    opacity: 0;
+  }
+  to
+  {
+    opacity: 1;
+  }
+}
+   
   
   /* Animation */
-  .anim-typewriter{
-    animation: typewriter 4s steps(44) 1s 1 normal both,
-               blinkTextCursor 500ms steps(44) infinite normal;
-  }
+ 
   @keyframes typewriter{
     from{width: 0;}
     to{width: 100%;}
   }
   @keyframes blinkTextCursor{
-    from{border-right-color: rgba(255,255,255,.75);}
+    from{border-right-color: white;}
     to{border-right-color: transparent;}
   }
  
+  .parallax_img_wrapper
+  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+    bottom: 0;
+    left: 0;
+    img
+    {
+      object-fit: cover !important;
+    }
+  }
+
+
+
   .home_btm
   {
     position: absolute;
@@ -120,9 +154,42 @@
   .parallax
   {
     background-attachment: scroll;
+    .title_1{
+      font-size: .37em;
+      margin-bottom: 60px;
+    }
+    .title_2, .title_3
+    {
+      font-size: 2.3rem; 
+    }
   }
   .home_btm_r
   {
     display: none;
+  }
+  
+}
+
+@media screen and (min-width: 670px)
+{
+  .title_1{
+    white-space: nowrap;
+  }
+  .title_2
+  {
+    opacity: 0 ;
+    animation: fadein .5s ease-in-out forwards;
+    animation-delay: 3.5s;
+  }
+  .title_3
+  {
+    opacity: 0 ;
+    animation: fadein .7s ease-in-out forwards;
+    animation-delay: 4s;
+  }
+  .anim-typewriter{
+    position: relative;
+    animation: typewriter 5s steps(50) .4s 1 normal both,
+               blinkTextCursor 1s steps(44) 3 normal;
   }
 }

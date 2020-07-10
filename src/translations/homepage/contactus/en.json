@@ -10,8 +10,8 @@
         "title":"Which categories apply to your project?",
         "placeholder": "We wish to work on the following projects: "
     },
-    "sup_cat": {
-        "title": "Which type(s) of product support do you need?"
+    "sub_cat": {
+        "title": "Which product type(s) are you interested in?"
     },
     "time": {
         "title": "When do you want to kick off your project with us?",

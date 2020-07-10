@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import {withTranslation, Trans} from 'react-i18next';
+import ReCaptchaValidation from './recaptcha';
 import Slider from 'react-slick';
 
 import {Container} from '@material-ui/core';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import Contact1 from './Contact1';
 
 import './Contact.scss';
+const axios = require('axios');
 class Contact extends Component
 {
     constructor(props)
@@ -20,6 +24,7 @@ class Contact extends Component
                 email: 0,
                 support: 0
             },
+            submit: "",
             fname: '',
             lname: '',
             email: '',
@@ -42,7 +47,8 @@ class Contact extends Component
            
         };
 
-        
+        // this.recaptchaRef = React.createRef();
+        this.submitstatus = React.createRef();
 
 
     }
@@ -59,7 +65,7 @@ class Contact extends Component
     static getDerivedStateFromProps = (props,state) =>
     {
         let updateState = {}
-        console.log(props.propid);
+     
         if(props.propid.email != state.prevpropid.email) 
         {
     
@@ -128,57 +134,147 @@ class Contact extends Component
        return updateState;
     }
 
-    handleInvalid = (e)=>{
+
+
+     handleInvalid = (e)=>{
     
-        // if(document.documentElement.clientWidth > 500)
-        // e.target.setCustomValidity('Bitte füllen Sie dieses Feld aus');
-        // else{
-        //   e.target.setCustomValidity(' ');
+        if(document.documentElement.clientWidth > 500)
+  
+ 
+        e.target.setCustomValidity(this.props.t('common:basic.invalidField'));
+     
+        else{
+          e.target.setCustomValidity(' ');
           
-        // }
-        
+        }
+        e.target.classList.add('invalid');
+  
       }
       handleChange = (e)=>{
         
         let name = e.target.name;
         let value = e.target.value;
 
+      
       if(name == 'email' && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)))
       {
 
             this.errors.add(name);
       }
-     else if(name == 'pnumber' && !(/^([0-9]|\+)[0-9]*$/.test(value)))
+     else if(name == 'pnumber' && value!="" && !(/^([0-9]|\+)[0-9]*$/.test(value)))
       {
         this.errors.add(name);
       }
      
       else
       { 
+          if(value!="")
+          {
+            e.target.setCustomValidity('');
+            e.target.classList.remove('invalid');
+          }
+          
           this.errors.delete(name);
       }
       if(name == 'resume') 
       {
         value = value.replace("C:\\fakepath\\", "");
       }
-      this.submitbtn.current.disabled = this.errors.size ? true : false
+    
+    
         this.setState({
             [name]: [value],
         });
 
         
       }
+      handleOnCaptchaChange = () =>
+      {
+        this.recaptchaRef.captcha.classList.remove('invalid');
+      }
 
-    //   resetform = () =>
-    //   {
-    //       this.setState({
-            
-    //       })
-    //   }
+      resetform = () =>
+      {
+          this.setState({
+            fname: "",
+            lname: "",
+            email: "",
+            pnumber: "",
+            message: "",
+            llink: "",
+            resume: "",
+          });
+         
+      }
+
     handleSubmit = (e) =>
     {
         e.preventDefault();
+        if(this.recaptchaRef.getValue())
+ 
+        {
+        this.submitbtn.current.classList.add('disabled');    
+        this.submitbtn.current.value = this.props.t('common:basic.sending');
+        let axiosConfig = {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+                "Access-Control-Allow-Origin": "*"
+            }
+          };
+          const {cur_contact, fname, lname, email, pnumber, message} =  this.state;
 
+          const {time, budget} = this.state.proj_details;
+          
+          const formData = new FormData();
+          formData.set('cur_contact', cur_contact);
+          formData.set('first_name', fname);
+          formData.set('last_name', lname);
+          formData.set('email', email);
+          formData.set('message', message);
+          formData.set('pnumber', pnumber);
+          formData.set('g-recaptcha-response',this.recaptchaRef.getValue());
+          if(cur_contact == 1)
+          {
+              formData.set('linkedin', this.state.llink);
+              formData.set('resume', this.state.resume);
+          }
+          
+          if(cur_contact == 0)
+          {
+              let main_cat_list = "";
+              formData.set('time', time);
+              formData.set('budget', budget);
+              (Array.from(this.state.proj_details.support)).map((item)=>{
+                    let sub_cat_list = "";                
+                Array.from(item[1]).map(desc=>{
+                    sub_cat_list += desc;
+                }) 
+            
+                formData.set(('sub_cat_'+item[0]),sub_cat_list);
+                main_cat_list+=item[0];
+            })
+            formData.set('main_cat',main_cat_list);
+        
+          }
+          
+          axios.post('https://softsourced.de/testing_mail.php', formData, axiosConfig)
+          .then(()=> {
+
+            this.submitbtn.current.value = this.props.t('common:basic.sent');
+            this.submitbtn.current.classList.remove('disabled');  
+            this.setState({submit: "success"});
+            setTimeout(()=>{this.resetform();}, 3000);
+          })
+          .catch((error)=> {
+            this.setState({submit: "error"});
+            this.submitbtn.current.value = this.props.t('common:basic.invalid_details');
+          });
+        }
+        else
+        {
+            this.recaptchaRef.captcha.classList.add('invalid');
+        }
+        setTimeout(()=>{this.submitbtn.current.value = this.props.t('common:basic.submit'); }, 3000);
     }
     
 
@@ -227,7 +323,19 @@ class Contact extends Component
             );
         })
     }
+
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        this.setState({submit: ""});
+      };
        
+    makemeRef =(refer)=>{
+         this.recaptchaRef = refer;
+      }
    
     render()
     {
@@ -254,6 +362,7 @@ class Contact extends Component
               }
           ]
               };
+
         return(
             <div className = "section contact_s">
                 <h2 className = "title">
@@ -284,7 +393,7 @@ class Contact extends Component
                         {
                             this.state.cur_contact == 0 ? 
                         (<div className = "display_box">
-                            <p> {this.props.t('time.placeholder')} <b>{this.props.t(`time.options.${this.state.proj_details.time}`)}</b></p>
+                            <p> {this.props.i18n.language != "de" ? this.props.t('time.placeholder') : ""} <b>{this.props.t(`time.options.${this.state.proj_details.time}`)} </b>{this.props.i18n.language == "de" ? this.props.t('time.placeholder') : ""}</p>
                             {
                                 this.state.proj_details.support.size > 0 ? (
                                 <>
@@ -338,12 +447,29 @@ class Contact extends Component
                                     </>
                                      : ''
                                 }  
-                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc"><Trans i18nKey="common:links.contact">I agree with <a href="/terms-and-conditions/" target='_blank'>Terms & Conditions</a> and <a target='_blank' href="/privacy-policy/"> Privacy Policy.*</a></Trans> </label>
+                                <input type="checkbox" required value = "tnc" name = "tnc" id="tnc" style={{marginTop: `30px`}} onInvalid = {this.handleInvalid} onChange = {this.handleChange} /><label style={{fontSize: `14px`, cursor: `pointer`}} for="tnc"><Trans i18nKey="common:links.contact">I agree with <a href="/terms-and-conditions/" target='_blank'>Terms & Conditions</a> and <a target='_blank' href="/privacy-policy/"> Privacy Policy.*</a></Trans> </label>
                         </div>
                     </div>
                 </div>
-
-                            <input type="submit" value = {this.props.t('common:basic.submit')} className = "custom_btn submit" ref={this.submitbtn} />
+                <div className = "recapatcha-wrapper">
+                    <ReCaptchaValidation handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/>
+                {/* <ReCAPTCHAWrapper
+    
+    ref={this.recaptchaRef}
+    onChange ={this.handleOnCaptchaChange}
+    style={{margin: `10px auto`}}
+    sitekey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO"
+    
+  /> */}
+                            <input type="submit" value = {this.props.t('common:basic.submit')} className = {`custom_btn submit  ${this.errors.size ? `disabled` : ''}`} ref={this.submitbtn} />
+                            <Snackbar open={this.state.submit == "" ? false : true} onClose={this.handleClose}>
+        <MuiAlert onClose={this.handleClose} severity={this.state.submit}>
+           {
+               this.state.submit == "success" ? this.props.t('common:basic.submit_status') : this.props.t('common:basic.error_status') 
+           }
+        </MuiAlert>
+      </Snackbar>
+                            </div>
                             {this.state.cur_contact == 0 ? <p className="desc">{this.props.t('extra')}</p> : ''}
                         </form>
                 </Container>

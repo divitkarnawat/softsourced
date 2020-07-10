@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import {withTranslation} from 'react-i18next';
 import {Container} from '@material-ui/core';
 import './Team.scss';
-import profile_pic_marc from '../../../assets/img/team/profile_marc_formal.png';
-import profile_pic_hanush from '../../../assets/img/team/profile_hanush_formal.png';
+import profile_pic_marc from '../../../assets/img/team/profile_marc_formal.jpg';
+import profile_pic_hanush from '../../../assets/img/team/profile_hanush_formal.jpg';
+import profile_pic_marc_w from '../../../assets/img/team/profile_marc_formal.webp';
+import profile_pic_hanush_w from '../../../assets/img/team/profile_hanush_formal.webp';
 class Team extends Component
 {
 
@@ -17,7 +19,7 @@ class Team extends Component
                 desig: [this.props.t('common:basic.sales'),this.props.t('common:basic.technology')],
                 loc: [this.props.t('common:basic.germany'),this.props.t('common:basic.india')],
                 slinks: [["https://www.linkedin.com/in/marc-mueller-7a4987a3/","#"],["https://www.linkedin.com/in/hanushpillai/","#"]],
-                img: [[profile_pic_marc,profile_pic_marc],[profile_pic_hanush,profile_pic_hanush]]
+                img: [[profile_pic_marc,profile_pic_marc_w],[profile_pic_hanush,profile_pic_hanush_w]]
 
             }
         
@@ -36,7 +38,14 @@ class Team extends Component
         return(
             <div class="profile-card js-profile-card">
     <div class="profile-card__img">
-      <img src={tcontent.img[idx][0]} alt="profile card" />
+    <picture>
+	<source
+		srcset={tcontent.img[idx][1]}
+		type="image/webp" />
+	<img
+		src={tcontent.img[idx][0]} alt="team member" />
+</picture>
+     
     </div>
 
     <div class="profile-card__cnt js-profile-cnt">

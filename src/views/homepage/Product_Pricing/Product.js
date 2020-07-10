@@ -4,22 +4,26 @@ import {Grid, Container, Box} from '@material-ui/core';
 
 import './Product.scss'
 import prodSym from '../../../assets/img/prod_sym.svg';
+import icon1 from '../../../assets/img/icon1.svg';
+import icon2 from '../../../assets/img/icon2.svg';
+
 class Product extends Component{
 
     constructor(props)
     {
         super(props);
+        
     }
     render()
     {
 
-    
+    const list_icons = [icon1,icon2];
     return(
         <>
         <div className="section prod_s">
             
             <h2 className="title">
-            These are our products:
+            {this.props.t('title')}
             </h2>
 
             <div>
@@ -53,19 +57,25 @@ class Product extends Component{
                         <Grid item md={6}>
                         <div className="part">
                             <h3 className=""> {this.props.t('part_right.title')} </h3>
-                            <ol>
+                            <div className = "list">
                                 {
-                                    this.props.t('part_right.desc', {returnObjects: true}).map(({title,desc})=>{
+                                    this.props.t('part_right.desc', {returnObjects: true}).map(({title,desc},idx)=>{
                                         return(
-                                            <>
-                                            <li> <h4 style={{textTransform: `uppercase`}}> {title} </h4></li>
+                                        
+                                            <div>
+                                                <div className="icon_wrapper">
+                                                    <img src={list_icons[idx]} alt="icon" />
+                                                </div>
+                                            <div>
+                                            <h4 style={{textTransform: `uppercase`}}> {title} </h4>
                                             <p className="desc">{desc} </p>
-                                            </>
+                                            </div>
+                                            </div>
                                         );                                     
                                     })
                                 }
-                               
-                            </ol>
+                               </div>
+                            
                             </div>
                         </Grid>
                     </Grid>

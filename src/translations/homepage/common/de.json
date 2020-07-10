@@ -1,6 +1,6 @@
 {
     "nav": ["ÜBER UNS","LEISTUNGEN & PREISLISTE","PROJEKTE","TEAM","BLOG", "KONTAKT"],
-    "main_cat": ["E-Commerce","Mobile Applications","API Development"],
+    "main_cat": ["E-Commerce","Mobile Applications","API ENTWICKLUNG"],
     "sub_cat": [
         [
             "Shopify",
@@ -18,34 +18,42 @@
     ],
     
     "basic": {
-        "time": "arbeitsstunden",
+        "time": "Arbeitsstunden",
         "from": "ab",
         "submit": "ABSENDEN",
+        "sending": "SENDEN...",
+        "sent": "GESCHICKT",
+        "invalid_details": "UNGÜLTIG EINZELHEITEN",
+        "submit_status": "Vielen Dank für Ihre Nachricht. Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.",
         "germany": "Deutschland",
         "india": "Indien",
-        "sales": "Der Umsatz",
-        "technology": "Technologie"
+        "sales": "Sales",
+        "technology": "Technology",
+        "invalidField": "Bitte füllen Sie dieses Feld aus",
+        "weeks": "Wochen",
+        "people": "Personen",
+        "munich": "MÜNCHEN"
     },
     "links": {
         "pdt_pricing": "Zu Leistungen & Preisliste ",
         "projects": "Zu allen Projekten",
-        "pricing": "Wählen Sie einen Plan",
+        "pricing": "Auswählen",
         "contact": "Ich bin mit den <1>AGBs</1> und den <3>Datenschutzrichtlinien</3> einverstanden.*"
     },
     "footer":
     {
-        "exp": "Unser Erfahrungsschatz",
+        "exp": "UNSERE EXPERTISE",
         "pjts": "unsere Projekte",
         "n_i": {
             "n_i": "Nachrichten und Infos",
             "blog": "blog",
             "abt_softy": "Über Softsourced"
         },
-        "c_i": "Kontaktinformation",
+        "c_i": "KONTAKTINFORMATIONEN",
         "careers": "Karriere",
-        "contact": "kontakt uns",
+        "contact": "KONTAKT",
         "imprint": "impressum",
         "tnc": "AGBs",
-        "pp": "Datenschutz Richtlinien"
+        "pp": " DATENSCHUTZRICHTLINIEN"
             }
 }

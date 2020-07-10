@@ -8,6 +8,7 @@ const Footer = lazy(()=> import('./components/Footer/Footer.js'));
 const BlogPage = lazy(()=>import('./views/blogpage'));
 const PrivacyPolicy = lazy(()=>import('./views/documents/PrivacyPolicy'));
 const TnC = lazy(()=>import('./views/documents/TnC'));
+const Imprint = lazy(()=>import('./views/documents/Imprint'));
 const HomePage = lazy(() => import('./views/homepage'));
 
 class App extends Component {
@@ -36,7 +37,7 @@ class App extends Component {
     <Route path = "/projects/:pname" component = {ProjectPage} />
     <Route path = "/privacy-policy/" component = {PrivacyPolicy} />
     <Route path = "/terms-and-conditions/" component = {TnC} />
-    <Route path = "/imprint/" component = {TnC} />
+    <Route path = "/imprint/" component = {Imprint} />
     <Route path = "/data-protection/" component = {PrivacyPolicy} />
     <Route path = "/"  ><HomePage p_slide_id = {this.state.p_slide_id} change_p_slide_id = {this.change_p_slide_id.bind(this)} /> </Route>
   </Switch>

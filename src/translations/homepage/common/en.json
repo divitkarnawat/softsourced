@@ -22,10 +22,19 @@
         "time": "hours",
         "from": "from",
         "submit": "SUBMIT",
+        "sending": "SENDING...",
+        "sent": "SENT",
+        "invalid_details": "INVALID DETAILS",
+        "submit_status": "Thank you for your message, we’ll get back to you within 24 hours.",
+        "error_status": "Your message could not be sent",
         "germany": "Germany",
+        "munich": "Munich",
         "india": "India",
         "sales": "Sales",
-        "technology": "Technology"
+        "technology": "Technology",
+        "invalidField": "Please fill out this field",
+        "weeks": "weeks",
+        "people":"people"
     },
     "links": {
         "pdt_pricing": "See products & pricing ",

@@ -1,13 +1,15 @@
 {
     "title": "PROJEKTE",
     "projects": {
-        "title": ["bella & bona","permatech","sansiel","ondoor","wildride","moreclix"],
+        "title": ["bella & bona","ondoor","sansiel","permatech","wildride","moreclix"],
         "desc": ["Erfahren Sie, wie wir einer italienischen Food Delivery Kitchen in einem hart umkämpften Markt zum Erfolg verhalfen.",
-                " Werfen Sie einen Blick darauf, wie wir einer Software Consulting Firma eine visuell ansprechende Webseite zur optimalen Darstellung Ihres Projektportfolios anfertigten.",
+            "Tauchen Sie in den Supermarkt der Zukunft ein. In ein paar Klicks vom Smartphone-Bildschirm vor die Haustüre.",
+            
                 "Schauen Sie sich an, wie wir die digitale Präsenz eines hygienetechnologischen Unternehmens rund um dessen revolutionäres Produkts zur Bewahrung von keimfreien Oberflächen etablierten.",
-                "Tauchen Sie in den Supermarkt der Zukunft ein. In ein paar Klicks vom Smartphone-Bildschirm vor die Haustüre.",
+                "Werfen Sie einen Blick darauf, wie wir einer Software Consulting Firma eine visuell ansprechende Webseite zur optimalen Darstellung Ihres Projektportfolios anfertigten.",    
+                
                 "Surprise! Das Entdecken von Bars und Restaurants wird anhand einer von uns mit entwickelten App zu einer angenehmen, bequemen Überraschung für jeden User.",
-                " Treten Sie ein in die Pforten einer Schweizer Marketingfirma. Schauen Sie sich das Firmenportfolio an und bestaunen Sie ein sehr spezielles Brand Image."
+                "Treten Sie ein in die Pforten einer Schweizer Marketingfirma. Schauen Sie sich das Firmenportfolio an und bestaunen Sie ein sehr spezielles Brand Image."
     ]
     }
 }

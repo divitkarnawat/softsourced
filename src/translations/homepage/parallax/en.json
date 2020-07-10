@@ -1,5 +1,9 @@
 {
-    "title": "WE DESIGN. WE DEVELOP. WE DELIVER.",
+    "title": {
+        "0": "YOU WANT TO HAVE YOUR IT PROJECT EXECUTED?",
+        "1": "WE DESIGN, DEVELOP &",
+        "2": "DELIVER ON YOUR INTENTIONS"
+    },
     "placeholder": "Type in your email address here to get in touch to start your project now...",
     "btn": "START PROJECT"
 

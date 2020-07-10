@@ -40,6 +40,15 @@ class About extends Component
                 <Container> 
                     <div className="m_content">
                         <h1 className="title"> {this.props.t('title')}</h1>
+                        {/* <div className = "imgNdesc"> */}
+                            {/* <div className = "img_desc_wrapper">
+                            <div className = "img_casual_wrapper">
+                                <img src = {marc_casual} alt="marc" />
+                            </div>
+                            <div className = "img_casual_wrapper">
+                                <img src = {hanush_casual} alt="hanush" />
+                            </div>
+                            </div> */}
                         <div className="desc">
                      
                      {this.props.t('desc', {returnObjects: true}).map(item=>{
@@ -50,14 +59,16 @@ class About extends Component
                      })}
                  
                      </div>
+             
                         <div className = "descNimg">
                             
-                            <div className = "img_wrapper">
+                            <div className = "img_wrapper" name-member="Marc Mueller">
                                 <img src = {marc_casual} alt="marc" />
                             </div>
-                            <div className = "img_wrapper">
-                                <img src = {hanush_casual} alt="hanush" />
+                            <div className = "img_wrapper" name-member="Hanush Pillai">
+                                <img src = {hanush_casual} alt="Hanush" />
                             </div>
+                        </div>
                             
                        
                        {/* <p> When the two of us, Marc & Hanush, founded Softsourced in 2017,<br /> we set out on the mission to offer premium IT services to everyone around the globe.</p>
@@ -74,7 +85,7 @@ The team has been working together for the past 3 years - you can imagine how we
 What makes us unique is the nomadic approach we take to run our company. We are spread all over the world, some are on holidays in Thailand, others live in India, and some of us even life the cliche life of a digital nomad.  */}
 
                     
-                        </div>
+                   
                     </div>
                     
                     <div className = "partners_logo">

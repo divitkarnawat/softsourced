@@ -6,9 +6,9 @@ import Fade from 'react-reveal/Fade';
 
 import './Projects.scss';
 import proj1s from '../../../assets/img/projects/prod1s.png';
-import proj2s from '../../../assets/img/projects/prod2s.png';
+import proj4s from '../../../assets/img/projects/prod2s.png';
 import proj3s from '../../../assets/img/projects/prod3s.png';
-import proj4s from '../../../assets/img/projects/prod4s.png';
+import proj2s from '../../../assets/img/projects/prod4s.png';
 import proj5s from '../../../assets/img/projects/prod5s.png';
 import proj6s from '../../../assets/img/projects/prod6s.png';
 

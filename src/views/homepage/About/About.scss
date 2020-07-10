@@ -13,17 +13,44 @@
         line-height: 2;
         
     } 
+
+
+    .imgNdesc
+    {
+        @include flexi(row, center, space-evenly);
+    }
+    .img_desc_wrapper
+    {
+        @include flexi(row, center, space-evenly);
+    }
+    .img_casual_wrapper
+    {
+        height: 200px;
+        width: 200px;
+    }
+
+
+
     .img_wrapper
     {
         height: 200px;
         width: 200px;
+
+        &::after
+        {
+            content: attr(name-member);
+            display: block;
+            
+            margin: 5px auto;
+            text-align: center;
+        }
 
         &:first-child
         {
             img{
 
             
-            border-radius: 0px 27px 52px 0px;
+            border-radius: 0px 27px 40px 0px;
     box-shadow: 2px 7px 22px rgba(0,0,0,.1);
         }
     }
@@ -32,7 +59,7 @@
             img{
 
             
-            border-radius: 27px 0px 0px 52px;
+            border-radius: 27px 0px 0px 40px;
     box-shadow: -2px 7px 22px rgba(0,0,0,.1);
         }
     }
@@ -95,7 +122,7 @@
 
         .img_wrapper
         {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         img
         {
             border-radius: 10px;

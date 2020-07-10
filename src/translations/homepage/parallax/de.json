@@ -1,5 +1,9 @@
 {
-    "title": "WIR DESIGNEN. WIR ENTWICKELN. WIR LIEFERN.",
+    "title": {
+        "0": "AUF DER SUCHE NACH HILFE BEI DER UMSETZUNG IHRE ONLINE-PROJEKTE?",
+        "1": "WIR DESIGNEN, CODEN &",
+        "2": "LIEFERN AB."
+    },
     "placeholder": "Geben Sie hier Ihre E-Mail-Adresse ein, um Kontakt aufzunehmen und Ihr Projekt jetzt zu starten...",
     "btn": "PROJEKT STARTEN"
 }

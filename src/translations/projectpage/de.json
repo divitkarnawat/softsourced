@@ -8,13 +8,22 @@
         "Die Kreation einer cleveren Mobile App, bei der die Überraschung für den User vorprogrammiert ist: So ist es Usern zwar erlaubt, Vorlieben, jedoch nicht den Ort zu äußern, an dem sie gerne Abends ausgehen würden. Für den User wird auf Grundlage seiner Vorlieben ein passender Ort ermittelt, der jedoch geheim bleibt, bis er dort ankommt. Uber & Google Maps sind in die App integriert, um den User bequem und sicher zum ermittelten Venue zu bringen."
     ],
     "solutions": [
-        "Die Lösung fanden sie bei Softsourced. Softsourced stellte  ein Full Stack Team innerhalb von zwei Wochen zusammen und entwickelte eine Beta-Lösung innerhalb von sieben Wochen. Im Rahmen eines Headless Redesigns wurde ein API-basiertes Order Management System (OMS) implementiert, das den Prozess von Bestellaufgabe bis hin zur -auslieferung komplett automatisiert. Dieses System kommuniziert mit einer selbstlernenenden Stock Management Software. Softsourced unterstützt Bella & Bona beim Verfolgen der Unternehmensziele bzw. der Expansion weiterhin nachhaltig mit exklusiven IT-Leistungen.",
-        "Nachdem wir die Anfrage zur Unterstützung erhielten, stellten wir innerhalb weniger Tage ein ausgezeichnetes Full Stack Team zusammen. Unser Team an Designer und Developern kam in diesem Projekt eine wesentliche Rolle zu. Wir entwarfen eine Reihe an Prototypen, die in die Testphase gingen. Die von allen Seiten als optimal befundene Version wurde anschließend perfektioniert. Das finale Produkt stand drei Monate nach Projektbeginn. Heute ist Ondoor eine Online-Supermarkt-App, die mehr als eine Millionen Mal heruntergeladen wurde; mehr als 10 Millionen Lebensmittelbestellungen wurden bisher ausgeliefert.",
-        "Die Wahl fiel auf Softsourced. Unser Team veredelte das schon anspruchsvolle Design. Unsere Entwickler setzten das Projekt innerhalb von zwei Wochen technisch um.",
+        "Die Lösung fanden sie bei softsourced. softsourced stellte  ein Full Stack Team innerhalb von zwei Wochen zusammen und entwickelte eine Beta-Lösung innerhalb von sieben Wochen. Im Rahmen eines Headless Redesigns wurde ein API-basiertes Order Management System (OMS) implementiert, das den Prozess von Bestellaufgabe bis hin zur -auslieferung komplett automatisiert. Dieses System kommuniziert mit einer selbstlernenenden Stock Management Software. softsourced unterstützt Bella & Bona beim Verfolgen der Unternehmensziele bzw. der Expansion weiterhin nachhaltig mit exklusiven IT-Leistungen.",
+        "Nachdem wir die Anfrage zur Unterstützung erhielten, stellten wir innerhalb weniger Tage ein ausgezeichnetes Full Stack Team zusammen. Unser Team an Designer und Developern kam in diesem Projekt eine wesentliche Rolle zu. Wir entwarfen eine Reihe an Prototypen, die in die Testphase gingen. Die von allen Seiten als optimal befundene Version wurde anschließend perfektioniert. Das finale Produkt stand vier wochen nach Projektbeginn. Heute ist Ondoor eine Online-Supermarkt-App, die mehr als eine Millionen Mal heruntergeladen wurde; mehr als 10 Millionen Lebensmittelbestellungen wurden bisher ausgeliefert.",
+        "Die Wahl fiel auf softsourced. Unser Team veredelte das schon anspruchsvolle Design. Unsere Entwickler setzten das Projekt innerhalb von zwei Wochen technisch um.",
         "WordPress ist wohl das am weitesten verbreitete Content Management System (CMS) für professionelle Business Webseiten. Leider muss man mit Abstrichen bei Ladezeiten (Page Speed) und Sicherheit rechnen, die wir nicht einfach so dulden konnten. Wir sahen in der Nutzung von ReactJS hingegen die optimale Lösung. Diese würde sämtliche Ansprüche an eine professionelle Business Webseite abdecken. Die Kommunikation mit Sansiel war exzellent, sodass es keinerlei Probleme gab, spitzen Content in ein sauberes Layout einzuarbeiten. Innerhalb von drei Wochen entstand eine in ReactJS programmierte Business Webseite, die ein perfektes Schaufenster für Sansiels Produkte bietet.",
         "Mit unserem Team an Designern und Developern gaben wir Permatech innerhalb weniger Wochen ein passendes Gesicht: Prototypen wurden mit Invision entwickelt und ein modernes, zukunftsfähiges Content Management System (CMS) etabliert. Mit Letzterem passieren Änderungen an der Webseite im Handumdrehen. Es verspricht minimale Ladezeiten (page speed) und ist suchmaschinenoptimiert codiert.",
         "Ein pragmatisch, gewiefter Ansatz spiegelte sich in einem visuell ansprechenden Design, das schon auf dem Smartphone-Bildschirm Vorfreude auf eine womöglich bevorstehende Überraschung erweckt. Unser Team lieferte innerhalb von 2 Monaten ab. Mit der App von WildRide gehen heute unzählige User auf Entdeckungsreise. Sie startet online und wird offline weitergeführt."
         
+    ],
+    "industry":[
+        "Food",
+        "Einzelhandel",
+        "Marketing",
+        "Pharmazie",
+        "IT",
+        "Events",
+        ""
     ],
     "basic":
     {
@@ -22,8 +31,10 @@
         "solution": "LÖSUNG",
         "industry": "INDUSTRIE",
         "platform": "PLATTFORM",
-        "tech": "TECH VERWENDET",
-        "stats": "STATISTIKEN",
-        "capa": "VERWENDETE FÄHIGKEITEN"
+        "tech": "VERWENDETE TECHNOLOGIEN",
+        "stats": "ZAHLEN",
+        "capa": "SKILLS"
+     
+  
     }
 }

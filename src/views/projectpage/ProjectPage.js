@@ -96,20 +96,11 @@ class ProjectPage extends Component
             capabilities:[
                 [0,1],
                 [0,1],
-                [],
+                [1],
                 [0,1],
                 [0,1],
                 [0],
                 []
-            ],
-            industry:[
-                "Food",
-                "Retail",
-                "Agency",
-                "Pharmaceutical",
-                "IT Agency",
-                "Agency",
-                ""
             ],
             imgj: 
                 [BB1xj,Ondoor1xj,Moreclix1xj,Sansiel1xj,Permatech1xj,Wildride1xj],
@@ -183,7 +174,7 @@ class ProjectPage extends Component
                     <Grid item md={4} xs={12} className = "proj_side">
                         <div>
                            <h4> {this.props.t('basic.industry')}</h4>
-                           <div>{this.content.industry[this.state.proj_id]}</div>
+                           <div>{this.props.t(`industry.${this.state.proj_id}`)}</div>
                         </div>
                         <div className = "platform">
                            <h4> {this.props.t('basic.platform')}</h4>
@@ -216,28 +207,31 @@ class ProjectPage extends Component
                                         return(
                                             <div>
                                             <img src = {this.symbols[3+idx]} />
-                                            {item} {` ${idx == 0 ? "weeks" : "people"}`} 
+                                            {item} {` ${idx == 0 ? this.props.t('common:basic.weeks') : this.props.t('common:basic.people')}`} 
                                             </div>
                                         );
                                     })
                             }
                         </div>
                         </div>
-                        <div className = "capabilities">
-                            <h4>{this.props.t('basic.capa')}</h4>
+                        {
+                            this.content.capabilities[this.state.proj_id].length > 0 ?  <div className = "capabilities">
+                            <h4> {this.props.t('basic.capa')}</h4>
                             <div>
                             {
                                 this.content.capabilities[this.state.proj_id].map((item,idx) =>
                                     {
                                         return(
-                                            <Tooltip title={idx == 0 ? "Design" : "Development"} arrow>
-                                            <img src = {this.symbols[5+idx]} />
+                                            <Tooltip title={item == 0 ? "Design" : "Development"} arrow>
+                                            <img src = {this.symbols[5+item]} />
                                             </Tooltip>
                                         );
                                     })
                             }
-                        </div>
-                        </div>
+                        </div>   </div> : ""
+                        }
+                       
+                      
                     </Grid>
                 </Grid>
                

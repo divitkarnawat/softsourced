@@ -7,6 +7,10 @@ import './Blog.scss';
 import blog3s from '../../../assets/img/blog1s.jpg';
 import blog2s from '../../../assets/img/blog2s.jpg';
 import blog1s from '../../../assets/img/blog3s.jpg';
+
+import blog3sw from '../../../assets/img/blog1s.webp';
+import blog2sw from '../../../assets/img/blog2s.webp';
+import blog1sw from '../../../assets/img/blog3s.webp';
 import author1 from '../../../assets/img/blog/author.jpg';
 
 class Blog extends Component{
@@ -22,7 +26,7 @@ class Blog extends Component{
                 "The COVID-19 pandemic has already triggered a number of layoffs across industries, from travel companies to scooter startups...",
                     "Microsoft has issued a security guidance advisory that there are vulnerabilities in its Windows products. The security flaws are...",
                      ],
-            imgURL_art: [[blog1s],[blog2s],[blog3s]],
+            imgURL_art: [[blog1s,blog1sw],[blog2s,blog2sw],[blog3s,blog3sw]],
             imgURL_aut: [author1,author1,author1]
         }    
 
@@ -34,7 +38,14 @@ class Blog extends Component{
                 <a href={`/blog/${name}/${content.bid[idx]}/`}>
                 <div className="blog_article">
                     <div className = "img_wrapper">
-                        <img src={content.imgURL_art[idx][0]} />
+                    <picture>
+                        <source
+                            srcset={content.imgURL_art[idx][1]}
+                            type="image/webp" />
+                        <img
+                            src={content.imgURL_art[idx][0]} alt="blog image" />
+                    </picture>
+                       
                     </div>
                         <div className="content_wrapper">
                         <div className = "title">

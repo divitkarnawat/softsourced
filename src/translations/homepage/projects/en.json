@@ -1,12 +1,14 @@
 {
     "title": "PROJECTS",
     "projects": {
-        "title": ["bella & bona","permatech","sansiel","ondoor","wildride","moreclix"],
+        "title": ["bella & bona","ondoor","sansiel","permatech","wildride","moreclix"],
         "desc": [
-                " Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands",
-                "Take a sneak peek into how we developed a visually appealing website for a software consulting company to showcase their myriad projects.",
-                "Deep dive into how we took over the digital set up of a company making breakthroughs in the pharmaceutical space by keeping your surfaces sanitised.",
+                " Check out how we helped an Italian food delivery kitchen succeed in a market ripe with established competitor brands.",
                 "Set your eyes on the future of grocery shopping. All with a few easy taps on your smartphone.",
+                
+                "Deep dive into how we took over the digital set up of a company making breakthroughs in the pharmaceutical space by keeping your surfaces sanitised.",
+                
+                "Take a sneak peek into how we developed a visually appealing website for a software consulting company to showcase their myriad projects.",
                 "Get a glimpse of an app that we developed to help make the discovery of bars and restaurants an interesting and convenient surprise for each customer.",
                 "Enter the doors to the business website of a Swiss marketing company. Embrace their vast portfolio that is fitted into their specific brand image."
         ]

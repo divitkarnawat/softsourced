@@ -3,7 +3,7 @@ import {withTranslation} from 'react-i18next';
 import {HashLink as Link} from 'react-router-hash-link';
 import './Header.scss';
 import CustomisedButton from '../CustomisedButton';
-import logo from '../../assets/img/logo.jpg';
+import logo from '../../assets/img/logo.svg';
 class Header extends Component{
 
     constructor(props)
@@ -114,7 +114,7 @@ class Header extends Component{
               
                </div>
                <div >
-                <a style={{height: `33px`}}> 
+                <a style={{height: `27px`}}> 
                                     <label class="button">
                     <input type="checkbox" />
                     <span></span>
