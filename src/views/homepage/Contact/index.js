@@ -349,14 +349,14 @@ class Contact extends Component
     }
 
 
-    componentDidMount () {
-        const script = document.createElement("script");
+    // componentDidMount () {
+    //     const script = document.createElement("script");
     
-        script.src = "https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit&hl=en";
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-    }
+    //     script.src = "https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit&hl=en";
+    //     script.async = true;
+    //     script.defer = true;
+    //     document.body.appendChild(script);
+    // }
 
     render()
     {
