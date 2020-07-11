@@ -11,10 +11,10 @@ import product_pricing_en from './translations/homepage/product_pricing/en.json'
 import product_pricing_de from './translations/homepage/product_pricing/de.json';
 import projects_en from './translations/homepage/projects/en.json';
 import projects_de from './translations/homepage/projects/de.json';
-import whyus_en from './translations/homepage/whyus/en.json';
-import whyus_de from './translations/homepage/whyus/de.json';
-import pricing_en from './translations/homepage/pricing/en.json';
-import pricing_de from './translations/homepage/pricing/de.json';
+// import whyus_en from './translations/homepage/whyus/en.json';
+// import whyus_de from './translations/homepage/whyus/de.json';
+// import pricing_en from './translations/homepage/pricing/en.json';
+// import pricing_de from './translations/homepage/pricing/de.json';
 // import blog_en from './translations/homepage/blog/en.json';
 // import blog_de from './translations/homepage/blog/de.json';
 // import contactus_en from './translations/homepage/contactus/en.json';
@@ -38,8 +38,8 @@ const resources = {
     about: about_en,
     product_pricing: product_pricing_en,
     projects: projects_en,
-    whyus: whyus_en,
-    pricing: pricing_en,
+    // whyus: whyus_en,
+    // pricing: pricing_en,
     // blog: blog_en,
     // contactus: contactus_en,
     // projectpage: projectpage_en,
@@ -53,8 +53,8 @@ const resources = {
     about: about_de,
     product_pricing: product_pricing_de,
     projects: projects_de,
-    whyus: whyus_de,
-    pricing: pricing_de,
+    // whyus: whyus_de,
+    // pricing: pricing_de,
     // blog: blog_de,
     // contactus: contactus_de,
     // projectpage: projectpage_de,

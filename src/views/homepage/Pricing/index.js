@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {withTranslation} from 'react-i18next';
+import pricing_en from '../../../translations/homepage/pricing/en.json';
+import pricing_de from '../../../translations/homepage/pricing/de.json';
 import {Container} from '@material-ui/core';
 import './Pricing.scss';
 import ellipse2 from '../../../assets/img/pricing/ellipse2.svg';
@@ -13,6 +15,7 @@ class Pricing extends Component{
 
 
         this.state = {
+            load: false,
             id: 0,
             prevprops_id: 0,
             
@@ -20,9 +23,20 @@ class Pricing extends Component{
 
         }
     }
+    componentDidMount()
+    {
+        this.props.i18n.addResourceBundle("en","pricing",pricing_en, true, false);
+        this.props.i18n.addResourceBundle("de","pricing",pricing_de, true, false);
+        this.setState({load: true})
+    }
   
     render()
     {
+
+        if(!this.state.load)
+        {
+            return(<div>Loading...</div>);
+        }
   
     if(this.props.p_slide_id != this.state.prevprops_id)
     {
@@ -44,7 +58,7 @@ class Pricing extends Component{
             <div className = "section pricing_s">
                 <Container>
                     <h2 className="title">
-                    {this.props.t('title')}
+                    {this.props.t('pricing:title')}
                     </h2>
                 <div className="main_slider">
                 
@@ -82,10 +96,10 @@ class Pricing extends Component{
                                                 {this.state.desc[this.state.id][idx]}
                                             </div> */}
                                             <div className = "desc">
-                                            {this.props.t(`time_hr.${this.state.id}.${idx}`)} {this.props.t('common:basic.time')} 
+                                            {this.props.t(`pricing:time_hr.${this.state.id}.${idx}`)} {this.props.t('common:basic.time')} 
                                             </div>
                                             <div className = "desc">
-                                            {this.props.t('common:basic.from')}  {this.props.t(`price.${this.state.id}.${idx}`)} €
+                                            {this.props.t('common:basic.from')}  {this.props.t(`pricing:price.${this.state.id}.${idx}`)} €
                                             </div>
                                             <a className="a-custom_btn" href = {`#${this.props.t('common:nav.5')}`} ><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
                                             {this.props.t('common:links.pricing')}
@@ -109,4 +123,4 @@ class Pricing extends Component{
     }
 }
 
-export default withTranslation('pricing')(Pricing);
+export default withTranslation()(Pricing);

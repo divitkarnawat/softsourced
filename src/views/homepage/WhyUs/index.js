@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {withTranslation} from 'react-i18next';
 import {Grid, Container} from '@material-ui/core';
-
+import whyus_en from '../../../translations/homepage/whyus/en.json';
+import whyus_de from '../../../translations/homepage/whyus/de.json';
 import './WhyUs.scss';
 import whyus_img from '../../../assets/img/whyus/whyus_img.png';
 
@@ -11,8 +12,28 @@ import sym3 from '../../../assets/img/whyus/sym3.svg';
 import sym4 from '../../../assets/img/whyus/sym4.svg';
 
 class WhyUs extends Component{
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            load: false
+        }
+    }   
+    
+    componentDidMount()
+    {
+        this.props.i18n.addResourceBundle("en","whyus",whyus_en, true, false);
+        this.props.i18n.addResourceBundle("de","whyus",whyus_de, true, false);
+        this.setState({load: true})
+    }
+  
     render()
     {
+
+        if(!this.state.load)
+        {
+            return(<div>Loading...</div>);
+        }
         const content_l = {
            
             syms : [sym1, sym2]
@@ -26,13 +47,13 @@ class WhyUs extends Component{
             <div className = "section whyus_s">
                 <Container>
                 <h2 className = "title">
-                    {this.props.t('title')}
+                    {this.props.t('whyus:title')}
                 </h2>
                 <Grid container>
                     <Grid item lg={5} xs={12}>
                         <div className = "content_l">
                             {
-                                this.props.t('content_l.titles', {returnObjects: true}).map((title,idx)=>
+                                this.props.t('whyus:content_l.titles', {returnObjects: true}).map((title,idx)=>
                                 {
                                     return(
                                         <div className = "part">
@@ -41,7 +62,7 @@ class WhyUs extends Component{
                                             <div className = "title">
                                                 {title}
                                             </div>
-                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: this.props.t(`content_l.desc.${idx}`) }} >
+                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: this.props.t(`whyus:content_l.desc.${idx}`) }} >
                                                 
                                             </div>
                                             </div>
@@ -74,7 +95,7 @@ class WhyUs extends Component{
                     <Grid item lg={5} xs={12}>
                     <div className = "content_r">
                             {
-                                this.props.t('content_r.titles', {returnObjects: true}).map((title,idx)=>
+                                this.props.t('whyus:content_r.titles', {returnObjects: true}).map((title,idx)=>
                                 {
                                     return(
                                         <div className = "part">
@@ -104,4 +125,4 @@ class WhyUs extends Component{
 
 }
 
-export default withTranslation('whyus')(WhyUs);
+export default withTranslation()(WhyUs);
