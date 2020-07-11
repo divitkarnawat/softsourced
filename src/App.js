@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Header from './components/Header/Header.js';
 import Loader from './components/Loader';
-import ProjectPage from './views/projectpage/ProjectPage';
+const ProjectPage = lazy(() => import('./views/projectpage/ProjectPage'));
 const Footer = lazy(()=> import('./components/Footer/Footer.js'));
 const BlogPage = lazy(()=>import('./views/blogpage'));
 const PrivacyPolicy = lazy(()=>import('./views/documents/PrivacyPolicy'));
@@ -29,9 +29,10 @@ class App extends Component {
 
     
   return (
+    <Suspense fallback={<Loader />}>
   <Router>
   <Header />
-  <Suspense fallback={<Loader />}>
+ 
   <Switch>
     <Route path = "/blog/:author/:blogid" component = {BlogPage} />
     <Route path = "/projects/:pname" component = {ProjectPage} />
@@ -39,13 +40,16 @@ class App extends Component {
     <Route path = "/terms-and-conditions/" component = {TnC} />
     <Route path = "/imprint/" component = {Imprint} />
     <Route path = "/data-protection/" component = {PrivacyPolicy} />
+
     <Route path = "/"  ><HomePage p_slide_id = {this.state.p_slide_id} change_p_slide_id = {this.change_p_slide_id.bind(this)} /> </Route>
+  
   </Switch>
   
-  
+ 
   <Footer  change_p_slide_id = {this.change_p_slide_id.bind(this)} />
-  </Suspense>
+ 
   </Router>    
+  </Suspense>
   );
     }
 }
