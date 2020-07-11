@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {withTranslation} from 'react-i18next';
+
+import projectpage_en from '../../translations/projectpage/en.json';
+import projectpage_de from '../../translations/projectpage/de.json';
 import {Container, Grid, Tooltip} from '@material-ui/core';
 import './ProjectPage.scss'
 
@@ -52,6 +55,7 @@ class ProjectPage extends Component
     {
         super(props);
         this.state = {
+            load: false,
             proj_id: 0
         }
         this.symbols = [ios,web,andr,calendar,people,design,development]
@@ -119,6 +123,11 @@ class ProjectPage extends Component
     }
 
     componentDidMount(){
+
+        this.props.i18n.addResourceBundle("en","projectpage",projectpage_en, true, false);
+        this.props.i18n.addResourceBundle("de","projectpage",projectpage_de, true, false);
+        
+
         let pname = this.props.match.params.pname;
         let proj_id = 0;
         switch(pname)
@@ -131,11 +140,16 @@ class ProjectPage extends Component
             case "wildride" : {proj_id = 5; break;}
             default : {proj_id = 0; break;}
         }
-        this.setState({proj_id})
+        this.setState({proj_id, load: true})
     }
     render()
     {   
-        console.log(this.props);
+
+
+        if(!this.state.load)
+        {
+            return(<div>Loading...</div>)
+        }
 
         return(
             <div className = "section projectpage-s">
@@ -163,21 +177,21 @@ class ProjectPage extends Component
                 <Grid container>
                     <Grid item md={8} xs={12} className = "proj_main">
                         <div className = "challenges">
-                            <h3> {this.props.t('basic.challenge')}</h3>
-                            <div> {this.props.t(`challenges.${this.state.proj_id}`)}</div>
+                            <h3> {this.props.t('projectpage:basic.challenge')}</h3>
+                            <div> {this.props.t(`projectpage:challenges.${this.state.proj_id}`)}</div>
                         </div>
                         <div className = "solutions">
-                            <h3> {this.props.t('basic.solution')} </h3>
-                            <div>{this.props.t(`solutions.${this.state.proj_id}`)}</div>
+                            <h3> {this.props.t('projectpage:basic.solution')} </h3>
+                            <div>{this.props.t(`projectpage:solutions.${this.state.proj_id}`)}</div>
                         </div>
                     </Grid>
                     <Grid item md={4} xs={12} className = "proj_side">
                         <div>
-                           <h4> {this.props.t('basic.industry')}</h4>
-                           <div>{this.props.t(`industry.${this.state.proj_id}`)}</div>
+                           <h4> {this.props.t('projectpage:basic.industry')}</h4>
+                           <div>{this.props.t(`projectpage:industry.${this.state.proj_id}`)}</div>
                         </div>
                         <div className = "platform">
-                           <h4> {this.props.t('basic.platform')}</h4>
+                           <h4> {this.props.t('projectpage:basic.platform')}</h4>
                            <div>
                             {
                                 this.content.platforms[this.state.proj_id].map(item => {
@@ -189,7 +203,7 @@ class ProjectPage extends Component
                             </div>
                         </div>
                         <div>
-                            <h4>{this.props.t('basic.tech')}</h4>
+                            <h4>{this.props.t('projectpage:basic.tech')}</h4>
                             <div>
                                 {
                                     this.content.techstack[this.state.proj_id].map(item=>{
@@ -199,7 +213,7 @@ class ProjectPage extends Component
                             </div>
                         </div>
                         <div className = "stats">
-                        <h4>    {this.props.t('basic.stats')}</h4>
+                        <h4>    {this.props.t('projectpage:basic.stats')}</h4>
                         <div>
                             {
                                 this.content.timeline[this.state.proj_id].map((item,idx) =>
@@ -216,7 +230,7 @@ class ProjectPage extends Component
                         </div>
                         {
                             this.content.capabilities[this.state.proj_id].length > 0 ?  <div className = "capabilities">
-                            <h4> {this.props.t('basic.capa')}</h4>
+                            <h4> {this.props.t('projectpage:basic.capa')}</h4>
                             <div>
                             {
                                 this.content.capabilities[this.state.proj_id].map((item,idx) =>
@@ -242,4 +256,4 @@ class ProjectPage extends Component
 
 }
 
-export default withTranslation('projectpage')(ProjectPage);
+export default withTranslation()(ProjectPage);

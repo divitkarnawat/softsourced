@@ -20,15 +20,15 @@ import blog_de from './translations/homepage/blog/de.json';
 import contactus_en from './translations/homepage/contactus/en.json';
 import contactus_de from './translations/homepage/contactus/de.json';
 
-import projectpage_en from './translations/projectpage/en.json';
-import projectpage_de from './translations/projectpage/de.json';
+// import projectpage_en from './translations/projectpage/en.json';
+// import projectpage_de from './translations/projectpage/de.json';
 
-import pp_en from './translations/documents/pp/en.json';
-import pp_de from './translations/documents/pp/de.json';
-import imprint_en from './translations/documents/imprint/en.json';
-import imprint_de from './translations/documents/imprint/de.json';
-import tnc_en from './translations/documents/tnc/en.json';
-import tnc_de from './translations/documents/tnc/de.json';
+// import pp_en from './translations/documents/pp/en.json';
+// import pp_de from './translations/documents/pp/de.json';
+// import imprint_en from './translations/documents/imprint/en.json';
+// import imprint_de from './translations/documents/imprint/de.json';
+// import tnc_en from './translations/documents/tnc/en.json';
+// import tnc_de from './translations/documents/tnc/de.json';
 
 
 const resources = {
@@ -42,10 +42,10 @@ const resources = {
     pricing: pricing_en,
     blog: blog_en,
     contactus: contactus_en,
-    projectpage: projectpage_en,
-    pp: pp_en,
-    tnc: tnc_en,
-    imprint: imprint_en
+    // projectpage: projectpage_en,
+    // pp: pp_en,
+    // tnc: tnc_en,
+    // imprint: imprint_en
   },
   de: {
     common: common_de,
@@ -57,10 +57,10 @@ const resources = {
     pricing: pricing_de,
     blog: blog_de,
     contactus: contactus_de,
-    projectpage: projectpage_de,
-    pp: pp_de,
-    tnc: tnc_de,
-    imprint: imprint_de
+    // projectpage: projectpage_de,
+    // pp: pp_de,
+    // tnc: tnc_de,
+    // imprint: imprint_de
   }
 };
 

@@ -1,15 +1,33 @@
 import React,{Component} from 'react';
 import parse from 'html-react-parser';
 import {withTranslation} from 'react-i18next';
+import pp_en from '../../translations/documents/pp/en.json';
+import pp_de from '../../translations/documents/pp/de.json';
 import './PrivacyPolicy.scss';
 class PrivacyPolicy extends Component
 {
     constructor(props)
     {
         super(props);
+        this.state = {
+            load: false
+        }
     }
+    componentDidMount()
+    {
+        this.props.i18n.addResourceBundle("en","pp",pp_en, true, false);
+        this.props.i18n.addResourceBundle("de","pp",pp_de, true, false);
+        this.setState({load: true})
+        
+    }
+    
     render()
     {
+        
+        if(!this.state.load)
+        {
+            return(<div>Loading...</div>)
+        }
         let path = this.props.match.path;
         path = path.slice(1);
         path = path.slice(0, path.length - 1);
@@ -24,10 +42,10 @@ class PrivacyPolicy extends Component
                 <div className = "desc">
                     <div>
                         
-                        <h3> {this.props.t('m_title')}</h3>
+                        <h3> {this.props.t('pp:m_title')}</h3>
                         
                         {
-                            this.props.t('m_desc', {returnObjects: true}).map(desc=>{
+                            this.props.t('pp:m_desc', {returnObjects: true}).map(desc=>{
                                 return(
                                     <p>
                                         {desc}
@@ -41,11 +59,11 @@ class PrivacyPolicy extends Component
 
                 <ol>
                     {
-                        this.props.t('titles', {returnObjects: true}).map((title,idx)=>{
+                        this.props.t('pp:titles', {returnObjects: true}).map((title,idx)=>{
                             return(
                                 <li> 
                                     <h3> {title}</h3>
-                                    {parse(this.props.t(`desc.${idx}`))}
+                                    {parse(this.props.t(`pp:desc.${idx}`))}
                                 </li>
                             );
                         })
@@ -59,4 +77,4 @@ class PrivacyPolicy extends Component
     }
 }
 
-export default withTranslation('pp')(PrivacyPolicy);
+export default withTranslation()(PrivacyPolicy);
