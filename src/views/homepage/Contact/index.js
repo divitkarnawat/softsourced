@@ -353,14 +353,15 @@ class Contact extends Component
 
 
     // componentDidMount () {
-    //     const script = document.createElement("script");
-    
-    //     script.src = "https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit&hl=en";
-    //     script.async = true;
-    //     script.defer = true;
-    //     document.body.appendChild(script);
+   
     // }
     componentDidMount(){
+        const script = document.createElement("script");
+    
+        script.src = "https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit";
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
         this.props.i18n.addResourceBundle("en", "contact", contactus_en, true, false);
         this.props.i18n.addResourceBundle("de", "contact", contactus_de, true, false);
    
