@@ -18,11 +18,11 @@ class Contact1 extends Component{
                 </div> */}
                 <div className = "part">
                 <div>
-               {this.props.t('time.title')}
+               {this.props.t('contact:time.title')}
                 </div>
                 <div className = "grp_btn_time">
                 {
-                   this.props.t('time.options', {returnObjects: true}).map((item,idx)=>
+                   this.props.t('contact:time.options', {returnObjects: true}).map((item,idx)=>
                     {
                               
                         return(
@@ -37,7 +37,7 @@ class Contact1 extends Component{
 
                 <div className = "part">
                 <div>
-                    {this.props.t('main_cat.title')}
+                    {this.props.t('contact:main_cat.title')}
                 </div>
                 <div className = "grp_btn_support">
                 {
@@ -56,7 +56,7 @@ class Contact1 extends Component{
                 </div>
                 <div className = "part">
                 <div>
-                   {this.props.t('sub_cat.title')}
+                   {this.props.t('contact:sub_cat.title')}
                 </div>
                 <div className = "grp_btn_support_cat">
                 {
@@ -75,11 +75,11 @@ class Contact1 extends Component{
 
                  <div className = "part">
                 <div>
-                    {this.props.t('budget.title')}
+                    {this.props.t('contact:budget.title')}
                 </div>
                 <div className = "grp_btn_price">
                 {
-                    this.props.t('budget.options', {returnObjects: true}).map((item,idx)=>
+                    this.props.t('contact:budget.options', {returnObjects: true}).map((item,idx)=>
                     {
                               
                         return(
@@ -97,4 +97,4 @@ class Contact1 extends Component{
     
 }
 
-export default withTranslation('contactus')(Contact1);
+export default withTranslation()(Contact1);

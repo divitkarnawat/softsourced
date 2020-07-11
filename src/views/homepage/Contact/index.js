@@ -20,7 +20,7 @@ class Contact extends Component
         this.errors = new Set();
         this.submitbtn = React.createRef();
         this.state = {
-            load: true,
+            load: false,
             cur_contact: 0,
             resume: this.props.t('contact:placeholders.resume'),
             prevpropid: {
@@ -363,6 +363,7 @@ class Contact extends Component
     componentDidMount(){
         this.props.i18n.addResourceBundle("en", "contact", contactus_en, true, false);
         this.props.i18n.addResourceBundle("de", "contact", contactus_de, true, false);
+   
         this.setState({load: true});
     }
 
