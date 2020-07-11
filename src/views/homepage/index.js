@@ -2,24 +2,24 @@
 import React, {Component,  Suspense, lazy} from 'react';
 import Loader from '../../components/Loader';
 import {withTranslation} from 'react-i18next';
-// const About = lazy(()=>import('./About/About'));
-// const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
-// const Projects = lazy(()=>import('./Projects'));
-// const Blog = lazy(()=>import('./Blog'));
-// const WhyUs = lazy(()=>import('./WhyUs'));
-// const Pricing = lazy(()=>import('./Pricing'));
-// const Team = lazy(()=>import('./Team'));
-// const Contact = lazy(()=>import('./Contact'));
-// const Product = lazy(()=>import('./Product_Pricing/Product'));
-import About from './About/About';
-import Parallax from '../../components/Parallax/Parallax';
-import Projects from './Projects';
-import Blog from './Blog';
-import WhyUs from './WhyUs';
-import Pricing from './Pricing';
-import Team from './Team';
-import Contact from './Contact';
-import Product from './Product_Pricing/Product';
+const About = lazy(()=>import('./About/About'));
+const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
+const Projects = lazy(()=>import('./Projects'));
+const Blog = lazy(()=>import('./Blog'));
+const WhyUs = lazy(()=>import('./WhyUs'));
+const Pricing = lazy(()=>import('./Pricing'));
+const Team = lazy(()=>import('./Team'));
+const Contact = lazy(()=>import('./Contact'));
+const Product = lazy(()=>import('./Product_Pricing/Product'));
+// import About from './About/About';
+// import Parallax from '../../components/Parallax/Parallax';
+// import Projects from './Projects';
+// import Blog from './Blog';
+// import WhyUs from './WhyUs';
+// import Pricing from './Pricing';
+// import Team from './Team';
+// import Contact from './Contact';
+// import Product from './Product_Pricing/Product';
 
 
 class HomePage extends Component  {
@@ -58,18 +58,35 @@ class HomePage extends Component  {
     {
        
         return(
+            <>
         <Suspense  fallback={<Loader />}>
             <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
+            </Suspense>
+                    <Suspense  fallback={<Loader />}>
             <div id = {this.props.t('common:nav.0')}><About/></div>
-        
+            </Suspense>
+            <Suspense  fallback={<Loader />}>
             <Product change_p_slide_id = {this.props.change_p_slide_id} />
+            </Suspense>
+            <Suspense  fallback={<Loader />}>
             <div id = {this.props.t('common:nav.2')}><Projects /></div> 
+            </Suspense>
+            <Suspense  fallback={<Loader />}>
             <WhyUs/>
-            <div id = {this.props.t('common:nav.3')}><Team /></div>
+            </Suspense>
+                <Suspense  fallback={<Loader />}>
+           <div id = {this.props.t('common:nav.3')}><Team /></div>
+           </Suspense>
+            <Suspense  fallback={<Loader />}>
             <div id = {this.props.t('common:nav.1')}><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /></div>
+            </Suspense>
+            <Suspense  fallback={<Loader />}>
             <div id ={this.props.t('common:nav.4')}><Blog/></div>
+            </Suspense>
+            <Suspense  fallback={<Loader />}>
             <div id = {this.props.t('common:nav.5')}><Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
             </Suspense>
+            </>
         )
     }
     
