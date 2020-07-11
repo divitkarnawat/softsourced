@@ -473,7 +473,7 @@ class Contact extends Component
                     </div>
                 </div>
                 <div className = "recapatcha-wrapper">
-                    <div id="recaptcha" ref={ref => {this.recaptchaRef = ref; setTimeout(()=>console.log(this.recaptchaRef),2000)}} ></div>
+                    <div id="recaptcha" ref={ref => {this.recaptchaRef = ref; }} ></div>
                     {/* <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/> */}
                 {/* <ReCAPTCHAWrapper
     
