@@ -15,10 +15,10 @@ import whyus_en from './translations/homepage/whyus/en.json';
 import whyus_de from './translations/homepage/whyus/de.json';
 import pricing_en from './translations/homepage/pricing/en.json';
 import pricing_de from './translations/homepage/pricing/de.json';
-import blog_en from './translations/homepage/blog/en.json';
-import blog_de from './translations/homepage/blog/de.json';
-import contactus_en from './translations/homepage/contactus/en.json';
-import contactus_de from './translations/homepage/contactus/de.json';
+// import blog_en from './translations/homepage/blog/en.json';
+// import blog_de from './translations/homepage/blog/de.json';
+// import contactus_en from './translations/homepage/contactus/en.json';
+// import contactus_de from './translations/homepage/contactus/de.json';
 
 // import projectpage_en from './translations/projectpage/en.json';
 // import projectpage_de from './translations/projectpage/de.json';
@@ -40,8 +40,8 @@ const resources = {
     projects: projects_en,
     whyus: whyus_en,
     pricing: pricing_en,
-    blog: blog_en,
-    contactus: contactus_en,
+    // blog: blog_en,
+    // contactus: contactus_en,
     // projectpage: projectpage_en,
     // pp: pp_en,
     // tnc: tnc_en,
@@ -55,8 +55,8 @@ const resources = {
     projects: projects_de,
     whyus: whyus_de,
     pricing: pricing_de,
-    blog: blog_de,
-    contactus: contactus_de,
+    // blog: blog_de,
+    // contactus: contactus_de,
     // projectpage: projectpage_de,
     // pp: pp_de,
     // tnc: tnc_de,

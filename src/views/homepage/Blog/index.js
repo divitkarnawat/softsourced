@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import {withTranslation} from 'react-i18next';
+
+import blog_en from '../../../translations/homepage/blog/en.json';
+import blog_de from '../../../translations/homepage/blog/de.json';
 import {Container} from '@material-ui/core';
 import {HashLink as Link} from 'react-router-hash-link';
 
@@ -14,9 +17,33 @@ import blog1sw from '../../../assets/img/blog3s.webp';
 import author1 from '../../../assets/img/blog/author.jpg';
 
 class Blog extends Component{
+
+    constructor(props)
+    {
+        super(props)
+        {
+            this.state = {
+                load: false
+            }
+        }
+    }
+
+    componentDidMount()
+    {
+        this.props.i18n.addResourceBundle("en","blog",blog_en, true, false);
+        this.props.i18n.addResourceBundle("de","blog",blog_de, true, false);
+        this.setState({load: true})
+        
+    }
     
     render()
     {
+        
+        if(!this.state.load)
+        {
+            return(<div>Loading...</div>)
+        }
+
         const content = {
             bid: ["mm_10052020",'nm_2432020',"adube_2232020"],
             author: [["MARC","MUELLER"],["NATASHA","MASCARENHAS"],["AAKARSH","DUBE"]],
@@ -79,9 +106,9 @@ class Blog extends Component{
             <div className="section blog_s">
                 <Container>
                     <div>
-                        <h2 className="title"> {this.props.t('title')}</h2>
+                        <h2 className="title"> {this.props.t('blog:title')}</h2>
                         <p className="desc c_desc">
-                        {this.props.t('desc')}
+                        {this.props.t('blog:desc')}
                         </p>
                     </div>
                     <div className = "blog_articles">
@@ -97,4 +124,4 @@ class Blog extends Component{
     }
 }
 
-export default withTranslation('blog')(Blog);
+export default withTranslation()(Blog);

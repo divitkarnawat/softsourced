@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {withTranslation, Trans} from 'react-i18next';
 // import ReCaptchaValidation from './recaptcha';
 import Slider from 'react-slick';
+import contactus_en from '../../../translations/homepage/contactus/en.json';
+import contactus_de from '../../../translations/homepage/contactus/de.json';
 
 import {Container} from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -18,8 +20,9 @@ class Contact extends Component
         this.errors = new Set();
         this.submitbtn = React.createRef();
         this.state = {
+            load: true,
             cur_contact: 0,
-            resume: this.props.t('placeholders.resume'),
+            resume: this.props.t('contact:placeholders.resume'),
             prevpropid: {
                 email: 0,
                 support: 0
@@ -357,9 +360,19 @@ class Contact extends Component
     //     script.defer = true;
     //     document.body.appendChild(script);
     // }
+    componentDidMount(){
+        this.props.i18n.addResourceBundle("en", "contact", contactus_en, true, false);
+        this.props.i18n.addResourceBundle("de", "contact", contactus_de, true, false);
+        this.setState({load: true});
+    }
 
     render()
     {
+
+        if(!this.state.load)
+        {
+            return(<div>Loading...</div>);
+        }
         
       const settings_main = {
             speed: 500,
@@ -387,13 +400,13 @@ class Contact extends Component
         return(
             <div className = "section contact_s">
                 <h2 className = "title">
-                    {this.props.t('title')}
+                    {this.props.t('contact:title')}
                 </h2>
                 <Container>
                 <div className="main_slider">
                 <Slider {...settings_main}>
                 {
-                   this.props.t('contact_cat', {returnObjects: true}).map((item,idx)=>
+                   this.props.t('contact:contact_cat', {returnObjects: true}).map((item,idx)=>
                     {
                               
                         return(
@@ -414,12 +427,12 @@ class Contact extends Component
                         {
                             this.state.cur_contact == 0 ? 
                         (<div className = "display_box">
-                            <p> {this.props.i18n.language != "de" ? this.props.t('time.placeholder') : ""} <b>{this.props.t(`time.options.${this.state.proj_details.time}`)} </b>{this.props.i18n.language == "de" ? this.props.t('time.placeholder') : ""}</p>
+                            <p> {this.props.i18n.language != "de" ? this.props.t('contact:time.placeholder') : ""} <b>{this.props.t(`time.options.${this.state.proj_details.time}`)} </b>{this.props.i18n.language == "de" ? this.props.t('time.placeholder') : ""}</p>
                             {
                                 this.state.proj_details.support.size > 0 ? (
                                 <>
                                 
-                                <p> {this.props.t('main_cat.placeholder')} </p>
+                                <p> {this.props.t('contact:main_cat.placeholder')} </p>
                             <ul>
                             {
                                
@@ -441,27 +454,27 @@ class Contact extends Component
                             </ul>
                             </>): ''
     }
-                            <p> {this.props.t('budget.placeholder')} <b>{this.props.t(`budget.options.${this.state.proj_details.budget}`)} EUR</b></p>
+                            <p> {this.props.t('contact:budget.placeholder')} <b>{this.props.t(`contact:budget.options.${this.state.proj_details.budget}`)} EUR</b></p>
                         </div>) : ''
     }
-                        <textarea rows="4"  value= {this.state.message} name="message" onChange = {this.handleChange} placeholder={this.props.t(`display_box.${this.state.cur_contact}`)} />
+                        <textarea rows="4"  value= {this.state.message} name="message" onChange = {this.handleChange} placeholder={this.props.t(`contact:display_box.${this.state.cur_contact}`)} />
                            
 
                         <div className = "main_form">
                            
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = {this.props.t('placeholders.fname')} />
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = {this.props.t('placeholders.lname')}/>
-                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = {this.props.t('placeholders.email')} className = {this.errors.has("email") ? 'invalid': ''} />
-                                <input type="tel"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = {this.props.t('placeholders.pno')} minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = {this.props.t('contact:placeholders.fname')} />
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = {this.props.t('contact:placeholders.lname')}/>
+                                <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = {this.props.t('contact:placeholders.email')} className = {this.errors.has("email") ? 'invalid': ''} />
+                                <input type="tel"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = {this.props.t('contact:placeholders.pno')} minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
                                 {
-                                    this.state.cur_contact == 1 ? <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = {this.props.t('placeholders.linkedin')}/> : ''
+                                    this.state.cur_contact == 1 ? <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = {this.props.t('contact:placeholders.linkedin')}/> : ''
                                 }   
                                 {
                                     this.state.cur_contact == 1 ? <>
-                                        <div className={`file-upload ${this.state.resume != this.props.t('placeholders.resume') ? 'active' : ''}`}>
+                                        <div className={`file-upload ${this.state.resume != this.props.t('contact:placeholders.resume') ? 'active' : ''}`}>
                                             <div className="file-select"> 
                                                 <div className="file-select-name" id="noFile">{this.state.resume}</div> 
-                                                <div className="file-select-button" id="fileName">{this.props.t('placeholders.upload')}</div>
+                                                <div className="file-select-button" id="fileName">{this.props.t('contact:placeholders.upload')}</div>
                                                 <input type="file" name="resume" id="chooseFile" onChange={this.handleChange} />
                                             </div>
                                         </div>
@@ -492,7 +505,7 @@ class Contact extends Component
         </MuiAlert>
       </Snackbar>
                             </div>
-                            {this.state.cur_contact == 0 ? <p className="desc">{this.props.t('extra')}</p> : ''}
+                            {this.state.cur_contact == 0 ? <p className="desc">{this.props.t('contact:extra')}</p> : ''}
                         </form>
                 </Container>
             </div>
@@ -502,4 +515,4 @@ class Contact extends Component
 
 
 
-export default withTranslation('contactus')(Contact);
+export default withTranslation()(Contact);
