@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {withTranslation, Trans} from 'react-i18next';
-// import ReCaptchaValidation from './recaptcha';
+import ReCaptchaValidation from './recaptcha';
 import Slider from 'react-slick';
 
 import {Container} from '@material-ui/core';
@@ -349,14 +349,14 @@ class Contact extends Component
     }
 
 
-    componentDidMount () {
-        const script = document.createElement("script");
+    // componentDidMount () {
+    //     const script = document.createElement("script");
     
-        script.src = "https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit";
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-    }
+    //     script.src = "https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit";
+    //     script.async = true;
+    //     script.defer = true;
+    //     document.body.appendChild(script);
+    // }
 
     render()
     {
@@ -473,8 +473,8 @@ class Contact extends Component
                     </div>
                 </div>
                 <div className = "recapatcha-wrapper">
-                    <div id="recaptcha" ref={ref => {this.recaptchaRef = ref; }} ></div>
-                    {/* <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/> */}
+                    {/* <div id="recaptcha" ref={ref => {this.recaptchaRef = ref; }} ></div> */}
+                    <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/>
                 {/* <ReCAPTCHAWrapper
     
     ref={this.recaptchaRef}
