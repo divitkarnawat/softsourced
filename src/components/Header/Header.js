@@ -88,9 +88,7 @@ class Header extends Component{
           <div className="menuWrapper" ref={this.menuWrapper}>
               <div className="linksWrapper">
               {navlinks}
-              {/* <div className="navLink" onClick={this.handleHamburger}>
-                <a href = "#CONTACT">  <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
-            </div> */}
+     
            
               </div>
               
@@ -106,9 +104,7 @@ class Header extends Component{
            <div className="navLinks">
                <div className="desktopView">
                {navlinks}
-               {/* <div className="navLink" onClick={this.handleHamburger}>
-                <a href = "#CONTACT">   <div className = "custom_btn">KICK OFF YOUR PROJECT WITH US</div></a>
-            </div> */}
+       
           
                </div>
               
@@ -120,8 +116,7 @@ class Header extends Component{
                     <span></span>
                     <span onClick={()=>this.props.i18n.changeLanguage('en')} className = {this.props.i18n.language!="de" ? "lng_selected" : ""}></span>
                     <span onClick={()=>this.props.i18n.changeLanguage('de')} className = {this.props.i18n.language=="de" ? "lng_selected" : ""}></span>
-                    {/* <span onClick = {()=> this.props.i18n.changeLanguage("en")}></span>
-                    <span onClick = {()=> this.props.i18n.changeLanguage("de")}></span> */}
+         
                     </label>
                 </a>
                 </div>

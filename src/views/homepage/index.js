@@ -1,6 +1,6 @@
 
-import React, {Component,  Suspense, lazy} from 'react';
-import Loader from '../../components/Loader';
+import React, {Component} from 'react';
+
 import {withTranslation} from 'react-i18next';
 // const About = lazy(()=>import('./About/About'));
 // const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
@@ -58,7 +58,8 @@ class HomePage extends Component  {
     {
        
         return(
-        <Suspense  fallback={<Loader />}>
+            <>
+      
             <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
             <div id = {this.props.t('common:nav.0')}><About/></div>
         
@@ -69,7 +70,7 @@ class HomePage extends Component  {
             <div id = {this.props.t('common:nav.1')}><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /></div>
             <div id ={this.props.t('common:nav.4')}><Blog/></div>
             <div id = {this.props.t('common:nav.5')}><Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
-            </Suspense>
+  </>
         )
     }
     

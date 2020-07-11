@@ -90,48 +90,25 @@ class Parallax extends Component{
         
             <div className = "anim-typewriter title_1">
                 {/* <div className="title_1">             */}
-            {this.props.t('title.0')}
+            {this.props.t('parallax:title.0')}
             {/* </div> */}
             </div>
             <div className = "title_2">            
-            {this.props.t('title.1')}
+            {this.props.t('parallax:title.1')}
             </div>
             <div className = "title_3">            
-            {this.props.t('title.2')}
+            {this.props.t('parallax:title.2')}
             </div>
          
             </div>
-            {/* <p class="line-1 anim-typewriter">Animation typewriter style using css steps() </p> */}
 
             <div className="home_btm">
-            {/* <div className = "home_btm_l">
-               
-                <div>
-                    You are looking for support for your project ?
-                </div>
-               
-                <div>
-                {
-                    ["E-Commerce","Mobile Applications","API Development"].map((item,idx)=>
-                    {
-                              
-                        return(
-                            
-                                <label key={idx} className = {`custom_btn ${this.state.support.has(idx) ? 'checked' : ''}`} onClick = {(e) => this.handleClick(e,idx)}>{item}</label>
-                            
-                        );
-                    })
-                }
-                </div>
-               
-                
-
-                </div> */}
+       
 
                 <div className = "home_btm_r">
                     <div >
-                        <input required type="text" required placeholder={this.props.t("placeholder")} value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
-                        <a href={`#${this.props.t('common:nav.5')}`} ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = {this.props.t("btn")} className = "custom_btn submit" /></a>
+                        <input required type="text" required placeholder={this.props.t("parallax:placeholder")} value = {this.state.email} onChange={this.handleChange} name="email" className={this.inv ? 'invalid': ''} />
+                        <a href={`#${this.props.t('common:nav.5')}`} ref={this.proceedbtn}><input onClick={this.handleSubmit}  value = {this.props.t("parallax:btn")} className = "custom_btn submit" /></a>
                     </div>
                 </div>
                 </div>
@@ -144,4 +121,4 @@ class Parallax extends Component{
 }
 }
 
-export default withTranslation('parallax')(Parallax);
+export default withTranslation()(Parallax);

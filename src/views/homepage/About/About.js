@@ -41,7 +41,7 @@ class About extends Component
             <div className="section about_s">
                 <Container> 
                     <div className="m_content">
-                        <h1 className="title"> {this.props.t('title')}</h1>
+                        <h1 className="title"> {this.props.t('about:title')}</h1>
                         {/* <div className = "imgNdesc"> */}
                             {/* <div className = "img_desc_wrapper">
                             <div className = "img_casual_wrapper">
@@ -53,7 +53,7 @@ class About extends Component
                             </div> */}
                         <div className="desc">
                      
-                     {this.props.t('desc', {returnObjects: true}).map(item=>{
+                     {this.props.t('about:desc', {returnObjects: true}).map(item=>{
                          return(
                              <p dangerouslySetInnerHTML={{__html: item}} />
 
@@ -126,4 +126,4 @@ What makes us unique is the nomadic approach we take to run our company. We are 
         );
     }
 }
-export default withTranslation('about')(About);
+export default withTranslation()(About);

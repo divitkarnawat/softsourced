@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import { Trans, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import {Grid, Container, Box} from '@material-ui/core';
 
+import pdt_pr_en from '../../../translations/homepage/product_pricing/en.json';
+import pdt_pr_de from '../../../translations/homepage/product_pricing/de.json';
 import './Product.scss'
 import prodSym from '../../../assets/img/prod_sym.svg';
 import icon1 from '../../../assets/img/icon1.svg';
@@ -12,10 +14,23 @@ class Product extends Component{
     constructor(props)
     {
         super(props);
+        this.state = {
+            load: false
+        }
         
+    }
+    componentDidMount()
+    {
+        this.props.i18n.addResourceBundle("en","pdt_pr",pdt_pr_en, true, false);
+        this.props.i18n.addResourceBundle("de","pdt_pr",pdt_pr_de, true, false);
+        this.setState({load: true}) 
     }
     render()
     {
+        if(!this.state.load)
+        {
+            return false;
+        }
 
     const list_icons = [icon1,icon2];
     return(
@@ -23,7 +38,7 @@ class Product extends Component{
         <div className="section prod_s">
             
             <h2 className="title">
-            {this.props.t('title')}
+            {this.props.t('pdt_pr:title')}
             </h2>
 
             <div>
@@ -35,7 +50,7 @@ class Product extends Component{
                                 <div className="prod_item" onClick={()=>this.props.change_p_slide_id(idx)}> 
                                 <img src={prodSym} className="prodSym"/>
                                 <h4 style={{textTransform : `uppercase`}}>{title}</h4>
-                                <p className="desc" style={{width: `100%`}}>{this.props.t(`pdts_desc.${idx}`)}</p>
+                                <p className="desc" style={{width: `100%`}}>{this.props.t(`pdt_pr:pdts_desc.${idx}`)}</p>
                                 </div>
                                 </a>
                         );
@@ -50,16 +65,16 @@ class Product extends Component{
                     <Grid container >
                         <Grid item md={6}>
                             <div className="part part-specific">
-                            <h3 className=""> {this.props.t('part_left.title')} </h3>
-                            <p className="desc" dangerouslySetInnerHTML = {{__html: this.props.t('part_left.desc')}} />
+                            <h3 className=""> {this.props.t('pdt_pr:part_left.title')} </h3>
+                            <p className="desc" dangerouslySetInnerHTML = {{__html: this.props.t('pdt_pr:part_left.desc')}} />
                             </div>
                         </Grid>
                         <Grid item md={6}>
                         <div className="part">
-                            <h3 className=""> {this.props.t('part_right.title')} </h3>
+                            <h3 className=""> {this.props.t('pdt_pr:part_right.title')} </h3>
                             <div className = "list">
                                 {
-                                    this.props.t('part_right.desc', {returnObjects: true}).map(({title,desc},idx)=>{
+                                    this.props.t('pdt_pr:part_right.desc', {returnObjects: true}).map(({title,desc},idx)=>{
                                         return(
                                         
                                             <div>
@@ -86,4 +101,4 @@ class Product extends Component{
     );
 }
 }
-export default withTranslation('product_pricing')(Product);
+export default withTranslation()(Product);

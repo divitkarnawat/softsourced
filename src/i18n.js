@@ -7,10 +7,10 @@ import parallax_en from './translations/homepage/parallax/en.json';
 import parallax_de from './translations/homepage/parallax/de.json';
 import about_en from './translations/homepage/about/en.json';
 import about_de from './translations/homepage/about/de.json';
-import product_pricing_en from './translations/homepage/product_pricing/en.json';
-import product_pricing_de from './translations/homepage/product_pricing/de.json';
-import projects_en from './translations/homepage/projects/en.json';
-import projects_de from './translations/homepage/projects/de.json';
+// import product_pricing_en from './translations/homepage/product_pricing/en.json';
+// import product_pricing_de from './translations/homepage/product_pricing/de.json';
+// import projects_en from './translations/homepage/projects/en.json';
+// import projects_de from './translations/homepage/projects/de.json';
 // import whyus_en from './translations/homepage/whyus/en.json';
 // import whyus_de from './translations/homepage/whyus/de.json';
 // import pricing_en from './translations/homepage/pricing/en.json';
@@ -36,8 +36,8 @@ const resources = {
     common: common_en,
     parallax: parallax_en,
     about: about_en,
-    product_pricing: product_pricing_en,
-    projects: projects_en,
+    // product_pricing: product_pricing_en,
+    // projects: projects_en,
     // whyus: whyus_en,
     // pricing: pricing_en,
     // blog: blog_en,
@@ -51,8 +51,8 @@ const resources = {
     common: common_de,
     parallax: parallax_de,
     about: about_de,
-    product_pricing: product_pricing_de,
-    projects: projects_de,
+    // product_pricing: product_pricing_de,
+    // projects: projects_de,
     // whyus: whyus_de,
     // pricing: pricing_de,
     // blog: blog_de,

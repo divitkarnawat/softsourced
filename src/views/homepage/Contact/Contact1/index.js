@@ -13,9 +13,7 @@ class Contact1 extends Component{
         return(
             <div className = "contact_proj_req">
           
-                  {/* <div className = "part" style={{contentEditable: true}}>
-                    You are looking for support for your project?
-                </div> */}
+              
                 <div className = "part">
                 <div>
                {this.props.t('contact:time.title')}

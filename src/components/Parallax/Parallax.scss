@@ -2,27 +2,12 @@
 @import '../../assets/scss/flexbox';
 
 .parallax {
-    /* The image used */
-    // background: url("../../assets/img/home_bg_img/home_bg1x.jpg");
-  
-    /* Set a specific height */
+
     min-height: 100vh; 
     @include flexi(column, center, space-evenly);
 
   
-    /* Create the parallax scrolling effect */
-//     background-attachment: fixed;
-//     background-position: 40%;
-//     background-repeat: no-repeat;
-//     background-size: cover;
 
-// -webkit-background-position: center;
-// -webkit-background-repeat: no-repeat;
-// -webkit-background-size: cover;
-
-// -moz-background-position: center;
-// -moz-background-repeat: no-repeat;
-// -moz-background-size: cover;
 
   }
   

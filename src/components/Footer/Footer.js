@@ -15,16 +15,7 @@ class Footer extends Component
         return(
             <div className="footer_section">
                 <div className = "upper_footer" >
-                    {/* <Grid item className="cb" sm = {4} xs = {12}>
-                    <div style={{textAlign: `center`}} >
-                    <Link smooth to="/#root">
-           <img src = {logo} style = {{ width: `100px`, height: `93.33px`}} />
-           </Link>
-
-           </div>
-
-
-                    </Grid> */}
+                  
                     <div className = "fr1">
                         <div className = "fc1">
                         <span className ="hw">{this.props.t('common:footer.exp')}</span>
@@ -70,14 +61,7 @@ class Footer extends Component
                     </div>
                     </div>
                     
-                    {/* <Grid item className="cf" sm = {3} xs = {12}>
-                        <div className="flinks">
-                        <div><a href="/data-protection">Data Protection</a></div>
-                        <div><a href="/imprint">Imprint</a></div>
-                       
-                        
-                        </div>
-                    </Grid> */}
+                
               
                 <Grid container className="ext_footer" >
                     <Grid item md = {3} sm={3} xs = {12}><div style={{ margin: `auto`,textAlign: `left`}}><a href="https://goo.gl/maps/Gzj3oiGp7peDR3PSA" target="_blank">{this.props.t('common:basic.germany')}</a></div></Grid>

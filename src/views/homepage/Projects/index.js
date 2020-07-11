@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import {Container} from '@material-ui/core';
-
+import projects_en from '../../../translations/homepage/projects/en.json';
+import projects_de from '../../../translations/homepage/projects/de.json';
 import Fade from 'react-reveal/Fade';
 
 import './Projects.scss';
@@ -19,67 +20,36 @@ class Projects extends Component{
     {
         super(props);
         this.state = {
+            load: false,
             id: 1,
             projects_id: [0,1,2]
         }
         this.mainSlider = React.createRef();
     }
 
-    // componentDidMount()
-    // {
-    //     this.slider.slickGoTo(1,false);   
-    // }
+    componentDidMount()
+    {
+        this.props.i18n.addResourceBundle("en","projects",projects_en, true, false);
+        this.props.i18n.addResourceBundle("de","projects",projects_de, true, false);
+        this.setState({load: true}) 
+    }
 
     render()
     {
-        // const ran = Math.random();
-     
-        // const projects_cat = [[0,2],[3,4,5],[0,1,3,6]];
-        
+      
+        if(!this.state.load)
+        {
+            return(<div>Loading...</div>);
+        }
           const imgURLs=[proj1s,proj2s,proj3s,proj4s,proj5s,proj6s]
         
-        // const settings_main = {
-        //     speed: 500,
-        //     slidesToShow: 3,
-        //     slidesToScroll: 1,
-        //     responsive: [
-        //       {
-        //         breakpoint: 767,
-        //         settings: {
-        //           slidesToShow: 1,
-        //           dots: true,
-        //           slidesToScroll: 1,
-        //           infinite: true,
-        //           beforeChange: (current, next) => {
-        //              this.setState({id: next});
-        //           }
-        //         }
-        //       }
-        //   ]
-        //       };
         return(
             <div className = "section project_s">
                 <Container>
                     <h2 className = "title">
-                        {this.props.t('title')}
+                        {this.props.t('projects:title')}
                     </h2>
-                    {/* <div className="main_slider">
-                <Slider ref={slider => (this.slider = slider)} {...settings_main}>
-                {
-                    ["E-Commerce","Mobile Applications","API Development"].map((item,idx)=>
-                    {
-                              
-                        return(
-                            <div className = "slide_wrapper" key={idx}>
-                                <label onClick={() => {this.setState({id: idx}); }} className = {`custom_btn ${this.state.id == idx ? 'checked' : ''}`}>{item}</label>
-                            </div>
-                        );
-                    })
-                }
-
-                </Slider>
-                </div> */}
-
+                 
                 <div className = "projects">
                     
                         
@@ -88,17 +58,17 @@ class Projects extends Component{
                         this.state.projects_id.map((project_id, idx)=>{
                             return(
                                 <Fade clear  spy = {0} appear = {true} >
-                                <a  href = {`/projects/${this.props.t(`projects.title.${project_id}`).replace(/ +/g, "")}`} target="_blank">
+                                <a  href = {`/projects/${this.props.t(`projects:projects.title.${project_id}`).replace(/ +/g, "")}`} target="_blank">
                                 <div className="project">
                                 <div className = "img_wrapper">
                                     <img src={imgURLs[project_id]} />
                                 </div>
                                     <div className="content_wrapper">
                                     <div className = "title">
-                                        {this.props.t(`projects.title.${project_id}`)}
+                                        {this.props.t(`projects:projects.title.${project_id}`)}
                                     </div>
                                     <div className = "desc">
-                                    {this.props.t(`projects.desc.${project_id}`)}
+                                    {this.props.t(`projects:projects.desc.${project_id}`)}
                                     </div>
                                     
                                        
@@ -123,4 +93,4 @@ class Projects extends Component{
 }
 
 
-export default withTranslation('projects')(Projects);
+export default withTranslation()(Projects);
