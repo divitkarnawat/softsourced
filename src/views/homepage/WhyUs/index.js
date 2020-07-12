@@ -106,7 +106,7 @@ class WhyUs extends Component{
                                             <div className = "title">
                                                 {title}
                                             </div>
-                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: this.props.t(`content_r.desc.${idx}`) }}>
+                                            <div className ="desc" dangerouslySetInnerHTML = {{__html: this.props.t(`whyus:content_r.desc.${idx}`) }}>
                                             
                                             </div>
                                             </div>
