@@ -66,10 +66,10 @@ class HomePage extends Component  {
             this.setState({load: true})
         }
     });
-    window.scroll({
-        top: 1,
-        behavior: 'smooth'
-      });
+    // window.scroll({
+    //     top: 1,
+    //     behavior: 'smooth'
+    //   });
   }
     
     render()
@@ -90,7 +90,7 @@ class HomePage extends Component  {
             }
             
 
-            <div id = {this.props.t('common:nav.2')}>
+            <div id = {this.props.t('common:nav.2')} style={{minHeight: `100vh`}}>
             {
              this.state.load ? 
                 <Projects /> : ""
@@ -100,27 +100,27 @@ class HomePage extends Component  {
 
                 {this.state.load ? <WhyUs/> : ""}
              
-            <div id = {this.props.t('common:nav.3')}>
+            <div id = {this.props.t('common:nav.3')} style={{minHeight: `100vh`}}>
                 
             {this.state.load ? <Team /> : ""}
                 
                 </div>
-            <div id = {this.props.t('common:nav.1')}>
+            <div id = {this.props.t('common:nav.1')} style={{minHeight: `100vh`}}>
                 
             {this.state.load ? <Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /> : ""}
                 
                 </div>
 
-            <div id ={this.props.t('common:nav.4')}>
+            <div id ={this.props.t('common:nav.4')} style={{minHeight: `100vh`}}>
             {this.state.load ? <Blog/> : ""}
             </div>
-            <div id = {this.props.t('common:nav.5')}>
+            <div id = {this.props.t('common:nav.5')} style={{minHeight: `100vh`}}>
             {this.state.load ? <Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /> : ""}
             </div>
          </Suspense>
          
   </>
-        )
+        );
     }
     
 }
