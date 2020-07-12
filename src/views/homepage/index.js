@@ -60,41 +60,55 @@ class HomePage extends Component  {
 
     componentDidMount()
     {
-        this.setState({load: true});
+        // this.setState({load: false});
     }
     
     render()
     {
-       if(!this.state.load)
+       
         return(
             <>
                   <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
   
       
             <div id = {this.props.t('common:nav.0')}><About/></div>
-            </>
-        );
-
-        else
-        return(
-            <>
-            <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
-
-
-      <div id = {this.props.t('common:nav.0')}><About/></div>
+        
          
-         {
-             this.state.load ? <>
-           <Product change_p_slide_id = {this.props.change_p_slide_id} />
+            {
+             this.state.load ? 
+           <Product change_p_slide_id = {this.props.change_p_slide_id} /> :  ""
+            }
             
-            <div id = {this.props.t('common:nav.2')}><Projects /></div> 
-            <WhyUs/>
-            <div id = {this.props.t('common:nav.3')}><Team /></div>
-            <div id = {this.props.t('common:nav.1')}><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /></div>
-            <div id ={this.props.t('common:nav.4')}><Blog/></div>
-            <div id = {this.props.t('common:nav.5')}><Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
-         </> : ""
-         }
+
+            <div id = {this.props.t('common:nav.2')}>
+            {
+             this.state.load ? 
+                <Projects /> : ""
+            }
+                
+                </div> 
+
+                {this.state.load ? <WhyUs/> : ""}
+             
+            <div id = {this.props.t('common:nav.3')}>
+                
+            {this.state.load ? <Team /> : ""}
+                
+                </div>
+            <div id = {this.props.t('common:nav.1')}>
+                
+            {this.state.load ? <Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /> : ""}
+                
+                </div>
+
+            <div id ={this.props.t('common:nav.4')}>
+            {this.state.load ? <Blog/> : ""}
+            </div>
+            <div id = {this.props.t('common:nav.5')}>
+            {this.state.load ? <Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /> : ""}
+            </div>
+         
+         
   </>
         )
     }
