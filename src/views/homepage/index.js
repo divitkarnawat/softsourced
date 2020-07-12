@@ -35,7 +35,7 @@ class HomePage extends Component  {
         this.support_cat = new Set();
         this.checked_btns.add(0);
         this.state = {
-            
+            load: false,
             email: '',
             support : this.checked_btns,
             support_cat_id: 'hello',
@@ -57,6 +57,11 @@ class HomePage extends Component  {
         let contact_ran = {...this.state.contact_ran, support: ran};
         this.setState({support_id, support_cat_id, contact_ran});
     }
+
+    componentDidMount()
+    {
+        this.setState({load: true});
+    }
     
     render()
     {
@@ -68,7 +73,10 @@ class HomePage extends Component  {
       
             <div id = {this.props.t('common:nav.0')}><About/></div>
         
-            {/* <Product change_p_slide_id = {this.props.change_p_slide_id} />
+         
+         {
+             this.state.load ? <>
+           <Product change_p_slide_id = {this.props.change_p_slide_id} />
             
             <div id = {this.props.t('common:nav.2')}><Projects /></div> 
             <WhyUs/>
@@ -76,7 +84,8 @@ class HomePage extends Component  {
             <div id = {this.props.t('common:nav.1')}><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /></div>
             <div id ={this.props.t('common:nav.4')}><Blog/></div>
             <div id = {this.props.t('common:nav.5')}><Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
-     */}
+         </> : ""
+         }
   </>
         )
     }
