@@ -474,8 +474,9 @@ class Contact extends Component
                     </div>
                 </div>
                 <div className = "recapatcha-wrapper">
-                    {/* <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/> */}
-               
+                    {
+                      (1 == 2) ? <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/> : ""
+                    }
                             <input type="submit" value = {this.props.t('common:basic.submit')} className = {`custom_btn submit  ${this.errors.size ? `disabled` : ''}`} ref={this.submitbtn} />
                             <Snackbar open={this.state.submit == "" ? false : true} onClose={this.handleClose}>
         <MuiAlert onClose={this.handleClose} severity={this.state.submit}>
