@@ -9,9 +9,9 @@ const BlogPage = lazy(()=>import('./views/blogpage'));
 const PrivacyPolicy = lazy(()=>import('./views/documents/PrivacyPolicy'));
 const TnC = lazy(()=>import('./views/documents/TnC'));
 const Imprint = lazy(()=>import('./views/documents/Imprint'));
-const About = lazy(()=>import('./About/About'));
-const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
-const Projects = lazy(()=>import('./Projects'));
+const About = lazy(()=>import('./view/homepage/About/About'));
+const Parallax = lazy(()=>import('./components/Parallax/Parallax'));
+const Projects = lazy(()=>import('./view/homepage/Projects'));
 // const HomePage = lazy(() => import('./views/homepage'));
 
 class App extends Component {
