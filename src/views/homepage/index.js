@@ -58,10 +58,15 @@ class HomePage extends Component  {
         this.setState({support_id, support_cat_id, contact_ran});
     }
 
-    componentDidMount()
-    {
-        // this.setState({load: false});
-    }
+  componentDidMount()
+  {
+    document.addEventListener('scroll', ()=>{
+        if(!this.state.load)
+        {
+            this.setState({load: true})
+        }
+    });
+  }
     
     render()
     {
