@@ -11,9 +11,9 @@ import {withTranslation} from 'react-i18next';
 // const Team = lazy(()=>import('./Team'));
 // const Contact = lazy(()=>import('./Contact'));
 // const Product = lazy(()=>import('./Product_Pricing/Product'));
-import About from './About/About';
+// import About from './About/About';
 import Parallax from '../../components/Parallax/Parallax';
-import Projects from './Projects';
+// import Projects from './Projects';
 // import Blog from './Blog';
 // import WhyUs from './WhyUs';
 import Pricing from './Pricing';
@@ -61,10 +61,10 @@ class HomePage extends Component  {
             <>
       
             <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
-            <div id = {this.props.t('common:nav.0')}><About/></div>
+            {/* <div id = {this.props.t('common:nav.0')}><About/></div> */}
         
             <Product change_p_slide_id = {this.props.change_p_slide_id} />
-            <div id = {this.props.t('common:nav.2')}><Projects /></div> 
+            {/* <div id = {this.props.t('common:nav.2')}><Projects /></div>  */}
             {/* <WhyUs/> */}
             {/* <div id = {this.props.t('common:nav.3')}><Team /></div> */}
             <div id = {this.props.t('common:nav.1')}><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /></div>
