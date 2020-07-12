@@ -9,7 +9,10 @@ const BlogPage = lazy(()=>import('./views/blogpage'));
 const PrivacyPolicy = lazy(()=>import('./views/documents/PrivacyPolicy'));
 const TnC = lazy(()=>import('./views/documents/TnC'));
 const Imprint = lazy(()=>import('./views/documents/Imprint'));
-const HomePage = lazy(() => import('./views/homepage'));
+const About = lazy(()=>import('./About/About'));
+const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
+const Projects = lazy(()=>import('./Projects'));
+// const HomePage = lazy(() => import('./views/homepage'));
 
 class App extends Component {
   constructor(props)
@@ -41,7 +44,15 @@ class App extends Component {
     <Route path = "/imprint/" component = {Imprint} />
     <Route path = "/data-protection/" component = {PrivacyPolicy} />
 
-    <Route path = "/"  ><HomePage p_slide_id = {this.state.p_slide_id} change_p_slide_id = {this.change_p_slide_id.bind(this)} /> </Route>
+    <Route path = "/"  >
+
+
+    <About />
+    <Parallax />
+    <Projects/>
+
+      {/* <HomePage p_slide_id = {this.state.p_slide_id} change_p_slide_id = {this.change_p_slide_id.bind(this)} />  */}
+      </Route>
   
   </Switch>
   
