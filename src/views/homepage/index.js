@@ -3,8 +3,7 @@ import React, {Component, lazy, Suspense} from 'react';
 
 import {withTranslation} from 'react-i18next';
 // import Loader from '../../components/Loader';
-// import About from './About/About';
-import Parallax from '../../components/Parallax/Parallax';
+
 // const About = lazy(()=>import('./About/About'));
 // const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
 // const Projects = lazy(()=>import('./Projects'));
@@ -15,6 +14,8 @@ import Parallax from '../../components/Parallax/Parallax';
 // const Contact = lazy(()=>import('./Contact'));
 // const Product = lazy(()=>import('./Product_Pricing/Product'));
 
+import About from './About/About';
+import Parallax from '../../components/Parallax/Parallax';
 import Projects from './Projects';
 import Blog from './Blog';
 import WhyUs from './WhyUs';
