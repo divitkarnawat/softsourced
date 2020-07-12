@@ -21,6 +21,7 @@ class Contact extends Component
         this.submitbtn = React.createRef();
         this.state = {
             load: false,
+            recload: false,
             cur_contact: 0,
             resume: this.props.t('contact:placeholders.resume'),
             prevpropid: {
@@ -146,6 +147,10 @@ class Contact extends Component
         let name = e.target.name;
         let value = e.target.value;
 
+        if(!this.state.recload)
+        {
+            this.setState({recload: true});
+        }
       
       if(name == 'email' && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)))
       {
@@ -453,9 +458,9 @@ class Contact extends Component
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.fname} name = "fname" placeholder = {this.props.t('contact:placeholders.fname')} />
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.lname} name = "lname" placeholder = {this.props.t('contact:placeholders.lname')}/>
                                 <input type="text" required onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.email} name = "email" placeholder = {this.props.t('contact:placeholders.email')} className = {this.errors.has("email") ? 'invalid': ''} />
-                                <input type="tel"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = {this.props.t('contact:placeholders.pno')} minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
+                                <input type="tel"           onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.pnumber} name = "pnumber" placeholder = {this.props.t('contact:placeholders.pno')} minlength = "7" maxlength = "14" className = {this.errors.has("pnumber") ? 'invalid': ''}  />
                                 {
-                                    this.state.cur_contact == 1 ? <input type="text"          onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = {this.props.t('contact:placeholders.linkedin')}/> : ''
+                                    this.state.cur_contact == 1 ? <input type="text" onChange = {this.handleChange} onInvalid = {this.handleInvalid} value = {this.state.llink} name = "llink" placeholder = {this.props.t('contact:placeholders.linkedin')}/> : ''
                                 }   
                                 {
                                     this.state.cur_contact == 1 ? <>
@@ -475,7 +480,7 @@ class Contact extends Component
                 </div>
                 <div className = "recapatcha-wrapper">
                     {
-                      (1 == 2) ? <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/> : ""
+                      (this.state.recload) ? <ReCaptchaValidation onLoadRecaptcha = {this.onLoadRecaptcha.bind(this)} verifyCallback = {this.verifyCallback.bind(this)} handleOnCaptchaChange = {this.handleOnCaptchaChange.bind(this)} makemeRef = {this.makemeRef.bind(this)} className = "contact_recaptcha_main" apiKey="6LdUE68ZAAAAAKBqIeqpK2anACgmnjZ1Z8kJyXbO" lang={this.props.i18n.language}/> : ""
                     }
                             <input type="submit" value = {this.props.t('common:basic.submit')} className = {`custom_btn submit  ${this.errors.size ? `disabled` : ''}`} ref={this.submitbtn} />
                             <Snackbar open={this.state.submit == "" ? false : true} onClose={this.handleClose}>
