@@ -66,6 +66,10 @@ class HomePage extends Component  {
             this.setState({load: true})
         }
     });
+    window.scroll({
+        top: 1,
+        behavior: 'smooth'
+      });
   }
     
     render()
