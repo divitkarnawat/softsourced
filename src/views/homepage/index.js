@@ -4,7 +4,7 @@ import React, {Component, lazy, Suspense} from 'react';
 import {withTranslation} from 'react-i18next';
 import About from './About/About';
 import Parallax from '../../components/Parallax/Parallax';
-// import Loader from '../../components/Loader';
+import Loader from '../../components/Loader';
 
 // const About = lazy(()=>import('./About/About'));
 // const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
@@ -69,7 +69,7 @@ class HomePage extends Component  {
     setTimeout(()=>{    window.scroll({
         top: 1,
         behavior: 'smooth'
-      });}, 4000)
+      });}, 0)
 
   }
     
@@ -84,7 +84,7 @@ class HomePage extends Component  {
       
             <div id = {this.props.t('common:nav.0')}><About/></div>
         
-         <Suspense fallback={<div>Loading...</div>} >
+         <Suspense fallback={<Loader />} >
             {
              this.state.load ? 
            <Product change_p_slide_id = {this.props.change_p_slide_id} /> :  ""
