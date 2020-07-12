@@ -67,7 +67,7 @@ class WhyUs extends Component{
                                             </div>
                                             </div>
                                             <div className="part_img_wrapper">
-                                                <img src={content_l.syms[idx]} />
+                                                <img src={content_l.syms[idx]} loading="lazy"/>
                                             </div>
                                         </div>
                                     );
@@ -85,7 +85,7 @@ class WhyUs extends Component{
                             
                                
                                  <picture>
-                                    <img src = {whyus_img} alt="img_whyus" />    
+                                    <img src = {whyus_img} alt="img_whyus" loading="lazy"/>    
                                 </picture>
                                 </div>)
                             }
@@ -100,7 +100,7 @@ class WhyUs extends Component{
                                     return(
                                         <div className = "part">
                                               <div className="part_img_wrapper">
-                                                <img src={content_r.syms[idx]} />
+                                                <img src={content_r.syms[idx]} loading="lazy"/>
                                             </div>
                                             <div className = "part_content">
                                             <div className = "title">

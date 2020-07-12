@@ -72,7 +72,7 @@ class About extends Component
                                 srcset={marc_casualw}
                                 type="image/webp" />
                             <img
-                                src={marc_casual} alt="team member" />
+                                src={marc_casual} alt="team member" loading="lazy" />
                         </picture>
                             </div>
                             <div className = "img_wrapper" name-member="Hanush Pillai">
@@ -81,7 +81,7 @@ class About extends Component
                                 srcset={hanush_casualw}
                                 type="image/webp" />
                             <img
-                                src={hanush_casual} alt="team member" />
+                                src={hanush_casual} alt="team member" loading="lazy"/>
                         </picture>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ What makes us unique is the nomadic approach we take to run our company. We are 
                               
                         return(
                             <div className = "logo" key={idx}>
-                                <img src = {imgURL} />   
+                                <img src = {imgURL} loading="lazy"/>   
                             </div>
                         );
                     })

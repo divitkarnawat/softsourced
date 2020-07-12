@@ -104,8 +104,8 @@ class Pricing extends Component{
                                             <a className="a-custom_btn" href = {`#${this.props.t('common:nav.5')}`} ><div className = "custom_btn" style={{border: `2px solid white`}} onClick = {()=>{this.props.support_catUpdate(this.state.id,idx,Math.random())}} >
                                             {this.props.t('common:links.pricing')}
                                         </div>  </a>
-                                            <img src = {ellipse2} className = "ellipse2" />
-                <img src = {ellipse3} className = "ellipse3" />
+                                            <img src = {ellipse2} className = "ellipse2" loading="lazy"/>
+                <img src = {ellipse3} className = "ellipse3" loading="lazy"/>
                                         </div>
                                         
 

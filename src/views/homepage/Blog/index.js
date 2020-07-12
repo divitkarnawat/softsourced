@@ -70,7 +70,7 @@ class Blog extends Component{
                             srcset={content.imgURL_art[idx][1]}
                             type="image/webp" />
                         <img
-                            src={content.imgURL_art[idx][0]} alt="blog image" />
+                            src={content.imgURL_art[idx][0]} alt="blog image" loading="lazy"/>
                     </picture>
                        
                     </div>
@@ -83,7 +83,7 @@ class Blog extends Component{
                         </div>
                         <div className = "author">
                             <div className = "author_img_wrapper">
-                                <img src = {content.imgURL_aut[idx]} alt={content.author[idx][0]}/>
+                                <img src = {content.imgURL_aut[idx]} alt={content.author[idx][0]} loading="lazy"/>
                             </div>
                             <div className = "author_nd">
                                 <div className = "author_name desc">

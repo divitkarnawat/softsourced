@@ -61,7 +61,7 @@ class Projects extends Component{
                                 <a  href = {`/projects/${this.props.t(`projects:projects.title.${project_id}`).replace(/ +/g, "")}`} target="_blank">
                                 <div className="project">
                                 <div className = "img_wrapper">
-                                    <img src={imgURLs[project_id]} />
+                                    <img src={imgURLs[project_id]} loading="lazy" />
                                 </div>
                                     <div className="content_wrapper">
                                     <div className = "title">

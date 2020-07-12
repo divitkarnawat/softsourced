@@ -43,7 +43,7 @@ class Team extends Component
 		srcset={tcontent.img[idx][1]}
 		type="image/webp" />
 	<img
-		src={tcontent.img[idx][0]} alt="team member" />
+		src={tcontent.img[idx][0]} alt="team member" loading="lazy" />
 </picture>
      
     </div>

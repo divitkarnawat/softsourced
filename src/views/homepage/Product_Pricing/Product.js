@@ -48,7 +48,7 @@ class Product extends Component{
                         return(
                                 <a href={`#${this.props.t('common:nav.1')}`}>
                                 <div className="prod_item" onClick={()=>this.props.change_p_slide_id(idx)}> 
-                                <img src={prodSym} className="prodSym"/>
+                                <img src={prodSym} className="prodSym" loading="lazy"/>
                                 <h4 style={{textTransform : `uppercase`}}>{title}</h4>
                                 <p className="desc" style={{width: `100%`}}>{this.props.t(`pdt_pr:pdts_desc.${idx}`)}</p>
                                 </div>
@@ -79,7 +79,7 @@ class Product extends Component{
                                         
                                             <div>
                                                 <div className="icon_wrapper">
-                                                    <img src={list_icons[idx]} alt="icon" />
+                                                    <img src={list_icons[idx]} alt="icon" loading="lazy"/>
                                                 </div>
                                             <div>
                                             <h4 style={{textTransform: `uppercase`}}> {title} </h4>
