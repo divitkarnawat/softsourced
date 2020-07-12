@@ -60,7 +60,7 @@ class HomePage extends Component  {
 
     componentDidMount()
     {
-        this.setState({load: true});
+        // this.setState({load: true});
     }
     
     render()
