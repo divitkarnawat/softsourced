@@ -6,23 +6,23 @@ import {withTranslation} from 'react-i18next';
 
 // const About = lazy(()=>import('./About/About'));
 // const Parallax = lazy(()=>import('../../components/Parallax/Parallax'));
-// const Projects = lazy(()=>import('./Projects'));
-// const Blog = lazy(()=>import('./Blog'));
-// const WhyUs = lazy(()=>import('./WhyUs'));
-// const Pricing = lazy(()=>import('./Pricing'));
-// const Team = lazy(()=>import('./Team'));
-// const Contact = lazy(()=>import('./Contact'));
-// const Product = lazy(()=>import('./Product_Pricing/Product'));
+const Projects = lazy(()=>import('./Projects'));
+const Blog = lazy(()=>import('./Blog'));
+const WhyUs = lazy(()=>import('./WhyUs'));
+const Pricing = lazy(()=>import('./Pricing'));
+const Team = lazy(()=>import('./Team'));
+const Contact = lazy(()=>import('./Contact'));
+const Product = lazy(()=>import('./Product_Pricing/Product'));
 
 import About from './About/About';
 import Parallax from '../../components/Parallax/Parallax';
-import Projects from './Projects';
-import Blog from './Blog';
-import WhyUs from './WhyUs';
-import Pricing from './Pricing';
-import Team from './Team';
-import Contact from './Contact';
-import Product from './Product_Pricing/Product';
+// import Projects from './Projects';
+// import Blog from './Blog';
+// import WhyUs from './WhyUs';
+// import Pricing from './Pricing';
+// import Team from './Team';
+// import Contact from './Contact';
+// import Product from './Product_Pricing/Product';
 
 
 class HomePage extends Component  {
