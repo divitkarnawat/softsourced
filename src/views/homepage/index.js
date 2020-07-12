@@ -14,10 +14,10 @@ import {withTranslation} from 'react-i18next';
 import About from './About/About';
 import Parallax from '../../components/Parallax/Parallax';
 import Projects from './Projects';
-import Blog from './Blog';
-import WhyUs from './WhyUs';
+// import Blog from './Blog';
+// import WhyUs from './WhyUs';
 import Pricing from './Pricing';
-import Team from './Team';
+// import Team from './Team';
 import Contact from './Contact';
 import Product from './Product_Pricing/Product';
 
@@ -65,10 +65,10 @@ class HomePage extends Component  {
         
             <Product change_p_slide_id = {this.props.change_p_slide_id} />
             <div id = {this.props.t('common:nav.2')}><Projects /></div> 
-            <WhyUs/>
-            <div id = {this.props.t('common:nav.3')}><Team /></div>
+            {/* <WhyUs/> */}
+            {/* <div id = {this.props.t('common:nav.3')}><Team /></div> */}
             <div id = {this.props.t('common:nav.1')}><Pricing support_catUpdate = {this.support_catUpdate.bind(this)} p_slide_id = {this.props.p_slide_id} /></div>
-            <div id ={this.props.t('common:nav.4')}><Blog/></div>
+            {/* <div id ={this.props.t('common:nav.4')}><Blog/></div> */}
             <div id = {this.props.t('common:nav.5')}><Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /></div>
   </>
         )
