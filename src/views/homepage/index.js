@@ -60,19 +60,28 @@ class HomePage extends Component  {
 
     componentDidMount()
     {
-        // this.setState({load: true});
+        this.setState({load: true});
     }
     
     render()
     {
-       
+       if(!this.state.load)
         return(
             <>
                   <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
   
       
             <div id = {this.props.t('common:nav.0')}><About/></div>
-        
+            </>
+        );
+
+        else
+        return(
+            <>
+            <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
+
+
+      <div id = {this.props.t('common:nav.0')}><About/></div>
          
          {
              this.state.load ? <>
