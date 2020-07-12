@@ -82,20 +82,22 @@ class HomePage extends Component  {
   
       
             <div id = {this.props.t('common:nav.0')}><About/></div>
+            <Product change_p_slide_id = {this.props.change_p_slide_id} />
         
          <Suspense fallback={<div>Loading...</div>} >
-            {
+            {/* {
              this.state.load ? 
            <Product change_p_slide_id = {this.props.change_p_slide_id} /> :  ""
             }
-            
+             */}
 
             <div id = {this.props.t('common:nav.2')} style={{minHeight: `100vh`}}>
-            {
+            <Projects />
+            {/* {
              this.state.load ? 
                 <Projects /> : ""
             }
-                
+                 */}
                 </div> 
 
                 {this.state.load ? <WhyUs/> : ""}
