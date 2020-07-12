@@ -73,12 +73,13 @@ class HomePage extends Component  {
        
         return(
             <>
+            
                   <Parallax contactUpdate = {this.contactUpdate.bind(this)} />
   
       
             <div id = {this.props.t('common:nav.0')}><About/></div>
         
-         
+         <Suspense fallback={<div>Loading...</div>} >
             {
              this.state.load ? 
            <Product change_p_slide_id = {this.props.change_p_slide_id} /> :  ""
@@ -112,7 +113,7 @@ class HomePage extends Component  {
             <div id = {this.props.t('common:nav.5')}>
             {this.state.load ? <Contact propid = {this.state.contact_ran} email={this.state.email} support={this.state.support} support_cat_id = {this.state.support_cat_id} support_id = {this.state.support_id} /> : ""}
             </div>
-         
+         </Suspense>
          
   </>
         )
