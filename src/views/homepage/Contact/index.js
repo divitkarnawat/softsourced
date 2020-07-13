@@ -180,7 +180,7 @@ class Contact extends Component
         value = value.replace("C:\\fakepath\\", "");
         this.setState({
             [name]: [value],
-            file: e.target.files[0]
+   
         });
     
       }
@@ -216,8 +216,8 @@ class Contact extends Component
     handleSubmit = (e) =>
     {
         e.preventDefault();
-        // if(this.recaptchaRef.getValue())
- if(true)
+        if(this.recaptchaRef.getValue())
+
         {
         this.submitbtn.current.classList.add('disabled');    
         this.submitbtn.current.value = this.props.t('common:basic.sending');
@@ -243,8 +243,8 @@ class Contact extends Component
           if(cur_contact == 1)
           {
               formData.set('linkedin', this.state.llink);
-              formData.set('resume', this.state.file);
-              console.log(this.state.file);
+              formData.set('resume', this.state.resume);
+            
           }
 
           
@@ -428,7 +428,7 @@ class Contact extends Component
 
                 </Slider>
                 </div>
-                <form onSubmit = {this.handleSubmit} enctype="multipart/form-data">
+                <form onSubmit = {this.handleSubmit} >
                 <div className = "contact_wrapper">
                     {this.state.cur_contact == 0 ? <Contact1  proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
                     
@@ -484,7 +484,7 @@ class Contact extends Component
                                             <div className="file-select"> 
                                                 <div className="file-select-name" id="noFile">{this.state.resume}</div> 
                                                 <div className="file-select-button" id="fileName">{this.props.t('contact:placeholders.upload')}</div>
-                                                <input type="file" required name="resume" id="chooseFile" onChange={this.handleChange} />
+                                                <input type="file" required name="resume" id="chooseFile" onChange={this.handleChange} placeholder="hello"/>
                                             </div>
                                         </div>
                                     </>
