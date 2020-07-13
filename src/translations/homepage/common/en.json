@@ -34,7 +34,9 @@
         "technology": "Technology",
         "invalidField": "Please fill out this field",
         "weeks": "weeks",
-        "people":"people"
+        "people":"people",
+        "resume": "Resume..."
+
     },
     "links": {
         "pdt_pricing": "See products & pricing ",

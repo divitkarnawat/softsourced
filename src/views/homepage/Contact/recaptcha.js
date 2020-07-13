@@ -21,7 +21,7 @@ export default class ReCaptchaValidation extends React.Component {
     }
   
     importRecaptcha = async () => {
-        console.log('import runs again');
+   
       const { lang } = this.props
       this.setState({ Recaptcha: null })
       delete window.recaptchaOptions
@@ -45,7 +45,7 @@ export default class ReCaptchaValidation extends React.Component {
     componentDidUpdate(prevProps){
 
       if (prevProps.lang !== this.props.lang) {
-        console.log('prev: ' + prevProps.lang + 'new: ' + this.props.lang);
+      
         this.setState({key: Math.random()})
         // this.importRecaptcha()
 

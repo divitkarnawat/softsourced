@@ -23,7 +23,8 @@ class Contact extends Component
             load: false,
             recload: false,
             cur_contact: 0,
-            resume: this.props.t('contact:placeholders.resume'),
+            file: null,
+            resume: this.props.t('common:basic.resume'),
             prevpropid: {
                 email: 0,
                 support: 0
@@ -172,16 +173,24 @@ class Contact extends Component
           
           this.errors.delete(name);
       }
+
+
       if(name == 'resume') 
       {
         value = value.replace("C:\\fakepath\\", "");
-      }
+        this.setState({
+            [name]: [value],
+            file: e.target.files[0]
+        });
     
+      }
+    else
+    {
     
         this.setState({
             [name]: [value],
         });
-
+    }
         
       }
       handleOnCaptchaChange = () =>
@@ -198,7 +207,8 @@ class Contact extends Component
             pnumber: "",
             message: "",
             llink: "",
-            resume: "",
+            resume:  this.props.t('common:basic.resume'),
+            file: null
           });
          
       }
@@ -206,15 +216,16 @@ class Contact extends Component
     handleSubmit = (e) =>
     {
         e.preventDefault();
-        if(this.recaptchaRef.getValue())
- 
+        // if(this.recaptchaRef.getValue())
+ if(true)
         {
         this.submitbtn.current.classList.add('disabled');    
         this.submitbtn.current.value = this.props.t('common:basic.sending');
         let axiosConfig = {
             headers: {
               'Content-Type': 'multipart/form-data',
-                "Access-Control-Allow-Origin": "*"
+                "Access-Control-Allow-Origin": "*",
+                "type": "formData"
             }
           };
           const {cur_contact, fname, lname, email, pnumber, message} =  this.state;
@@ -232,8 +243,10 @@ class Contact extends Component
           if(cur_contact == 1)
           {
               formData.set('linkedin', this.state.llink);
-              formData.set('resume', this.state.resume);
+              formData.set('resume', this.state.file);
+              console.log(this.state.file);
           }
+
           
           if(cur_contact == 0)
           {
@@ -264,6 +277,9 @@ class Contact extends Component
           .catch((error)=> {
             this.setState({submit: "error"});
             this.submitbtn.current.value = this.props.t('common:basic.invalid_details');
+            this.submitbtn.current.classList.remove('disabled');  
+            setTimeout(()=>{this.resetform();}, 3000);
+            
           });
         }
         else
@@ -341,7 +357,7 @@ class Contact extends Component
     }
     verifyCallback(recaptchaToken) {
         
-      console.log(recaptchaToken, "<= your recaptcha token")
+
     }
 
 
@@ -412,7 +428,7 @@ class Contact extends Component
 
                 </Slider>
                 </div>
-                <form onSubmit = {this.handleSubmit}>
+                <form onSubmit = {this.handleSubmit} enctype="multipart/form-data">
                 <div className = "contact_wrapper">
                     {this.state.cur_contact == 0 ? <Contact1  proj_details = {this.state.proj_details} changeProjDetails = {this.changeProjDetails.bind(this)} /> : ''}
                     
@@ -468,7 +484,7 @@ class Contact extends Component
                                             <div className="file-select"> 
                                                 <div className="file-select-name" id="noFile">{this.state.resume}</div> 
                                                 <div className="file-select-button" id="fileName">{this.props.t('contact:placeholders.upload')}</div>
-                                                <input type="file" name="resume" id="chooseFile" onChange={this.handleChange} />
+                                                <input type="file" required name="resume" id="chooseFile" onChange={this.handleChange} />
                                             </div>
                                         </div>
                                     </>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {withTranslation} from 'react-i18next';
 import nm1 from "../../assets/img/blog/nm/nm_2432020.jpeg";
 const ADUBE_2232020 = (props) =>{
     return(
@@ -23,4 +24,4 @@ const ADUBE_2232020 = (props) =>{
         </>
     );
 }
-export default ADUBE_2232020;
+export default withTranslation()(ADUBE_2232020);

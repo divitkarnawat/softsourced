@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
 import {Container} from "@material-ui/core";
+import {withTranslation} from 'react-i18next';
+import blogpage_en from '../../translations/blogpage/titles/en.json';
+import blogpage_de from '../../translations/blogpage/titles/de.json';
 import blog3s from '../../assets/img/blog1s.jpg';
 import blog2s from '../../assets/img/blog2s.jpg';
 import blog1s from '../../assets/img/blog3s.jpg';
@@ -19,6 +22,7 @@ class BlogPage extends Component
     {
         super(props);
         this.state = {
+            laod: false,
             id: 'lmatsakis_1032020'
         }
         this.blog_content = {
@@ -59,11 +63,18 @@ class BlogPage extends Component
     componentDidMount()
     {
         window.scrollTo(0,0);
+        this.props.i18n.addResourceBundle("en","blogpage_t",blogpage_en, true, false);
+        this.props.i18n.addResourceBundle("de","blogpage_t",blogpage_de, true, false);
+        this.setState({load: true});
     }   
 
     render()
     {
-
+       
+if(!this.state.load)
+{
+    return(<div>Loading...</div>);
+}
         
         let id = this.props.match.params.blogid;
         return(
@@ -71,7 +82,7 @@ class BlogPage extends Component
             <Container>
 
             <h2 className = "title">
-                {this.blog_content[id].title}
+                {this.props.t(`blogpage_t:titles.${id}`)}
             </h2>
             <div className = "author">
                 <div className = "details">
@@ -90,12 +101,13 @@ class BlogPage extends Component
                 <div className = "author_social_links">
                     {this.blog_content[id].social_links.map((item,idx)=>{
                         return(
-                            <a href = {item[1]}> <img src = {`http://ec2-35-158-221-15.eu-central-1.compute.amazonaws.com/${item[0]}  `} /></a>
+                            <a href = {item[1]}> <img src = {item[0]} alt="social_link" /></a>
                         );
                     })}
                 </div>
             </div>
             <div className = "divider" />
+            
             <div className = "blog_desc desc">
                 {this.blog_content[id].desc}
             </div>
@@ -106,4 +118,4 @@ class BlogPage extends Component
 
 }
 
-export default BlogPage;
+export default withTranslation()(BlogPage);
